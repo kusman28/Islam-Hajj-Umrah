@@ -44,7 +44,13 @@ Header
 <div class="container-fluid">
 
 <div id="logo" class="pull-left">
-<h1><a href="#intro" class="scrollto">BizPage</a></h1>
+<a href="#intro" class="scrollto">
+    <img 
+    style="height: 120px; padding-bottom: 10px;" 
+    src="template/img/logo.png" 
+    alt="dupang-logo" 
+    title="dupang-logo">
+</a>
 <!-- Uncomment below if you prefer to use an image logo -->
 <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
 </div>
