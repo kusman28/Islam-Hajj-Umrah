@@ -46,7 +46,7 @@ Header
 <div id="logo" class="pull-left">
 <a href="#intro" class="scrollto">
     <img 
-    style="height: 120px; padding-bottom: 10px;" 
+    style="height: 120px; margin-top: -40px;" 
     src="template/img/logo.png" 
     alt="dupang-logo" 
     title="dupang-logo">
