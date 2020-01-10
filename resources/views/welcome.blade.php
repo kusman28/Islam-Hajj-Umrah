@@ -58,19 +58,15 @@ Header
 <nav id="nav-menu-container">
 <ul class="nav-menu">
 <li class="menu-active"><a href="#intro">Home</a></li>
-<li><a href="#about">About Us</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#team">Team</a></li>
-<li class="menu-has-children"><a href="">Drop Down</a>
+<li class="menu-has-children"><a href="">Registration</a>
 <ul>
-<li><a href="#">Drop Down 1</a></li>
-<li><a href="#">Drop Down 3</a></li>
-<li><a href="#">Drop Down 4</a></li>
-<li><a href="#">Drop Down 5</a></li>
+<li><a href="#">Hajj</a></li>
+<li><a href="#">Umrah</a></li>
 </ul>
 </li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#contact">Contact Us</a></li>
+<li><a href="#services">Check My Registration</a></li>
 </ul>
 </nav><!-- #nav-menu-container -->
 </div>
@@ -88,18 +84,29 @@ Intro Section
 <div class="carousel-inner" role="listbox">
 
 <div class="carousel-item active">
-<div class="carousel-background"><img src="template/img/intro-carousel/1.jpg" alt=""></div>
+<div class="carousel-background"><img src="template/img/intro-carousel/6.jpg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
-<h2>We are professional</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+<h2> قَالَ رَسُولُ اللَّهِ ﷺ‏‏‏</h2>
+<p style="font-size: 23px;">بُنِيَ الإِسْلاَمُ عَلَى خَمْسٍ شَهَادَةِ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلاَةِ، وَإِيتَاءِ الزَّكَاةِ، وَالْحَجِّ، وَصَوْمِ رَمَضَانَ</p>
+<p style="font-size: 13px;">Allah's Messenger (ﷺ) said: Islam is based on (the following) five (principles):
+    <br>
+    1. To testify that none has the right to be worshipped but Allah and Muhammad is Allah's Messenger (ﷺ).
+    <br>
+    2. To offer the (compulsory congregational) prayers dutifully and perfectly.
+    <br>
+    3. To pay Zakat (i.e. obligatory charity) .
+    <br>
+    4. To perform Hajj. (i.e. Pilgrimage to Mecca)
+    <br>
+    5. To observe fast during the month of Ramadan.</p>
+{{-- <a href="#featured-services" class="btn-get-started scrollto">Learn More</a> --}}
 </div>
 </div>
 </div>
 
-<div class="carousel-item">
-<div class="carousel-background"><img src="template/img/intro-carousel/2.jpg" alt=""></div>
+{{-- <div class="carousel-item">
+<div class="carousel-background"><img src="template/img/intro-carousel/7.jpg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
 <h2>At vero eos et accusamus</h2>
@@ -140,7 +147,7 @@ Intro Section
 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
 </div>
 </div>
-</div>
+</div> --}}
 
 </div>
 
@@ -163,7 +170,7 @@ Intro Section
 <!--==========================
 Featured Services Section
 ============================-->
-<section id="featured-services">
+{{-- <section id="featured-services">
 <div class="container">
 <div class="row">
 
@@ -880,7 +887,7 @@ Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
 </div>
 </footer><!-- #footer -->
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> --}}
 <!-- Uncomment below i you want to use a preloader -->
 <!-- <div id="preloader"></div> -->
 
