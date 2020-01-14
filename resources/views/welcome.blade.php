@@ -27,6 +27,7 @@
 <!-- Main Stylesheet File -->
 <link href="template/css/style.css" rel="stylesheet">
 
+
 <!-- =======================================================
 Theme Name: BizPage
 Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
@@ -34,7 +35,20 @@ Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
 ======================================================= -->
 </head>
+    <style>
+    body::-webkit-scrollbar {
+    width: 0.4em;
+    }
 
+    body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+    background-color: #52de97;
+    outline: 1px solid slategrey;
+    }
+    </style>
 <body>
 
 <!--==========================
@@ -100,7 +114,9 @@ Intro Section
     <br>
     4. To perform Hajj. (i.e. Pilgrimage to Mecca)
     <br>
-    5. To observe fast during the month of Ramadan.</p>
+    5. To observe fast during the month of Ramadan.
+    <br>
+    <b>[Al-Bukhari and Muslim]</b></p>
 {{-- <a href="#featured-services" class="btn-get-started scrollto">Learn More</a> --}}
 </div>
 </div>
@@ -223,38 +239,40 @@ Intro Section
 
 </div>
 </div>
-</section><!-- #intro -->
+</section>
+<!-- #intro -->
 
 <main id="main">
 
 <!--==========================
 Featured Services Section
 ============================-->
-{{-- <section id="featured-services">
+<section id="featured-services">
 <div class="container">
 <div class="row">
 
 <div class="col-lg-4 box">
-<i class="ion-ios-bookmarks-outline"></i>
-<h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
-<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+<i class="ion-social-facebook"></i>
+<h4 class="title"><a href="https://www.facebook.com/">@IslamHajjUmrah</a></h4>
+<p class="description">Follow us on Facebook to get more updates.</p>
 </div>
 
 <div class="col-lg-4 box box-bg">
-<i class="ion-ios-stopwatch-outline"></i>
-<h4 class="title"><a href="">Dolor Sitema</a></h4>
-<p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+<i class="ion-social-whatsapp"></i>
+<h4 class="title"><a href="">WhatsApp</a></h4>
+<p class="description">00639368182985</p>
 </div>
 
 <div class="col-lg-4 box">
-<i class="ion-ios-heart-outline"></i>
-<h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-<p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+<i class="ion-email"></i>
+<h4 class="title"><a href="">Email</a></h4>
+<p class="description">islamhajjandumrah@gmail.com</p>
 </div>
 
 </div>
 </div>
 </section><!-- #featured-services -->
+{{-- 
 
 <!--==========================
 About Us Section
