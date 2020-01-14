@@ -84,12 +84,13 @@ Intro Section
 <div class="carousel-inner" role="listbox">
 
 <div class="carousel-item active">
-<div class="carousel-background"><img src="template/img/intro-carousel/6.jpg" alt=""></div>
+<div class="carousel-background"><img src="template/img/intro-carousel/10.jpg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
 <h2> قَالَ رَسُولُ اللَّهِ ﷺ‏‏‏</h2>
 <p style="font-size: 23px;">بُنِيَ الإِسْلاَمُ عَلَى خَمْسٍ شَهَادَةِ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلاَةِ، وَإِيتَاءِ الزَّكَاةِ، وَالْحَجِّ، وَصَوْمِ رَمَضَانَ</p>
-<p style="font-size: 13px;">Allah's Messenger (ﷺ) said: Islam is based on (the following) five (principles):
+<p style="font-size: 13px;">Ibn 'Umar (May Allah be pleased with them) reported:<br>
+    Allah's Messenger (ﷺ) said: Islam is based on (the following) five (principles):
     <br>
     1. To testify that none has the right to be worshipped but Allah and Muhammad is Allah's Messenger (ﷺ).
     <br>
@@ -105,49 +106,108 @@ Intro Section
 </div>
 </div>
 
-{{-- <div class="carousel-item">
-<div class="carousel-background"><img src="template/img/intro-carousel/7.jpg" alt=""></div>
+<div class="carousel-item">
+<div class="carousel-background"><img src="template/img/intro-carousel/12.jpg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
-<h2>At vero eos et accusamus</h2>
-<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-<a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+<h2> سئل النبي ﷺ‏ أي العمل أفضل‏؟‏ قال‏‏</h2>
+<p style="font-size: 23px;">‏"إيمان بالله ورسوله‏"‏ قيل‏:‏ ثم ماذا‏؟‏ قال‏:‏ "‏الجهاد في سبيل الله"‏‏ قيل ثم ماذا‏؟‏ قال‏:‏ "‏حج مبرور"‏‏ <br>‏
+‏ "‏المبرور‏"‏ هو الذي لا يرتكب صاحبه فيه معصية‏.‏<br> ‏‏‏(‏متفق عليه‏)‏‏
+</p>
+<p style="font-size: 13px;">Abu Hurairah (May Allah be pleased with him) reported:<br>
+    The Prophet (ﷺ) was asked: "Which deed is the best?" He (ﷺ) replied, "Faith in Allah and His Messenger." Then he was asked: "What is next?" He replied, "Jihad (holy fighting) in the Cause of Allah." Then he was asked, "What is after that?" He (ﷺ) replied, "Hajj Mabrur (an accepted pilgrimage)."
+    <br>
+    <b>[Al-Bukhari and Muslim]</b></p>
+{{-- <a href="#featured-services" class="btn-get-started scrollto">Learn More</a> --}}
 </div>
 </div>
 </div>
 
 <div class="carousel-item">
-<div class="carousel-background"><img src="template/img/intro-carousel/3.jpg" alt=""></div>
+<div class="carousel-background"><img src="template/img/intro-carousel/15.jpg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
-<h2>Temporibus autem quibusdam</h2>
-<p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-<a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+<h2>سمعت رسول الله ﷺ‏ يقول‏‏</h2>
+<p style="font-size: 23px;">‏من حج، فلم يرفث ولم يفسق، رجع كيوم ولدته أمه‏ <br>(‏متفق عليه‏)
+</p>
+<p style="font-size: 13px;">Abu Hurairah (May Allah be pleased with him) reported:<br>
+    The Messenger of Allah (ﷺ) said, "Whoever performs Hajj (pilgrimage) and does not have sexual relations (with his wife), nor commits sin, nor disputes unjustly (during Hajj), then he returns from Hajj as pure and free from sins as on the day on which his mother gave birth to him."
+    <br>
+    <b>[Al-Bukhari and Muslim]</b></p>
+{{-- <a href="#featured-services" class="btn-get-started scrollto">Get Started</a> --}}
 </div>
 </div>
 </div>
 
 <div class="carousel-item">
-<div class="carousel-background"><img src="template/img/intro-carousel/4.jpg" alt=""></div>
+<div class="carousel-background"><img src="template/img/intro-carousel/10.jpg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
-<h2>Nam libero tempore</h2>
-<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-<a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+<h2>أن رسول الله ﷺ‏ قال</h2>
+<p style="font-size: 23px;">العمرة إلى العمرة كفارة لما بينهما، والحج المبرور ليس له جزاء إلا الجنة‏</p>
+<p style="font-size: 13px;">Abu Hurairah (May Allah be pleased with him) reported:<br>
+    The Messenger of Allah (ﷺ) said, "(The performance of) 'Umrah is an expiation for the sins committed between it and the previous 'Umrah; and the reward of Hajj Mabrur (i.e., one accepted) is nothing but Jannah."
+    <br>
+    <b>[Al-Bukhari and Muslim]</b></p>
 </div>
 </div>
 </div>
 
 <div class="carousel-item">
-<div class="carousel-background"><img src="template/img/intro-carousel/5.jpg" alt=""></div>
+<div class="carousel-background"><img src="template/img/intro-carousel/7.jpeg" alt=""></div>
 <div class="carousel-container">
 <div class="carousel-content">
-<h2>Magnam aliquam quaerat</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+<h2>عن عائشة رضي الله عنها قالت‏</h2>
+<p style="font-size: 23px;">قلت يا رسول الله نرى الجهاد أفضل العمل، أفلا نجاهد‏؟‏ فقال: ‏لَكُنّ أفضل الجهاد حج مبرور</p>
+<p style="font-size: 13px;">'Aishah (May Allah be pleased with her) reported:<br>
+    I said: "O Messenger of Allah! We consider Jihad as the best deed, should we not then go for Jihad?" The Messenger of Allah (ﷺ) said, "The best Jihad for you women is Hajj Mabrur (i.e., one accepted by Allah).
+    <br>
+    <b>[Al-Bukhari]</b></p>
 </div>
 </div>
-</div> --}}
+</div>
+
+<div class="carousel-item">
+<div class="carousel-background"><img src="template/img/intro-carousel/11.jpg" alt=""></div>
+<div class="carousel-container">
+<div class="carousel-content">
+<h2>عن ابن عباس رضي الله عنهما</h2>
+<p style="font-size: 23px;">أن النبي صلى الله عليه وسلم قال‏:‏ ‏عمرة في رمضان تعدل عمرة أو حجة معي</p>
+<p style="font-size: 13px;">Ibn 'Abbas (May Allah be pleased with them) reported:<br>
+    The Prophet (ﷺ) said, "(The performance of) 'Umrah during Ramadan is equal to Hajj (pilgrimage)." Or said, "Equal to the performance of Hajj with me."
+    <br>
+    <b>[Al-Bukhari and Muslim]</b></p>
+</div>
+</div>
+</div>
+
+
+<div class="carousel-item">
+    <div class="carousel-background"><img src="template/img/intro-carousel/13.jpg" alt=""></div>
+    <div class="carousel-container">
+    <div class="carousel-content">
+    <h2>عن لقيط بن عامر رضي الله عنه</h2>
+    <p style="font-size: 23px;">أنه أتى النبي صلى الله عليه وسلم فقال‏:‏ إن أبي شيخ كبير لا يستطيع الحج ولا العمرة، ولا الظعن قال‏:‏ ‏ "‏حج عن أبيك واعتمر"‏</p>
+    <p style="font-size: 13px;">Laqit bin 'Amir (May Allah be pleased with him) reported:<br>
+        I came to the Prophet (ﷺ) and said: "My father is a very old man and does not have strength to perform Hajj (pilgrimage) or 'Umrah or to undertake the journey." The Prophet (ﷺ) said, "Perform Hajj and 'Umrah on behalf of your father."
+    <br>
+    <b>[Abu Dawud and At- Tirmidhi]</b></p>
+    </div>
+    </div>
+</div>
+
+<div class="carousel-item">
+<div class="carousel-background"><img src="template/img/intro-carousel/9.jpg" alt=""></div>
+<div class="carousel-container">
+<div class="carousel-content">
+<h2> عن ابن عباس رضي الله عنهما </h2>
+<p style="font-size: 23px;">أن امرأة قالت‏:‏ يا رسول الله إن فريضة الله على عباده في الحج، أدركت أبي شيخًا كبيرًا، لا يثبت على الراحلة، أفأحج عنه‏؟‏ قال‏:‏ ‏ "‏نعم‏"‏‏</p>
+<p style="font-size: 13px;">A woman came to the Messenger of Allah (ﷺ) and said, "Allah's obligation upon His slaves has become obligatory on my father in his old age. My father is very old and incapable of riding. May I perform Hajj on his behalf?" He (ﷺ) said, "Yes."
+    <br>
+    <b>[Al-Bukhari and Muslim]</b></p>
+</div>
+</div>
+</div>
 
 </div>
 
