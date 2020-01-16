@@ -253,7 +253,7 @@ Featured Services Section
 
 <div class="col-lg-4 box">
 <i class="ion-social-facebook"></i>
-<h4 class="title"><a href="https://www.facebook.com/">@IslamHajjUmrah</a></h4>
+<h4 class="title"><a href="https://www.facebook.com/">Facebook</a></h4>
 <p class="description">Follow us on Facebook to get more updates.</p>
 </div>
 
