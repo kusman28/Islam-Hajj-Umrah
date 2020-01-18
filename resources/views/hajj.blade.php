@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Hajj Registration</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -201,8 +201,14 @@
                     </div>
                     </div>
                 </div>
-                <div class="mb-5">
+                <hr>
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">Note:</h4>
+                    <p>Siguraduhing tama ang mga impormasyon na inilagay at high-quality ang imahe ng Iqama at Pasaporte upang malinaw at hindi malabo kapag inupload ang mga ito.</p>
                     <hr>
+                    <p class="mb-0">Maraming salamat,</p>
+                </div>
+                <div class="mb-5">
                     <button class="col-md-4 btn btn-primary" type="submit">Submit Form</button>
                 </div>
               </form>
