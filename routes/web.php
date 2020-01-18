@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/Hajj', function () {
+    return view('hajj');
+    // return dd('Hajj');
+});
+
+Route::get('/Umrah', function () {
+    return dd('Umrah');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

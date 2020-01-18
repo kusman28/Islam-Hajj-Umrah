@@ -72,10 +72,10 @@ Header
 <nav id="nav-menu-container">
 <ul class="nav-menu">
 <li class="menu-active"><a href="#intro">Home</a></li>
-<li class="menu-has-children"><a href="">Registration</a>
+<li class="menu-has-children"><a href="#">Registration</a>
 <ul>
-<li><a href="#">Hajj</a></li>
-<li><a href="#">Umrah</a></li>
+<li><a href="Hajj">Hajj</a></li>
+<li><a href="Umrah">Umrah</a></li>
 </ul>
 </li>
 <li><a href="#about">About Us</a></li>
@@ -254,7 +254,7 @@ Featured Services Section
 <div class="col-lg-4 box">
 <i class="ion-social-facebook"></i>
 <h4 class="title"><a href="https://www.facebook.com/">Facebook</a></h4>
-<p class="description">Follow us on Facebook to get more updates.</p>
+<p class="description"><a href="https://www.facebook.com/">Follow us on Facebook to get more updates.</a></p>
 </div>
 
 <div class="col-lg-4 box box-bg">
@@ -272,7 +272,7 @@ Featured Services Section
 </div>
 </div>
 </section><!-- #featured-services -->
-{{-- 
+
 
 <!--==========================
 About Us Section
@@ -330,7 +330,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni 
 
 </div>
 </section><!-- #about -->
-
+{{-- 
 <!--==========================
 Services Section
 ============================-->
