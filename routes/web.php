@@ -15,13 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Hajj', 'HajjController');
+Route::resource('HajjRegistrationForm', 'HajjController');
 // Route::get('/Hajj', function () {
 //     return view('hajj');
 // });
 
 Route::get('/Umrah', function () {
     return dd('Umrah');
+});
+
+Route::get('/HajjRegistrationSuccess', function () {
+    return view('successHajj');
 });
 
 Auth::routes();

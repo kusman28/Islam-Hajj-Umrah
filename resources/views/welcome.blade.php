@@ -71,10 +71,10 @@ Header
 
 <nav id="nav-menu-container">
 <ul class="nav-menu">
-<li class="menu-active"><a href="#intro">Home</a></li>
+<li class="menu-active"><a href="#">Home</a></li>
 <li class="menu-has-children"><a href="#">Registration</a>
 <ul>
-<li><a href="Hajj">Hajj</a></li>
+<li><a href="HajjRegistrationForm">Hajj</a></li>
 <li><a href="Umrah">Umrah</a></li>
 </ul>
 </li>

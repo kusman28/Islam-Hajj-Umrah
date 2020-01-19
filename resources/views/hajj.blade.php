@@ -54,20 +54,49 @@
             src="template/img/logo1.png">
             <h4 class="mb-4">Hajj Registration Form</h4>
             <hr class="mb-4">
-        <form class="needs-validation" method="POST">
+        <form method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip01">First name</label>
-                    <input type="text" class="form-control" name="firstname" id="firstname" required>
+                    <label>First name</label>
+                    <input 
+                    type="text" 
+                    class="form-control @error('firstname') is-invalid @enderror" 
+                    name="firstname"
+                    value="{{ old('firstname') }}"
+                    >
+                    @error('firstname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip02">Middle name</label>
-                    <input type="text" class="form-control" name="middlename" id="validationTooltip02" >
+                    <label>Middle name</label>
+                    <input type="text" 
+                    class="form-control @error('middlename') is-invalid @enderror" 
+                    name="middlename"
+                    value="{{ old('middlename') }}"
+                    >
+                    @error('middlename')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip02">Last name</label>
-                    <input type="text" class="form-control" name="lastname" id="validationTooltip02" >
+                    <label>Last name</label>
+                    <input 
+                    type="text" 
+                    class="form-control @error('lastname') is-invalid @enderror" 
+                    name="lastname" 
+                    value="{{ old('lastname') }}"
+                    >
+                    @error('lastname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
                   </div>
                   {{-- <div class="col-md-4 mb-3">
                     <label for="validationTooltipUsername">Username</label>
@@ -81,126 +110,305 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip01">Gender</label>
-                    <select class="form-control" name="gender" id="exampleFormControlSelect1">
+                    <label>Gender</label>
+                    <select class="form-control" name="gender" value="{{ old('gender') }}">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip02">Birthday</label>
-                    <input type="date" class="form-control" name="birthday" id="validationTooltip02" >
+                    <label>Birthday</label>
+                    <input 
+                    type="date" 
+                    class="form-control @error('birthday') is-invalid @enderror" 
+                    name="birthday"
+                    value="{{ old('birthday') }}"
+                    >
+                    @error('birthday')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltipUsername">Mobile No.</label>
+                    <label>Mobile No.</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text" id="validationTooltipUsernamePrepend">
+                        <span class="input-group-text">
                             <span class="fas fa-mobile"></span>
                         </span>
                       </div>
-                      <input type="text" class="form-control" name="mobile_no" id="validationTooltipUsername" placeholder="09xxxxxxxxx" aria-describedby="validationTooltipUsernamePrepend" >
+                      <input 
+                      type="text" 
+                      class="form-control @error('mobile_no') is-invalid @enderror"
+                       name="mobile_no" 
+                       placeholder="09xxxxxxxxx" 
+                       value="{{ old('mobile_no') }}"
+                       >
+                       @error('mobile_no')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltipUsername">WhatsApp</label>
+                    <label>WhatsApp</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text" id="validationTooltipUsernamePrepend">
+                        <span class="input-group-text">
                             <span class="fab fa-whatsapp"></span>
                         </span>
                       </div>
-                      <input type="text" class="form-control" name="whatsapp_no" id="validationTooltipUsername" placeholder="WhatsApp" aria-describedby="validationTooltipUsernamePrepend" >
+                      <input 
+                      type="text" 
+                      class="form-control @error('whatsapp_no') is-invalid @enderror" 
+                      name="whatsapp_no" 
+                      placeholder="WhatsApp" 
+                      value="{{ old('whatsapp_no') }}"
+                      >
+                    @error('whatsapp_no')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltipUsername">Email</label>
+                    <label>Email</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text" id="validationTooltipUsernamePrepend">
+                        <span class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </span>
                       </div>
-                      <input type="email" class="form-control" name="email" id="validationTooltipUsername" placeholder="Enter Email" aria-describedby="validationTooltipUsernamePrepend" >
+                      <input 
+                      type="email" 
+                      class="form-control @error('email') is-invalid @enderror" 
+                      name="email"
+                      placeholder="Enter Email" 
+                      value="{{ old('email') }}"
+                      >
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip01">Nationality</label>
-                    <select class="form-control" name="nationality" id="exampleFormControlSelect1">
+                    <label>Nationality</label>
+                    <select class="form-control @error('nationality') is-invalid @enderror" 
+                    name="nationality" 
+                    value="{{ old('nationality') }}">
                         <option value="Filipino">Filipino</option>
                         <option value="Saudi">Saudi</option>
                     </select>
+                    @error('nationality')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip01">Address</label>
-                    <select class="form-control" name="address" id="exampleFormControlSelect1">
+                    <label>Address</label>
+                    <select class="form-control @error('address') is-invalid @enderror" 
+                    name="address" 
+                    value="{{ old('address') }}">
                         <option value="Philippines">Philippines</option>
                         <option value="Saudi Arabia">Saudi Arabia</option>
                     </select>
+                    @error('address')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip03">City</label>
-                    <input type="text" class="form-control" name="city" id="validationTooltip03" placeholder="Enter City" >
+                    <label>City</label>
+                    <input 
+                    type="text" 
+                    class="form-control @error('city') is-invalid @enderror" 
+                    name="city"
+                    placeholder="Enter City"
+                    value="{{ old('city') }}"
+                    >
+                    @error('city')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="validationTooltip04">Job Title</label>
-                    <input type="text" class="form-control" name="job" id="validationTooltip04" placeholder="Enter Job" >
+                    <label>Job Title</label>
+                    <input 
+                    type="text" 
+                    class="form-control @error('job') is-invalid @enderror" 
+                    name="job"  
+                    placeholder="Enter Job"
+                    value="{{ old('job') }}"
+                    >
+                    @error('job')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
-                    <label for="validationTooltip03">Company Name</label>
-                    <input type="text" class="form-control" name="company" id="validationTooltip03" placeholder="Enter Company/Employer Name" >
+                    <label>Company Name</label>
+                    <input 
+                    type="text" 
+                    class="form-control @error('company') is-invalid @enderror" 
+                    name="company"  
+                    placeholder="Enter Company/Employer Name" 
+                    value="{{ old('company') }}"
+                    >
+                    @error('company')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="validationTooltip04">Company Contact</label>
-                    <input type="text" class="form-control" name="contact_company" id="validationTooltip04" placeholder="Enter Company/Employer Contact" >
+                    <label>Company Contact</label>
+                    <input 
+                    type="text" 
+                    class="form-control @error('contact_company') is-invalid @enderror" 
+                    name="contact_company"
+                    placeholder="Enter Company/Employer Contact" 
+                    value="{{ old('contact_company') }}"
+                    >
+                    @error('contact_company')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
-                      <label for="validationTooltip01">Iqama No.</label>
-                      <input type="text" class="form-control" name="iqama_no" id="validationTooltip01" >
+                      <label>Iqama No.</label>
+                      <input 
+                      type="text" 
+                      class="form-control @error('iqama_no') is-invalid @enderror" 
+                      name="iqama_no"
+                      value="{{ old('iqama_no') }}"
+                      >
+                      @error('iqama_no')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                     <div class="col-md-3 mb-3">
-                      <label for="validationTooltip02">Expiration Date</label>
-                      <input type="date" class="form-control" name="iqama_exp_date" id="validationTooltip02" >
+                      <label>Expiration Date</label>
+                      <input 
+                      type="date" 
+                      class="form-control @error('iqama_exp_date') is-invalid @enderror" 
+                      name="iqama_exp_date"
+                      value="{{ old('iqama_exp_date') }}"
+                      >
+                      @error('iqama_exp_date')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                     <div class="col-md-3 mb-3">
-                      <label for="validationTooltip02">Passport No.</label>
-                      <input type="text" class="form-control" name="passport_no" id="validationTooltip02" >
+                      <label>Passport No.</label>
+                      <input 
+                      type="text" 
+                      class="form-control @error('passport_no') is-invalid @enderror" 
+                      name="passport_no"
+                      value="{{ old('passport_no') }}"
+                      >
+                      @error('passport_no')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                     <div class="col-md-3 mb-3">
-                      <label for="validationTooltip02">Expiration Date</label>
-                      <input type="date" class="form-control" name="passport_exp_date" id="validationTooltip02" >
+                      <label>Expiration Date</label>
+                      <input type="date" 
+                      class="form-control @error('passport_exp_date') is-invalid @enderror" 
+                      name="passport_exp_date" 
+                      value="{{ old('passport_exp_date') }}"
+                      >
+                      @error('passport_exp_date')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
-                      <label for="validationTooltip01">2x2 Picture</label>
+                      <label>2x2 Picture</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="picture" id="inputGroupFile01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        <input 
+                        type="file" 
+                        multiple 
+                        id="gallery-photo-add"
+                        class="custom-file-input @error('picture') is-invalid @enderror" 
+                        name="picture"
+                        value="{{ old('picture') }}"
+                        >
+                        @error('picture')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                        <label class="custom-file-label">Choose file</label>
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                      <label for="validationTooltip02">Iqama Picture</label>
+                      <label>Iqama Picture</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="iqama_pic" id="inputGroupFile01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        <input 
+                        type="file" 
+                        multiple 
+                        id="gallery-photo-add1"
+                        class="custom-file-input @error('iqama_pic') is-invalid @enderror" 
+                        name="iqama_pic" 
+                        value="{{ old('iqama_pic') }}"
+                        >
+                        @error('iqama_pic')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                        <label class="custom-file-label">Choose file</label>
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                      <label for="validationTooltip02">Passport Picture</label>
+                      <label>Passport Picture</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="passport_pic" id="inputGroupFile01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        <input 
+                        type="file" 
+                        class="custom-file-input @error('passport_pic') is-invalid @enderror" 
+                        name="passport_pic" 
+                        value="{{ old('passport_pic') }}"
+                        >
+                        @error('passport_pic')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                        <label class="custom-file-label">Choose file</label>
                     </div>
                     </div>
+                </div>
+                <div class="col-md-6 mb-3">
+
+                    {{-- <input type="file" multiple id="gallery-photo-add"> --}}
+                    <div class="gallery"></div>
                 </div>
                 <hr>
                 <div class="alert alert-warning" role="alert">
@@ -216,4 +424,43 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(function() {
+    // Multiple images preview in browser
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+        
+        if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    $($.parseHTML('<img class="img-thumbnail mt-4">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                }
+
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+
+    // $("div.gallery").html("");
+    $('#gallery-photo-add').on('change', function() {
+        imagesPreview(this, 'div.gallery');
+    });
+
+              //clear the file list when image is clicked
+              $('body').on('click','img',function(){
+            $('#gallery-photo-add').val("");
+            $('#gallery').html("");
+    
+        });
+
+    // $('#gallery-photo-add1').on('change', function() {
+    //     imagesPreview(this, 'div.gallery');
+    // });
+});
+</script>
 </html>

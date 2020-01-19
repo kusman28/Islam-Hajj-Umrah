@@ -39,9 +39,27 @@ class HajjController extends Controller
             'firstname' => 'required|string|min:3',
             'middlename' => 'required|string|min:3',
             'lastname' => 'required|string|min:3',
+            'gender' => 'required',
+            'birthday' => 'required',
+            'iqama_no' => 'required|numeric',
+            'iqama_exp_date' => 'required',
+            'passport_no' => 'required|numeric',
+            'passport_exp_date' => 'required',
+            'mobile_no' => 'required|numeric|max:11',
+            'whatsapp_no' => 'required|numeric',
+            'email' => 'required|string',
+            'nationality' => 'required|string',
+            'address' => 'required|string',
+            'city' => 'required|string',
+            'job',
+            'company',
+            'contact_company',
+            'picture' => 'required',
+            'iqama_pic' => 'required',
+            'passport_pic' => 'required',
         ]);
 
-        return Hajj::create([
+        Hajj::create([
             'fullname' => $request['firstname'].' '.$request['middlename'].' '.$request['lastname'],
             'firstname' => $request['firstname'],
             'middlename' => $request['middlename'],
@@ -49,9 +67,9 @@ class HajjController extends Controller
             'gender' => $request['gender'],
             'birthday' => $request['birthday'],
             'iqama_no' => $request['iqama_no'],
-            'iqama_exp' => $request['iqama_exp'],
+            'iqama_exp_date' => $request['iqama_exp_date'],
             'passport_no' => $request['passport_no'],
-            'passport_exp' => $request['passport_exp'],
+            'passport_exp_date' => $request['passport_exp_date'],
             'mobile_no' => $request['mobile_no'],
             'whatsapp_no' => $request['whatsapp_no'],
             'email' => $request['email'],
@@ -65,6 +83,8 @@ class HajjController extends Controller
             'iqama_pic' => $request['iqama_pic'],
             'passport_pic' => $request['passport_pic'],
         ]);
+
+        return view('HajjRegistrationSuccess');
     }
 
     /**
