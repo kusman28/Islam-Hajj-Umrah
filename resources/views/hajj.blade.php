@@ -54,19 +54,20 @@
             src="template/img/logo1.png">
             <h4 class="mb-4">Hajj Registration Form</h4>
             <hr class="mb-4">
-            <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="POST">
+                @csrf
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">First name</label>
-                    <input type="text" class="form-control" id="validationTooltip01" required>
+                    <input type="text" class="form-control" name="firstname" id="firstname" required>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Middle name</label>
-                    <input type="text" class="form-control" id="validationTooltip02" required>
+                    <input type="text" class="form-control" name="middlename" id="validationTooltip02" >
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Last name</label>
-                    <input type="text" class="form-control" id="validationTooltip02" required>
+                    <input type="text" class="form-control" name="lastname" id="validationTooltip02" >
                   </div>
                   {{-- <div class="col-md-4 mb-3">
                     <label for="validationTooltipUsername">Username</label>
@@ -81,14 +82,14 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">Gender</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Male</option>
-                        <option>Female</option>
+                    <select class="form-control" name="gender" id="exampleFormControlSelect1">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Birthday</label>
-                    <input type="date" class="form-control" id="validationTooltip02" required>
+                    <input type="date" class="form-control" name="birthday" id="validationTooltip02" >
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltipUsername">Mobile No.</label>
@@ -98,7 +99,7 @@
                             <span class="fas fa-mobile"></span>
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="validationTooltipUsername" placeholder="09xxxxxxxxx" aria-describedby="validationTooltipUsernamePrepend" required>
+                      <input type="text" class="form-control" name="mobile_no" id="validationTooltipUsername" placeholder="09xxxxxxxxx" aria-describedby="validationTooltipUsernamePrepend" >
                     </div>
                   </div>
                 </div>
@@ -111,7 +112,7 @@
                             <span class="fab fa-whatsapp"></span>
                         </span>
                       </div>
-                      <input type="email" class="form-control" id="validationTooltipUsername" placeholder="WhatsApp" aria-describedby="validationTooltipUsernamePrepend" required>
+                      <input type="text" class="form-control" name="whatsapp_no" id="validationTooltipUsername" placeholder="WhatsApp" aria-describedby="validationTooltipUsernamePrepend" >
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
@@ -122,81 +123,81 @@
                             <span class="fas fa-envelope"></span>
                         </span>
                       </div>
-                      <input type="email" class="form-control" id="validationTooltipUsername" placeholder="Enter Email" aria-describedby="validationTooltipUsernamePrepend" required>
+                      <input type="email" class="form-control" name="email" id="validationTooltipUsername" placeholder="Enter Email" aria-describedby="validationTooltipUsernamePrepend" >
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">Nationality</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Filipino</option>
-                        <option>Saudi</option>
+                    <select class="form-control" name="nationality" id="exampleFormControlSelect1">
+                        <option value="Filipino">Filipino</option>
+                        <option value="Saudi">Saudi</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">Address</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Philippine</option>
-                        <option>Saudi Arabia</option>
+                    <select class="form-control" name="address" id="exampleFormControlSelect1">
+                        <option value="Philippines">Philippines</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip03">City</label>
-                    <input type="text" class="form-control" id="validationTooltip03" placeholder="Enter City" required>
+                    <input type="text" class="form-control" name="city" id="validationTooltip03" placeholder="Enter City" >
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationTooltip04">Job Title</label>
-                    <input type="text" class="form-control" id="validationTooltip04" placeholder="Enter Job" required>
+                    <input type="text" class="form-control" name="job" id="validationTooltip04" placeholder="Enter Job" >
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationTooltip03">Company Name</label>
-                    <input type="text" class="form-control" id="validationTooltip03" placeholder="Enter Company/Employer Name" required>
+                    <input type="text" class="form-control" name="company" id="validationTooltip03" placeholder="Enter Company/Employer Name" >
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="validationTooltip04">Company Contact</label>
-                    <input type="text" class="form-control" id="validationTooltip04" placeholder="Enter Company/Employer Contact" required>
+                    <input type="text" class="form-control" name="contact_company" id="validationTooltip04" placeholder="Enter Company/Employer Contact" >
                   </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
                       <label for="validationTooltip01">Iqama No.</label>
-                      <input type="text" class="form-control" id="validationTooltip01" required>
+                      <input type="text" class="form-control" name="iqama_no" id="validationTooltip01" >
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationTooltip02">Expiration Date</label>
-                      <input type="date" class="form-control" id="validationTooltip02" required>
+                      <input type="date" class="form-control" name="iqama_exp_date" id="validationTooltip02" >
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationTooltip02">Passport No.</label>
-                      <input type="text" class="form-control" id="validationTooltip02" required>
+                      <input type="text" class="form-control" name="passport_no" id="validationTooltip02" >
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationTooltip02">Expiration Date</label>
-                      <input type="date" class="form-control" id="validationTooltip02" required>
+                      <input type="date" class="form-control" name="passport_exp_date" id="validationTooltip02" >
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip01">2x2 Picture</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                        <input type="file" class="custom-file-input" name="picture" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip02">Iqama Picture</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                        <input type="file" class="custom-file-input" name="iqama_pic" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
                       <label for="validationTooltip02">Passport Picture</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                        <input type="file" class="custom-file-input" name="passport_pic" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
                     </div>

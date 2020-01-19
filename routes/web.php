@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Hajj', function () {
-    return view('hajj');
-    // return dd('Hajj');
-});
+Route::resource('Hajj', 'HajjController');
+// Route::get('/Hajj', function () {
+//     return view('hajj');
+// });
 
 Route::get('/Umrah', function () {
     return dd('Umrah');
