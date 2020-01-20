@@ -34,3 +34,15 @@ class Hajj extends Model
     ];
     
 }
+
+
+// if ($request->hasfile('picture')) {
+//     $file = $request->file('picture');
+//     $extension = $file->getClientOriginalExtension();
+//     $filename = time() . '.' . $extension;
+//     $file->move(public_path('images/documents/'), $filename);
+//     $hajj->picture = $filename;
+// } else {
+//     return $request;
+//     $hajj->picture = '';
+// }

@@ -111,7 +111,7 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Gender</label>
-                    <select class="form-control" name="gender">
+                    <select class="form-control @error('birthday') is-invalid @enderror" name="gender">
                         <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -266,6 +266,7 @@
                     <select class="form-control @error('nationality') is-invalid @enderror" 
                     name="nationality" 
                     value="{{ old('nationality') }}">
+                        <option value="">Select</option>
                         <option value="Filipino">Filipino</option>
                         <option value="Saudi">Saudi</option>
                     </select>
@@ -282,6 +283,7 @@
                     <select class="form-control @error('address') is-invalid @enderror" 
                     name="address" 
                     value="{{ old('address') }}">
+                        <option value="">Select</option>
                         <option value="Philippines">Philippines</option>
                         <option value="Saudi Arabia">Saudi Arabia</option>
                     </select>
