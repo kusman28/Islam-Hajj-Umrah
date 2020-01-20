@@ -354,8 +354,7 @@
                     <div class="custom-file">
                         <input 
                         type="file" 
-                        multiple 
-                        id="gallery-photo-add"
+                        onchange="readURL(this);"
                         class="custom-file-input @error('picture') is-invalid @enderror" 
                         name="picture"
                         value="{{ old('picture') }}"
@@ -367,14 +366,14 @@
                     @enderror
                         <label class="custom-file-label">Choose file</label>
                     </div>
+                    <img style="height: 250px;" class="img-thumbnail mt-4" id="blah" alt="2x2 Picture" />
                     </div>
                     <div class="col-md-4 mb-3">
                       <label>Iqama Picture</label>
                     <div class="custom-file">
                         <input 
                         type="file" 
-                        multiple 
-                        id="gallery-photo-add1"
+                        onchange="readURL1(this);"
                         class="custom-file-input @error('iqama_pic') is-invalid @enderror" 
                         name="iqama_pic" 
                         value="{{ old('iqama_pic') }}"
@@ -386,12 +385,14 @@
                     @enderror
                         <label class="custom-file-label">Choose file</label>
                     </div>
+                    <img class="img-thumbnail mt-4" id="blah1" alt=" Iqama Picture" />
                     </div>
                     <div class="col-md-4 mb-3">
                       <label>Passport Picture</label>
                     <div class="custom-file">
                         <input 
                         type="file" 
+                        onchange="readURL2(this);"
                         class="custom-file-input @error('passport_pic') is-invalid @enderror" 
                         name="passport_pic" 
                         value="{{ old('passport_pic') }}"
@@ -403,12 +404,8 @@
                     @enderror
                         <label class="custom-file-label">Choose file</label>
                     </div>
+                    <img class="img-thumbnail mt-4" id="blah2" alt=" Passport Picture" />
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-
-                    {{-- <input type="file" multiple id="gallery-photo-add"> --}}
-                    <div class="gallery"></div>
                 </div>
                 <hr>
                 <div class="alert alert-warning" role="alert">
@@ -424,43 +421,44 @@
         </div>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-    $(function() {
-    // Multiple images preview in browser
-    var imagesPreview = function(input, placeToInsertImagePreview) {
-        
-        if (input.files) {
-            var filesAmount = input.files.length;
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-            for (i = 0; i < filesAmount; i++) {
-                var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result);
+        };
 
-                reader.onload = function(event) {
-                    $($.parseHTML('<img class="img-thumbnail mt-4">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
-                reader.readAsDataURL(input.files[i]);
-            }
-        }
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-    };
+        reader.onload = function (e) {
+            $('#blah1')
+                .attr('src', e.target.result);
+        };
 
-    // $("div.gallery").html("");
-    $('#gallery-photo-add').on('change', function() {
-        imagesPreview(this, 'div.gallery');
-    });
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
-              //clear the file list when image is clicked
-              $('body').on('click','img',function(){
-            $('#gallery-photo-add').val("");
-            $('#gallery').html("");
-    
-        });
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-    // $('#gallery-photo-add1').on('change', function() {
-    //     imagesPreview(this, 'div.gallery');
-    // });
-});
+        reader.onload = function (e) {
+            $('#blah2')
+                .attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 </html>
