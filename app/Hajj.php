@@ -32,4 +32,5 @@ class Hajj extends Model
         'passport_pic',
         'status',
     ];
+    
 }

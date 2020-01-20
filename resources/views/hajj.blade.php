@@ -111,10 +111,16 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Gender</label>
-                    <select class="form-control" name="gender" value="{{ old('gender') }}">
+                    <select class="form-control" name="gender">
+                        <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                    @error('gender')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
                   </div>
                   <div class="col-md-4 mb-3">
                     <label>Birthday</label>
@@ -131,25 +137,25 @@
                     @enderror
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label>Mobile No.</label>
+                    <label>Email</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
-                            <span class="fas fa-mobile"></span>
+                            <span class="fas fa-envelope"></span>
                         </span>
                       </div>
                       <input 
-                      type="text" 
-                      class="form-control @error('mobile_no') is-invalid @enderror"
-                       name="mobile_no" 
-                       placeholder="09xxxxxxxxx" 
-                       value="{{ old('mobile_no') }}"
-                       >
-                       @error('mobile_no')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                      type="email" 
+                      class="form-control @error('email') is-invalid @enderror" 
+                      name="email"
+                      placeholder="Enter Email" 
+                      value="{{ old('email') }}"
+                      >
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                   </div>
                 </div>
@@ -212,6 +218,28 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
+                    <label>Mobile No.</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fas fa-mobile"></span>
+                        </span>
+                      </div>
+                      <input 
+                      type="text" 
+                      class="form-control @error('mobile_no') is-invalid @enderror"
+                       name="mobile_no" 
+                       placeholder="05xxxxxxxx" 
+                       value="{{ old('mobile_no') }}"
+                       >
+                       @error('mobile_no')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
                     <label>WhatsApp</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -227,28 +255,6 @@
                       value="{{ old('whatsapp_no') }}"
                       >
                     @error('whatsapp_no')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label>Email</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </span>
-                      </div>
-                      <input 
-                      type="email" 
-                      class="form-control @error('email') is-invalid @enderror" 
-                      name="email"
-                      placeholder="Enter Email" 
-                      value="{{ old('email') }}"
-                      >
-                    @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

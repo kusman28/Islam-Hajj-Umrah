@@ -39,9 +39,9 @@ class HajjController extends Controller
             'firstname' => 'required|string|min:3',
             'middlename' => 'required|string|min:3',
             'lastname' => 'required|string|min:3',
-            'gender' => 'required',
+            'gender' => 'required|numeric',
             'birthday' => 'required',
-            'iqama_no' => 'required|numeric',
+            'iqama_no' => 'required|numeric|max:10',
             'iqama_exp_date' => 'required',
             'passport_no' => 'required|numeric',
             'passport_exp_date' => 'required',
@@ -58,6 +58,7 @@ class HajjController extends Controller
             'iqama_pic' => 'required',
             'passport_pic' => 'required',
         ]);
+
 
         Hajj::create([
             'fullname' => $request['firstname'].' '.$request['middlename'].' '.$request['lastname'],
@@ -131,4 +132,5 @@ class HajjController extends Controller
     {
         //
     }
+    
 }
