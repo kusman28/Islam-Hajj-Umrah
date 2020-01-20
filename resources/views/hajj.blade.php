@@ -154,6 +154,63 @@
                   </div>
                 </div>
                 <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                      <label>Iqama No.</label>
+                      <input 
+                      type="text" 
+                      class="form-control @error('iqama_no') is-invalid @enderror" 
+                      name="iqama_no"
+                      value="{{ old('iqama_no') }}"
+                      >
+                      @error('iqama_no')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label>Expiration Date</label>
+                      <input 
+                      type="date" 
+                      class="form-control @error('iqama_exp_date') is-invalid @enderror" 
+                      name="iqama_exp_date"
+                      value="{{ old('iqama_exp_date') }}"
+                      >
+                      @error('iqama_exp_date')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label>Passport No.</label>
+                      <input 
+                      type="text" 
+                      class="form-control @error('passport_no') is-invalid @enderror" 
+                      name="passport_no"
+                      value="{{ old('passport_no') }}"
+                      >
+                      @error('passport_no')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label>Expiration Date</label>
+                      <input type="date" 
+                      class="form-control @error('passport_exp_date') is-invalid @enderror" 
+                      name="passport_exp_date" 
+                      value="{{ old('passport_exp_date') }}"
+                      >
+                      @error('passport_exp_date')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    </div>
+                </div>
+                <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>WhatsApp</label>
                     <div class="input-group">
@@ -290,63 +347,6 @@
                     </span>
                     @enderror
                   </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                      <label>Iqama No.</label>
-                      <input 
-                      type="text" 
-                      class="form-control @error('iqama_no') is-invalid @enderror" 
-                      name="iqama_no"
-                      value="{{ old('iqama_no') }}"
-                      >
-                      @error('iqama_no')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label>Expiration Date</label>
-                      <input 
-                      type="date" 
-                      class="form-control @error('iqama_exp_date') is-invalid @enderror" 
-                      name="iqama_exp_date"
-                      value="{{ old('iqama_exp_date') }}"
-                      >
-                      @error('iqama_exp_date')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label>Passport No.</label>
-                      <input 
-                      type="text" 
-                      class="form-control @error('passport_no') is-invalid @enderror" 
-                      name="passport_no"
-                      value="{{ old('passport_no') }}"
-                      >
-                      @error('passport_no')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label>Expiration Date</label>
-                      <input type="date" 
-                      class="form-control @error('passport_exp_date') is-invalid @enderror" 
-                      name="passport_exp_date" 
-                      value="{{ old('passport_exp_date') }}"
-                      >
-                      @error('passport_exp_date')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
