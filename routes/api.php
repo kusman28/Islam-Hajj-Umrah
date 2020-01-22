@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources(['hajj' => 'API\HajjController']);
+// Route::get('pendingRegistration/{id}', 'API\HajjController@show');
+
+// Route::get('pendingRegistration/'{id}, 'API\HajjController@show');

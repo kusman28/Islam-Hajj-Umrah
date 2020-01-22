@@ -30,10 +30,10 @@
 									<td>{{pending.created_at | myDate}}</td>
 									<td>{{pending.gender}}</td>
 									<td><span class="badge badge-success"> {{pending.status}}</span></td>
-									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> -->
-									</td>
+									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> 
+									</td>-->
 			                      <td>
-			                      	<a v-bind:href="'/pendingRegistration/'+ pending.id" class="btn btn-primary btn-sm" @click="editModal(pending)">View Details &nbsp;
+			                      	<a v-bind:href="'pendingRegistration/'+pending.id" class="btn btn-primary btn-sm">View Details &nbsp;
 			                      		<i class="ion-ios-redo"></i>
 			                      	</a>
 			                      	<!-- <a href="#" @click="deletePatient(pending.id)">

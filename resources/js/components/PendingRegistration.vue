@@ -24,18 +24,18 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-for="pending in pendings" :key="pending.id">
-									<td>{{pending.id}}</td>
-									<td>{{pending.firstname | upCase}} {{pending.middlename | upCase}} {{pending.lastname | upCase}}</td>
-									<td>{{pending.created_at | myDate}}</td>
-									<td>{{pending.gender}}</td>
-									<td><span class="badge badge-success"> {{pending.status}}</span></td>
+								<tr v-if="form">
+									<td>{{form.id}}</td>
+									<td>{{form.firstname | upCase}} {{form.middlename | upCase}} {{form.lastname | upCase}}</td>
+									<td>{{form.created_at | myDate}}</td>
+									<td>{{form.gender}}</td>
+									<td><span class="badge badge-success"> {{form.status}}</span></td>
 									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> -->
 									</td>
 			                      <td>
-			                      	<a v-bind:href="'/pendingRegistration/'+ pending.id" class="btn btn-primary btn-sm" @click="editModal(pending)">View Details &nbsp;
+			                      	<!-- <a v-bind:href="'/pendingRegistration/'+ pending.id" class="btn btn-primary btn-sm" @click="editModal(pending)">View Details &nbsp;
 			                      		<i class="ion-ios-redo"></i>
-			                      	</a>
+			                      	</a> -->
 			                      	<!-- <a href="#" @click="deletePatient(pending.id)">
 			                      		<i class="fas fa-trash red"></i>
 			                      	</a> -->
@@ -127,7 +127,7 @@
 export default {
 	data() {
 		return {
-			pendings: {},
+			// pendings: {},
 			form: new Form({
 				id: '',
 				firstname: '',
@@ -201,7 +201,7 @@ export default {
 		// },
 		pendingRegistration()
 		{
-            axios.get('api/hajj/'+id).then(({ data }) => (this.pendings = data.data));
+            axios.get('api/hajj/1').then(({ data }) => (this.form = data));
             
 		},
 		// createPatient() 

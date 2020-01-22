@@ -2499,7 +2499,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      pendings: {},
+      // pendings: {},
       form: new Form({
         id: '',
         firstname: '',
@@ -2573,9 +2573,9 @@ __webpack_require__.r(__webpack_exports__);
     pendingRegistration: function pendingRegistration() {
       var _this = this;
 
-      axios.get('api/hajj/' + id).then(function (_ref) {
+      axios.get('api/hajj/1').then(function (_ref) {
         var data = _ref.data;
-        return _this.pendings = data.data;
+        return _this.form = data;
       });
     } // createPatient() 
     // {
@@ -56731,7 +56731,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "info-box-icon bg-success elevation-1" }, [
-      _c("i", { staticClass: "ion-ios-people-outline" })
+      _c("i", { staticClass: "ion-ios-people" })
     ])
   },
   function() {
@@ -56862,12 +56862,7 @@ var render = function() {
                         "a",
                         {
                           staticClass: "btn btn-primary btn-sm",
-                          attrs: { href: "/pendingRegistration/" + pending.id },
-                          on: {
-                            click: function($event) {
-                              return _vm.editModal(pending)
-                            }
-                          }
+                          attrs: { href: "pendingRegistration/" + pending.id }
                         },
                         [
                           _vm._v(
@@ -56951,58 +56946,37 @@ var render = function() {
             _c("table", { staticClass: "table table-hover" }, [
               _vm._m(1),
               _vm._v(" "),
-              _c(
-                "tbody",
-                _vm._l(_vm.pendings, function(pending) {
-                  return _c("tr", { key: pending.id }, [
-                    _c("td", [_vm._v(_vm._s(pending.id))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        _vm._s(_vm._f("upCase")(pending.firstname)) +
-                          " " +
-                          _vm._s(_vm._f("upCase")(pending.middlename)) +
-                          " " +
-                          _vm._s(_vm._f("upCase")(pending.lastname))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(_vm._s(_vm._f("myDate")(pending.created_at)))
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(pending.gender))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c("span", { staticClass: "badge badge-success" }, [
-                        _vm._v(" " + _vm._s(pending.status))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-primary btn-sm",
-                          attrs: { href: "/pendingRegistration/" + pending.id },
-                          on: {
-                            click: function($event) {
-                              return _vm.editModal(pending)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "View Details  \n\t\t\t                      \t\t"
-                          ),
-                          _c("i", { staticClass: "ion-ios-redo" })
-                        ]
-                      )
+              _c("tbody", [
+                _vm.form
+                  ? _c("tr", [
+                      _c("td", [_vm._v(_vm._s(_vm.form.id))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(_vm._f("upCase")(_vm.form.firstname)) +
+                            " " +
+                            _vm._s(_vm._f("upCase")(_vm.form.middlename)) +
+                            " " +
+                            _vm._s(_vm._f("upCase")(_vm.form.lastname))
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(_vm._s(_vm._f("myDate")(_vm.form.created_at)))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.form.gender))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("span", { staticClass: "badge badge-success" }, [
+                          _vm._v(" " + _vm._s(_vm.form.status))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td")
                     ])
-                  ])
-                }),
-                0
-              )
+                  : _vm._e()
+              ])
             ])
           ])
         ])

@@ -186,7 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <i class="nav-icon ion-ios-settings-strong"></i>
               <p>
                 Management
-                <i class="right fas ion-ios-arrow-back"></i>
+                <i class="right fas ion-ios-arrow-back mt-1"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
