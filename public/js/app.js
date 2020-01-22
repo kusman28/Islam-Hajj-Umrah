@@ -56947,35 +56947,33 @@ var render = function() {
               _vm._m(1),
               _vm._v(" "),
               _c("tbody", [
-                _vm.form
-                  ? _c("tr", [
-                      _c("td", [_vm._v(_vm._s(_vm.form.id))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          _vm._s(_vm._f("upCase")(_vm.form.firstname)) +
-                            " " +
-                            _vm._s(_vm._f("upCase")(_vm.form.middlename)) +
-                            " " +
-                            _vm._s(_vm._f("upCase")(_vm.form.lastname))
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(_vm._s(_vm._f("myDate")(_vm.form.created_at)))
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.form.gender))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c("span", { staticClass: "badge badge-success" }, [
-                          _vm._v(" " + _vm._s(_vm.form.status))
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("td")
+                _c("tr", [
+                  _c("td", [_vm._v(_vm._s(_vm.form.id))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      _vm._s(_vm._f("upCase")(_vm.form.firstname)) +
+                        " " +
+                        _vm._s(_vm._f("upCase")(_vm.form.middlename)) +
+                        " " +
+                        _vm._s(_vm._f("upCase")(_vm.form.lastname))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm._f("myDate")(_vm.form.created_at)))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.form.gender))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("span", { staticClass: "badge badge-success" }, [
+                      _vm._v(" " + _vm._s(_vm.form.status))
                     ])
-                  : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("td")
+                ])
               ])
             ])
           ])
@@ -72145,7 +72143,8 @@ var routes = [{
 }, {
   path: '/pendingRegistration',
   component: __webpack_require__(/*! ./components/PendingRegistration */ "./resources/js/components/PendingRegistration.vue")["default"]
-} // { path: '/denture', component: require('./components/Denture').default },
+} // { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
+// { path: '/denture', component: require('./components/Denture').default },
 // { path: '/extraction', component: require('./components/Extraction').default },
 // { path: '/prescription', component: require('./components/Prescription').default },
 // { path: '/payment', component: require('./components/Payment').default },

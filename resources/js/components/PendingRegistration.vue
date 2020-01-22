@@ -24,7 +24,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-if="form">
+								<tr>
 									<td>{{form.id}}</td>
 									<td>{{form.firstname | upCase}} {{form.middlename | upCase}} {{form.lastname | upCase}}</td>
 									<td>{{form.created_at | myDate}}</td>
