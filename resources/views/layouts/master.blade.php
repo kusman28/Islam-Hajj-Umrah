@@ -13,8 +13,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Islam Hajj & Umrah | Dashboard</title>
   <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link href="template/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <style>
-    .navbar { background-color: #52de97 !important }
+    .navbar { background-color: #2c786c !important }
     .main-sidebar { background-color: #004445 !important }
     * {
         font-family: 'Source Sans Pro';
@@ -45,7 +46,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     outline: 1px solid slategrey;
     }
-    
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -56,14 +56,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="nav-icon ion-ios-settings-strong"></i></a>
       </li>
       <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
-      </li> -->
+      </li> 
+    -->
     </ul>
 
     <!-- SEARCH -->
@@ -88,6 +89,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </form> --}}
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="#">Notifications
+                <i class="ion-android-notifications"></i> 
+                {{-- <span class="badge badge-warning navbar-badge">15</span> --}}
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="fas fa-envelope mr-2"></i> 4 new messages
+                  <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="fas fa-users mr-2"></i> 8 friend requests
+                  <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="fas fa-file mr-2"></i> 3 new reports
+                  <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+              </div>
+            </li>
+          </ul>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -112,7 +142,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <div class="info">
           <a href="#" class="d-block mt-2">
+              <span class="badge badge-success">
             {{ Auth::user()->name }} <br>
+              </span>
             {{-- <span class="badge badge-success">Admin</span> --}}
         </a>
         </div>
@@ -127,93 +159,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon ion-ios-speedometer"></i>
               <p>
                 Dashboard
               </p>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/patients" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+            <router-link to="/pending" class="nav-link">
+              <i class="nav-icon ion-ios-more"></i>
               <p>
-                Patients
+                Pending
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/registered" class="nav-link">
+              <i class="nav-icon ion-ios-checkmark"></i>
+              <p>
+                Registrants
               </p>
             </router-link>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users-cog"></i>
+              <i class="nav-icon ion-ios-settings-strong"></i>
               <p>
-                Manage
-                <i class="right fas fa-angle-left"></i>
+                Management
+                <i class="right fas ion-ios-arrow-back"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <router-link to="/brace" class="nav-link">
-                  <i class="fas fa-teeth nav-icon yellow"></i>
-                  <p>Braces</p>
+                <router-link to="/hajj" class="nav-link">
+                  <i class="nav-icon ion-ios-copy-outline"></i>
+                  <p>Hajj Documents</p>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/extraction" class="nav-link">
-                  <i class="fas fa-tooth nav-icon blue"></i>
-                  <p>Extractions</p>
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="/denture" class="nav-link">
-                  <i class="fas fa-teeth-open nav-icon green"></i>
-                  <p>Dentures</p>
+                <router-link to="/umrah" class="nav-link">
+                  <i class="nav-icon ion-ios-copy-outline"></i>
+                  <p>Umrah Documents</p>
                 </router-link>
               </li>
             </ul>
             <li class="nav-item">
-              <router-link to="/prescription" class="nav-link">
-                <i class="nav-icon fas fa-file-prescription"></i>
+              <router-link to="/history" class="nav-link">
+                <i class="nav-icon ion-ios-information"></i>
                 <p>
-                  Treatment
+                  History
                 </p>
               </router-link>
-            </li>
-            {{-- <li class="nav-item">
-              <router-link to="/payment" class="nav-link">
-                <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  Medical History
-                </p>
-              </router-link>
-            </li> --}}
-            <li class="nav-item">
-              <router-link to="/report" class="nav-link">
-                <i class="nav-icon fas fa-print"></i>
-                <p>
-                  Records
-                </p>
-              </router-link>
+              <hr>
             </li>
             <li class="nav-item">
-              <router-link to="users" class="nav-link">
-                <i class="nav-icon fas fa-user-nurse"></i>
+              <router-link to="/settings" class="nav-link">
+                <i class="nav-icon ion-ios-toggle"></i>
                 <p>
-                  Users
-                </p>
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/profile" class="nav-link">
-                <i class="nav-icon fas fa-user-md"></i>
-                <p>
-                  Profile
-                </p>
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/activities" class="nav-link">
-                <i class="nav-icon fas fa-stream"></i>
-                <p>
-                  Activity Log
+                  Settings
                 </p>
               </router-link>
             </li>
@@ -221,7 +224,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a class="nav-link" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
-              <i class="nav-icon fas fa-power-off red"></i>
+              <i class="nav-icon ion-log-out"></i>
               <p>{{ __('Logout') }}</p>
               </a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -242,7 +245,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <router-view></router-view>
-        <vue-progress-bar></vue-progress-bar>
+        {{-- <vue-progress-bar></vue-progress-bar> --}}
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->

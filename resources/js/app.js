@@ -7,6 +7,48 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import { Form, HasError, AlertError } from 'vform'
+import moment from 'moment'
+
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
+// Routes
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+let routes = [
+    { path: '/dashboard', component: require('./components/Dashboard').default },
+    { path: '/pending', component: require('./components/Pending').default },
+    // { path: '/brace', component: require('./components/Brace').default },
+    // { path: '/denture', component: require('./components/Denture').default },
+    // { path: '/extraction', component: require('./components/Extraction').default },
+    // { path: '/prescription', component: require('./components/Prescription').default },
+    // { path: '/payment', component: require('./components/Payment').default },
+    // { path: '/report', component: require('./components/Report').default },
+    // { path: '/users', component: require('./components/Users').default },
+    // { path: '/profile', component: require('./components/Profile').default},
+    // { path: '/activities', component: require('./components/Activities').default},
+    // { path: '*', component: require('./components/NotFound').default}
+  ]
+const router = new VueRouter({
+	mode: 'history',
+  	routes // short for `routes: routes`
+})
+// End of Routes
+
+
+// Text filter
+Vue.filter('upCase', function(text){
+	// return text.toUpperCase();
+  return text.charAt(0).toUpperCase() + text.slice(1)
+});
+Vue.filter('myDate', function(created){
+  return moment(created).format('MMMM Do YYYY');
+})
+Vue.filter('myTime', function(created){
+  return moment(created).format('hh:mm a');
+})
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,4 +71,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router,
 });
