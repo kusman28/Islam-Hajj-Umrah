@@ -41,7 +41,9 @@ class HajjController extends Controller
      */
     public function show($id)
     {
-        //
+        $hajj = Hajj::findOrFail($id);
+
+        return $hajj;
     }
 
     /**

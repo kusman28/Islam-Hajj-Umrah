@@ -20,7 +20,7 @@ Vue.use(VueRouter)
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard').default },
     { path: '/pending', component: require('./components/Pending').default },
-    // { path: '/brace', component: require('./components/Brace').default },
+    { path: '/pendingRegistration', component: require('./components/PendingRegistration').default },
     // { path: '/denture', component: require('./components/Denture').default },
     // { path: '/extraction', component: require('./components/Extraction').default },
     // { path: '/prescription', component: require('./components/Prescription').default },

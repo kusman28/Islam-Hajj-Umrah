@@ -201,7 +201,7 @@ export default {
 		// },
 		pendingRegistration()
 		{
-            axios.get('api/hajj').then(({ data }) => (this.pendings = data.data));
+            axios.get('api/hajj/'+id).then(({ data }) => (this.pendings = data.data));
             
 		},
 		// createPatient() 
