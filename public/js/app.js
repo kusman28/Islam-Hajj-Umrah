@@ -2254,6 +2254,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2265,6 +2273,7 @@ __webpack_require__.r(__webpack_exports__);
         lastname: '',
         gender: '',
         created_at: '',
+        picture: '',
         status: ''
       })
     };
@@ -2499,16 +2508,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      // pendings: {},
-      form: new Form({
-        id: '',
-        firstname: '',
-        middlename: '',
-        lastname: '',
-        gender: '',
-        created_at: '',
-        status: ''
-      })
+      data: [] // pending: {},
+      // form: new Form({
+      // 	id: '',
+      // 	firstname: '',
+      // 	middlename: '',
+      // 	lastname: '',
+      // 	gender: '',
+      // 	created_at: '',
+      // 	status: ''
+      // })
+
     };
   },
   methods: {
@@ -2573,9 +2583,9 @@ __webpack_require__.r(__webpack_exports__);
     pendingRegistration: function pendingRegistration() {
       var _this = this;
 
-      axios.get('api/hajj/1').then(function (_ref) {
+      axios.get('/api/hajj/' + this.id).then(function (_ref) {
         var data = _ref.data;
-        return _this.form = data;
+        return _this.data = data;
       });
     } // createPatient() 
     // {
@@ -56825,6 +56835,14 @@ var render = function() {
         _c("div", { staticClass: "card" }, [
           _vm._m(0),
           _vm._v(" "),
+          _c("button", { attrs: { id: "open-popup" } }, [_vm._v("Open popup")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mfp-hide white-popup", attrs: { id: "my-popup" } },
+            [_vm._v("\n  Inline popup\n")]
+          ),
+          _vm._v(" "),
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
             _c("table", { staticClass: "table table-hover" }, [
               _vm._m(1),
@@ -56833,7 +56851,12 @@ var render = function() {
                 "tbody",
                 _vm._l(_vm.pendings, function(pending) {
                   return _c("tr", { key: pending.id }, [
-                    _c("td", [_vm._v(_vm._s(pending.id))]),
+                    _c("td", [
+                      _c("img", {
+                        staticClass: "img-size-50",
+                        attrs: { src: "/images/picture/" + pending.picture }
+                      })
+                    ]),
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
@@ -56900,7 +56923,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("ID")]),
+        _c("th", [_vm._v("Picture")]),
         _vm._v(" "),
         _c("th", [_vm._v("Name of Registrants")]),
         _vm._v(" "),
@@ -56948,27 +56971,27 @@ var render = function() {
               _vm._v(" "),
               _c("tbody", [
                 _c("tr", [
-                  _c("td", [_vm._v(_vm._s(_vm.form.id))]),
+                  _c("td", [_vm._v(_vm._s(_vm.data.id))]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(_vm._f("upCase")(_vm.form.firstname)) +
+                      _vm._s(_vm._f("upCase")(_vm.data.firstname)) +
                         " " +
-                        _vm._s(_vm._f("upCase")(_vm.form.middlename)) +
+                        _vm._s(_vm._f("upCase")(_vm.data.middlename)) +
                         " " +
-                        _vm._s(_vm._f("upCase")(_vm.form.lastname))
+                        _vm._s(_vm._f("upCase")(_vm.data.lastname))
                     )
                   ]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(_vm._s(_vm._f("myDate")(_vm.form.created_at)))
+                    _vm._v(_vm._s(_vm._f("myDate")(_vm.data.created_at)))
                   ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.form.gender))]),
+                  _c("td", [_vm._v(_vm._s(_vm.data.gender))]),
                   _vm._v(" "),
                   _c("td", [
                     _c("span", { staticClass: "badge badge-success" }, [
-                      _vm._v(" " + _vm._s(_vm.form.status))
+                      _vm._v(" " + _vm._s(_vm.data.status))
                     ])
                   ]),
                   _vm._v(" "),
@@ -72141,7 +72164,7 @@ var routes = [{
   path: '/pending',
   component: __webpack_require__(/*! ./components/Pending */ "./resources/js/components/Pending.vue")["default"]
 }, {
-  path: '/pendingRegistration',
+  path: '/pendingRegistration/:id',
   component: __webpack_require__(/*! ./components/PendingRegistration */ "./resources/js/components/PendingRegistration.vue")["default"]
 } // { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
 // { path: '/denture', component: require('./components/Denture').default },
@@ -72384,14 +72407,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************!*\
   !*** ./resources/js/components/Pending.vue ***!
   \*********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pending_vue_vue_type_template_id_19d90f7c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pending.vue?vue&type=template&id=19d90f7c& */ "./resources/js/components/Pending.vue?vue&type=template&id=19d90f7c&");
 /* harmony import */ var _Pending_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pending.vue?vue&type=script&lang=js& */ "./resources/js/components/Pending.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Pending_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Pending_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -72421,7 +72445,7 @@ component.options.__file = "resources/js/components/Pending.vue"
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Pending.vue?vue&type=script&lang=js& ***!
   \**********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

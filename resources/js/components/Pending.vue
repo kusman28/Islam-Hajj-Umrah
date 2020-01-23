@@ -9,12 +9,17 @@
                 		<!-- <button type="submit" class="btn btn-success btn-sm" @click="newModal">Add Patient <i class="fas fa-user-plus"></i></button> -->
 						</div>
 					</div>
+                    <button id="open-popup">Open popup</button>
+
+<div id="my-popup" class="mfp-hide white-popup">
+  Inline popup
+</div>
 					<!-- /.card-header -->
 					<div class="card-body table-responsive p-0">
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th>ID</th>
+									<th>Picture</th>
 									<th>Name of Registrants</th>
 									<th>Date of Registration</th>
 									<!-- <th>Address</th> -->
@@ -25,10 +30,13 @@
 							</thead>
 							<tbody>
 								<tr v-for="pending in pendings" :key="pending.id">
-									<td>{{pending.id}}</td>
+									<td><img class="img-size-50" v-bind:src="'/images/picture/'+pending.picture"></td>
 									<td>{{pending.firstname | upCase}} {{pending.middlename | upCase}} {{pending.lastname | upCase}}</td>
 									<td>{{pending.created_at | myDate}}</td>
 									<td>{{pending.gender}}</td>
+									<!-- <td>
+                                        <img class="img-size-50" v-bind:src="'/images/picture/'+pending.picture">
+                                    </td> -->
 									<td><span class="badge badge-success"> {{pending.status}}</span></td>
 									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> 
 									</td>-->
@@ -135,6 +143,7 @@ export default {
 				lastname: '',
 				gender: '',
 				created_at: '',
+				picture: '',
 				status: ''
 			})
 		}

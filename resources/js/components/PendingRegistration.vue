@@ -25,13 +25,13 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>{{form.id}}</td>
-									<td>{{form.firstname | upCase}} {{form.middlename | upCase}} {{form.lastname | upCase}}</td>
-									<td>{{form.created_at | myDate}}</td>
-									<td>{{form.gender}}</td>
-									<td><span class="badge badge-success"> {{form.status}}</span></td>
-									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> -->
-									</td>
+									<td>{{data.id}}</td>
+									<td>{{data.firstname | upCase}} {{data.middlename | upCase}} {{data.lastname | upCase}}</td>
+									<td>{{data.created_at | myDate}}</td>
+									<td>{{data.gender}}</td>
+									<td><span class="badge badge-success"> {{data.status}}</span></td>
+									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> 
+									</td>-->
 			                      <td>
 			                      	<!-- <a v-bind:href="'/pendingRegistration/'+ pending.id" class="btn btn-primary btn-sm" @click="editModal(pending)">View Details &nbsp;
 			                      		<i class="ion-ios-redo"></i>
@@ -127,16 +127,17 @@
 export default {
 	data() {
 		return {
-			// pendings: {},
-			form: new Form({
-				id: '',
-				firstname: '',
-				middlename: '',
-				lastname: '',
-				gender: '',
-				created_at: '',
-				status: ''
-			})
+			data: [],
+			// pending: {},
+			// form: new Form({
+			// 	id: '',
+			// 	firstname: '',
+			// 	middlename: '',
+			// 	lastname: '',
+			// 	gender: '',
+			// 	created_at: '',
+			// 	status: ''
+			// })
 		}
 	},
 	methods: {
@@ -201,7 +202,7 @@ export default {
 		// },
 		pendingRegistration()
 		{
-            axios.get('api/hajj/1').then(({ data }) => (this.form = data));
+            axios.get('/api/hajj/'+this.id).then(({ data }) => (this.data = data));
             
 		},
 		// createPatient() 
