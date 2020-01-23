@@ -9,11 +9,6 @@
                 		<!-- <button type="submit" class="btn btn-success btn-sm" @click="newModal">Add Patient <i class="fas fa-user-plus"></i></button> -->
 						</div>
 					</div>
-                    <button id="open-popup">Open popup</button>
-
-<div id="my-popup" class="mfp-hide white-popup">
-  Inline popup
-</div>
 					<!-- /.card-header -->
 					<div class="card-body table-responsive p-0">
 						<table class="table table-hover">

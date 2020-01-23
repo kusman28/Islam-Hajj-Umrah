@@ -2257,11 +2257,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2508,7 +2503,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      data: [] // pending: {},
+      wid: null,
+      // pending: {},
       // form: new Form({
       // 	id: '',
       // 	firstname: '',
@@ -2517,9 +2513,13 @@ __webpack_require__.r(__webpack_exports__);
       // 	gender: '',
       // 	created_at: '',
       // 	status: ''
-      // })
-
+      // }),
+      hajj: []
     };
+  },
+  mounted: function mounted() {
+    this.wid = this.$route.params.id;
+    this.pendingRegistration();
   },
   methods: {
     // updatePatient()
@@ -2583,9 +2583,9 @@ __webpack_require__.r(__webpack_exports__);
     pendingRegistration: function pendingRegistration() {
       var _this = this;
 
-      axios.get('/api/hajj/' + this.id).then(function (_ref) {
+      axios.get('/api/hajj/' + this.wid).then(function (_ref) {
         var data = _ref.data;
-        return _this.data = data;
+        return _this.hajj = data;
       });
     } // createPatient() 
     // {
@@ -2605,12 +2605,13 @@ __webpack_require__.r(__webpack_exports__);
     // 	})
     // }
 
-  },
-  created: function created() {
-    this.pendingRegistration(); // Fire.$on('afterCreate',() => {
-    // 	this.pendingRegistration();
-    // });
-  }
+  } // created(){
+  // 	this.pendingRegistration();
+  // 	Fire.$on('afterCreate',() => {
+  // 		this.pendingRegistration();
+  // 	});
+  // },
+
 });
 
 /***/ }),
@@ -56835,14 +56836,6 @@ var render = function() {
         _c("div", { staticClass: "card" }, [
           _vm._m(0),
           _vm._v(" "),
-          _c("button", { attrs: { id: "open-popup" } }, [_vm._v("Open popup")]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "mfp-hide white-popup", attrs: { id: "my-popup" } },
-            [_vm._v("\n  Inline popup\n")]
-          ),
-          _vm._v(" "),
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
             _c("table", { staticClass: "table table-hover" }, [
               _vm._m(1),
@@ -56971,27 +56964,19 @@ var render = function() {
               _vm._v(" "),
               _c("tbody", [
                 _c("tr", [
-                  _c("td", [_vm._v(_vm._s(_vm.data.id))]),
+                  _c("td", [_vm._v(_vm._s(_vm.hajj.id))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.hajj.fullname))]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      _vm._s(_vm._f("upCase")(_vm.data.firstname)) +
-                        " " +
-                        _vm._s(_vm._f("upCase")(_vm.data.middlename)) +
-                        " " +
-                        _vm._s(_vm._f("upCase")(_vm.data.lastname))
-                    )
+                    _vm._v(_vm._s(_vm._f("myDate")(_vm.hajj.created_at)))
                   ]),
                   _vm._v(" "),
-                  _c("td", [
-                    _vm._v(_vm._s(_vm._f("myDate")(_vm.data.created_at)))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.data.gender))]),
+                  _c("td", [_vm._v(_vm._s(_vm.hajj.gender))]),
                   _vm._v(" "),
                   _c("td", [
                     _c("span", { staticClass: "badge badge-success" }, [
-                      _vm._v(" " + _vm._s(_vm.data.status))
+                      _vm._v(" " + _vm._s(_vm.hajj.status))
                     ])
                   ]),
                   _vm._v(" "),

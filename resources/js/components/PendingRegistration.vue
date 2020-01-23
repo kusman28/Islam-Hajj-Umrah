@@ -25,11 +25,11 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>{{data.id}}</td>
-									<td>{{data.firstname | upCase}} {{data.middlename | upCase}} {{data.lastname | upCase}}</td>
-									<td>{{data.created_at | myDate}}</td>
-									<td>{{data.gender}}</td>
-									<td><span class="badge badge-success"> {{data.status}}</span></td>
+									<td>{{hajj.id}}</td>
+									<td>{{hajj.fullname}}</td>
+									<td>{{hajj.created_at | myDate}}</td>
+									<td>{{hajj.gender}}</td>
+									<td><span class="badge badge-success"> {{hajj.status}}</span></td>
 									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> 
 									</td>-->
 			                      <td>
@@ -127,7 +127,7 @@
 export default {
 	data() {
 		return {
-			data: [],
+			wid: null,
 			// pending: {},
 			// form: new Form({
 			// 	id: '',
@@ -137,8 +137,13 @@ export default {
 			// 	gender: '',
 			// 	created_at: '',
 			// 	status: ''
-			// })
-		}
+			// }),
+			hajj: []
+		};
+	},
+	mounted() {
+		this.wid = this.$route.params.id;
+		this.pendingRegistration();
 	},
 	methods: {
 		// updatePatient()
@@ -202,8 +207,8 @@ export default {
 		// },
 		pendingRegistration()
 		{
-            axios.get('/api/hajj/'+this.id).then(({ data }) => (this.data = data));
-            
+			axios.get('/api/hajj/'+this.wid)
+			.then(({ data }) => (this.hajj = data));
 		},
 		// createPatient() 
 		// {
@@ -223,12 +228,12 @@ export default {
 		// 	})
 		// }
     },
-	created(){
-		this.pendingRegistration();
-		// Fire.$on('afterCreate',() => {
-		// 	this.pendingRegistration();
-		// });
+	// created(){
+	// 	this.pendingRegistration();
+	// 	Fire.$on('afterCreate',() => {
+	// 		this.pendingRegistration();
+	// 	});
 
-	},
+	// },
 }
 </script>
