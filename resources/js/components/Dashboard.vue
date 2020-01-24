@@ -8,7 +8,7 @@
                       <span class="info-box-icon bg-info elevation-1"><i class="ion-ios-people"></i></span>
 
                       <div class="info-box-content">
-                        <span class="info-box-text">Pilgrim</span>
+                        <span class="info-box-text">Hajj</span>
                         <span class="info-box-number">
                             
                           <!-- {{patients.length}} -->
@@ -31,9 +31,9 @@
                 <span class="info-box-number">
                 <!-- {{treatments.length}} -->
               </span>
-              <router-link to="/brace" class="small-box-footer">View Details
+              <!-- <router-link to="/brace" class="small-box-footer">View Details
                   <i class="fas fa-arrow-right"></i>
-                </router-link>
+                </router-link> -->
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -46,15 +46,15 @@
 
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-          <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-tooth nav-icon"></i></span>
+          <span class="info-box-icon bg-primary elevation-1"><i class="ion-ios-download"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Extraction</span>
+            <span class="info-box-text">Download</span>
             <span class="info-box-number">
               <!-- {{extraction.length}} -->
             </span>
               <router-link to="/extraction" class="small-box-footer">View Details
-                  <i class="fas fa-arrow-right"></i>
+                  <!-- <i class="ion-ios-arrow-forward"></i> -->
                 </router-link>
         </div>
         <!-- /.info-box-content -->
@@ -62,18 +62,17 @@
     <!-- /.info-box -->
 </div>
 <!-- /.col -->
-<div class="col-12 col-sm-6 col-md-3">
+<!-- <div class="col-12 col-sm-6 col-md-3">
     <div class="info-box mb-3">
       <span class="info-box-icon bg-success elevation-1"><i class="fas fa-teeth-open nav-icon"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">Denture</span>
-        <!-- <span class="info-box-number">{{denture.length}}</span> -->
 
           <router-link to="/denture" class="small-box-footer">View Details
                   <i class="fas fa-arrow-right"></i>
             </router-link>
-    </div>
+    </div> -->
     <!-- /.info-box-content -->
 </div>
 <!-- /.info-box -->

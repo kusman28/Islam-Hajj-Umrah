@@ -165,19 +165,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/pending" class="nav-link">
-              <i class="nav-icon ion-ios-more"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon nav-icon ion-ios-more"></i>
               <p>
                 Pending
+                <i class="right fas ion-ios-arrow-back mt-1"></i>
               </p>
-            </router-link>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <router-link to="/pendingHajj" class="nav-link">
+                  <i class="nav-icon ion-ios-people"></i>
+                  <p>Hajj Registrants</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/pendingUmrah" class="nav-link">
+                  <i class="nav-icon ion-ios-people"></i>
+                  <p>Umrah Registrants</p>
+                </router-link>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <router-link to="/registered" class="nav-link">
               <i class="nav-icon ion-ios-checkmark"></i>
               <p>
-                Registrants
+                Registered
               </p>
             </router-link>
           </li>
@@ -203,6 +218,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </router-link>
               </li>
             </ul>
+          </li>
             <li class="nav-item">
               <router-link to="/history" class="nav-link">
                 <i class="nav-icon ion-ios-information"></i>
