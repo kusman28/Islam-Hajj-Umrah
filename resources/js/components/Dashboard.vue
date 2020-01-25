@@ -62,22 +62,7 @@
     <!-- /.info-box -->
 </div>
 <!-- /.col -->
-<!-- <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box mb-3">
-      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-teeth-open nav-icon"></i></span>
 
-      <div class="info-box-content">
-        <span class="info-box-text">Denture</span>
-
-          <router-link to="/denture" class="small-box-footer">View Details
-                  <i class="fas fa-arrow-right"></i>
-            </router-link>
-    </div> -->
-    <!-- /.info-box-content -->
-</div>
-<!-- /.info-box -->
-
-</div>
 <!-- <div class="card card-primary card-outline col-md-6">
   <div class="card-body box-profile">
     <div class="text-center">

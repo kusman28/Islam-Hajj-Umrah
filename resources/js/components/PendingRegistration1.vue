@@ -4,24 +4,29 @@
             class="rounded mx-auto d-block"
             height="150px"
             src="/template/img/logo1.png">
+            <button class="btn btn-primary float-right" @click="disabled = (disabled + 1) % 2">Edit
+                <i class="ion-ios-compose-outline"></i>
+            </button>
             <h4 class="mb-4">Hajj Registration Form</h4>
-            <hr class="mb-4">                
+            <hr class="mb-4">            
+            <form @submit.prevent="update()">    
             <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>First name</label>
                     <input 
                     type="text" 
                     class="form-control" 
+                    name="firstname"
                     v-model="hajj.firstname"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
-                  <div class="col-md-4 mb-3">
+                  <!-- <div class="col-md-4 mb-3">
                     <label>Middle name</label>
                     <input type="text" 
                     class="form-control"
                     v-model="hajj.middlename"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
                   <div class="col-md-4 mb-3">
@@ -30,14 +35,14 @@
                     type="text" 
                     class="form-control"
                     v-model="hajj.lastname"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Gender</label>
-                    <select class="form-control" v-model="hajj.gender" name="gender" disabled>
+                    <select class="form-control" v-model="hajj.gender" name="gender" :disabled="disabled == 1">
                         <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -49,7 +54,7 @@
                     type="date" 
                     class="form-control" 
                     v-model="hajj.birthday"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                      </div>
                   <div class="col-md-4 mb-3">
@@ -64,7 +69,7 @@
                       type="email" 
                       class="form-control"
                       v-model="hajj.email"
-                      disabled
+                      :disabled="disabled == 1"
                       >
                       </div>
                   </div>
@@ -76,7 +81,7 @@
                       type="text" 
                       class="form-control"
                       v-model="hajj.iqama_no"
-                      disabled
+                      :disabled="disabled == 1"
                       >
                       </div>
                     <div class="col-md-3 mb-3">
@@ -85,7 +90,7 @@
                       type="date" 
                       class="form-control"
                       v-model="hajj.iqama_exp_date"
-                      disabled
+                      :disabled="disabled == 1"
                       >
                        </div>
                     <div class="col-md-3 mb-3">
@@ -94,7 +99,7 @@
                       type="text" 
                       class="form-control"
                       v-model="hajj.passport_no" 
-                      disabled
+                      :disabled="disabled == 1"
                       >
                        </div>
                     <div class="col-md-3 mb-3">
@@ -102,7 +107,7 @@
                       <input type="date" 
                       class="form-control"
                       v-model="hajj.passport_exp_date"
-                      disabled
+                      :disabled="disabled == 1"
                       >
                        </div>
                 </div>
@@ -119,7 +124,7 @@
                       type="text" 
                       class="form-control"
                       v-model="hajj.mobile_no"
-                      disabled
+                      :disabled="disabled == 1"
                        >
                     </div>
                   </div>
@@ -135,7 +140,7 @@
                       type="text" 
                       class="form-control"
                       v-model="hajj.whatsapp_no"
-                      disabled
+                      :disabled="disabled == 1"
                       >
                        </div>
                   </div>
@@ -143,7 +148,7 @@
                     <label>Nationality</label>
                     <select class="form-control"
                     v-model="hajj.nationality"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                         <option value="">Select</option>
                         <option value="Filipino">Filipino</option>
@@ -156,7 +161,7 @@
                     <label>Address</label>
                     <select class="form-control"
                     v-model="hajj.address"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     <option value="">Select</option>
                     <option value="Philippines">Philippines</option>
@@ -169,7 +174,7 @@
                     type="text" 
                     class="form-control"
                     v-model="hajj.city"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
                   <div class="col-md-4 mb-3">
@@ -178,7 +183,7 @@
                     type="text" 
                     class="form-control"
                     v-model="hajj.job"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
                 </div>
@@ -189,7 +194,7 @@
                     type="text" 
                     class="form-control"
                     v-model="hajj.company"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
                   <div class="col-md-6 mb-3">
@@ -198,7 +203,7 @@
                     type="text" 
                     class="form-control"
                     v-model="hajj.contact_company"
-                    disabled
+                    :disabled="disabled == 1"
                     >
                     </div>
                 </div>
@@ -214,22 +219,24 @@
                     <div class="col-md-4 mb-3">
                       <label>Passport Picture</label>
                       <img class="img-thumbnail" v-bind:src="'/images/passport/'+hajj.passport_pic">
-                    </div>
+                    </div> -->
                 </div>
                 <hr>
                 <div class="mb-5">
-                    <button class="col-md-4 btn btn-primary" type="submit">Approve Registration</button>
+                    <button class="col-md-4 btn btn-success" type="submit">Approve Registration
+                        <i class="ion-ios-checkmark"></i>
+                    </button>
                 </div>
+            </form>
         </div>
-	</div>
 </template>
 <script>
 
 export default {
 	data() {
 		return {
-			wid: null,
-			// pending: {},
+            disabled: 1,
+            hajj: {},
 			// form: new Form({
 			// 	id: '',
 			// 	firstname: '',
@@ -239,33 +246,29 @@ export default {
 			// 	created_at: '',
 			// 	status: ''
 			// }),
-			hajj: []
 		};
 	},
 	mounted() {
-		this.wid = this.$route.params.id;
+		this.id = this.$route.params.id;
 		this.pendingRegistration();
 	},
 	methods: {
-		// updatePatient()
-		// {
-		// 	this.$Progress.start();
-		// 	this.form.put('api/patient/'+this.form.id)
-		// 	.then(() => {
-		// 	$('#addNew').modal('hide');
-		// 	swal.fire(
-		// 		'Updated!',
-		// 		'Patient information updated.',
-		// 		'success'
-		// 		)
-		// 		Fire.$emit('afterCreate');
-		// 		this.$Progress.finish();
-		// 	Fire.$emit('afterCreate');
-		// 	})
-		// 	.catch(() => {
-		// 		this.$Progress.fail();
-		// 	})
-		// },
+		update()
+		{
+			this.$Progress.start();
+			axios.put('/api/hajj/'+this.id)
+			.then(() => {
+			swal.fire(
+				'Approved',
+				'Successfully registered.',
+				'success'
+				)
+			this.$Progress.finish();
+			})
+			.catch(() => {
+				this.$Progress.fail();
+			})
+		},
 		// editModal(patient)
 		// {
 		// 	this.editmode = true;
@@ -308,7 +311,7 @@ export default {
 		// },
 		pendingRegistration()
 		{
-			axios.get('/api/hajj/'+this.wid)
+			axios.get('/api/hajj/'+this.id)
 			.then(({ data }) => (this.hajj = data));
 		},
 		// createPatient() 

@@ -56,7 +56,11 @@ class HajjController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $hajj = Hajj::findOrFail($id);
+        $hajj->firstname = $request->firstname;
+        $hajj->save();
+
     }
 
     /**
