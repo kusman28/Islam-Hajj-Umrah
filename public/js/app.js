@@ -2247,8 +2247,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      pendings: {},
-      hajj: {} // form: new Form({
+      pendings: {} // hajj: {},
+      // form: new Form({
       // 	id: '',
       // 	firstname: '',
       // 	middlename: '',
@@ -2676,45 +2676,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.$Progress.fail();
       });
     },
-    // editModal(patient)
-    // {
-    // 	this.editmode = true;
-    // 	this.form.reset();
-    // 	$('#addNew').modal('show');
-    // 	this.form.fill(patient);
-    // },
-    // newModal()
-    // {
-    // 	this.editmode = false;
-    // 	this.form.reset();
-    // 	$('#addNew').modal('show');
-    // },
-    // deletePatient(id)
-    // {
-    // swal.fire({
-    // 	title: 'Are you sure?',
-    // 	text: "You are going to delete this user",
-    // 	type: 'warning',
-    // 	showCancelButton: true,
-    // 	confirmButtonColor: '#3085d6',
-    // 	cancelButtonColor: '#d33',
-    // 	confirmButtonText: 'Yes'
-    // 	}).then((result) => {
-    // 	if (result.value) {	
-    // 		this.form.delete('api/patient/'+id).then(()=>{
-    // 				swal.fire(
-    // 				'Deleted!',
-    // 				'Your file has been deleted.',
-    // 				'success'
-    // 				)
-    // 				Fire.$emit('afterCreate');
-    // 			})
-    // 			.catch(()=>{
-    // 				swal('Failed!', 'There was something wrong.', 'warning');
-    // 			});
-    // 		}
-    // 	})
-    // },
     pendingRegistration: function pendingRegistration() {
       var _this2 = this;
 

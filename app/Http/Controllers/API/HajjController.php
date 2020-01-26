@@ -60,9 +60,9 @@ class HajjController extends Controller
         // $hajj = Hajj::findOrFail($id);
         $hajj = Hajj::findOrFail($id);
         $hajj->firstname = $request->firstname;
-        $hajj->middlename = $request->middlename;
+        // $hajj->middlename = $request->middlename;
         $hajj->status = 'Approved';
-        $hajj->save();
+        $hajj->update();
         // $this->validate($request, [
         //     'firstname' => 'required|string|min:3',
         //     // 'middlename' => 'required|string|min:3',

@@ -134,7 +134,7 @@ export default {
 	data() {
 		return {
 			pendings: {},
-			hajj: {},
+			// hajj: {},
 			// form: new Form({
 			// 	id: '',
 			// 	firstname: '',

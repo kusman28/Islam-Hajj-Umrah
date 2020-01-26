@@ -316,46 +316,6 @@ export default {
 				this.$Progress.fail();
 			})
 		},
-		// editModal(patient)
-		// {
-		// 	this.editmode = true;
-		// 	this.form.reset();
-		// 	$('#addNew').modal('show');
-		// 	this.form.fill(patient);
-		// },
-		// newModal()
-		// {
-		// 	this.editmode = false;
-		// 	this.form.reset();
-		// 	$('#addNew').modal('show');
-		// },
-		// deletePatient(id)
-		// {
-		// swal.fire({
-		// 	title: 'Are you sure?',
-		// 	text: "You are going to delete this user",
-		// 	type: 'warning',
-		// 	showCancelButton: true,
-		// 	confirmButtonColor: '#3085d6',
-		// 	cancelButtonColor: '#d33',
-		// 	confirmButtonText: 'Yes'
-		// 	}).then((result) => {
-
-		// 	if (result.value) {	
-		// 		this.form.delete('api/patient/'+id).then(()=>{
-		// 				swal.fire(
-		// 				'Deleted!',
-		// 				'Your file has been deleted.',
-		// 				'success'
-		// 				)
-		// 				Fire.$emit('afterCreate');
-		// 			})
-		// 			.catch(()=>{
-		// 				swal('Failed!', 'There was something wrong.', 'warning');
-		// 			});
-		// 		}
-		// 	})
-		// },
 		pendingRegistration()
 		{
 			axios.get('/api/hajj/'+this.id)
