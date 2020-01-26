@@ -15,17 +15,20 @@
                     <label>First name</label>
                     <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control"
                     name="firstname"
-                    v-model="hajj.firstname"
+                    :placeholder="[[ hajj.firstname ]]"
+                    v-model="form.firstname"
                     :disabled="disabled == 1"
                     >
                     </div>
-                  <!-- <div class="col-md-4 mb-3">
+                  <div class="col-md-4 mb-3">
                     <label>Middle name</label>
                     <input type="text" 
                     class="form-control"
-                    v-model="hajj.middlename"
+                    name="middlename"
+                    :placeholder="[[ hajj.middlename ]]"
+                    v-model="form.middlename"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -34,7 +37,9 @@
                     <input 
                     type="text" 
                     class="form-control"
-                    v-model="hajj.lastname"
+                    name="lastname"
+                    :placeholder="[[ hajj.lastname ]]"
+                    v-model="form.lastname"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -42,8 +47,8 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Gender</label>
-                    <select class="form-control" v-model="hajj.gender" name="gender" :disabled="disabled == 1">
-                        <option value="">Select</option>
+                    <select class="form-control" v-model="form.gender" name="gender" :disabled="disabled == 1">
+                        <option value="">{{hajj.gender}}</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -51,9 +56,12 @@
                   <div class="col-md-4 mb-3">
                     <label>Birthday</label>
                     <input 
-                    type="date" 
+                    type="text" 
+                    :placeholder="[[ hajj.birthday ]]"
                     class="form-control" 
-                    v-model="hajj.birthday"
+                    name="birthday"
+                    v-model="form.birthday"
+                    onfocus="(this.type='date')"
                     :disabled="disabled == 1"
                     >
                      </div>
@@ -68,7 +76,9 @@
                       <input 
                       type="email" 
                       class="form-control"
-                      v-model="hajj.email"
+                      name="email"
+                    :placeholder="[[ hajj.email ]]"
+                      v-model="form.email"
                       :disabled="disabled == 1"
                       >
                       </div>
@@ -80,16 +90,21 @@
                       <input 
                       type="text" 
                       class="form-control"
-                      v-model="hajj.iqama_no"
+                      name="iqama_no"
+                    :placeholder="[[ hajj.iqama_no ]]"
+                      v-model="form.iqama_no"
                       :disabled="disabled == 1"
                       >
                       </div>
                     <div class="col-md-3 mb-3">
                       <label>Expiration Date</label>
                       <input 
-                      type="date" 
+                      type="text" 
                       class="form-control"
-                      v-model="hajj.iqama_exp_date"
+                      name="iqama_exp_date"
+                      :placeholder="[[ hajj.iqama_exp_date ]]"
+                      v-model="form.iqama_exp_date"
+                      onfocus="(this.type='date')"
                       :disabled="disabled == 1"
                       >
                        </div>
@@ -98,15 +113,20 @@
                       <input 
                       type="text" 
                       class="form-control"
-                      v-model="hajj.passport_no" 
+                      name="passport_no"
+                      :placeholder="[[ hajj.passport_no ]]"
+                      v-model="form.passport_no" 
                       :disabled="disabled == 1"
                       >
                        </div>
                     <div class="col-md-3 mb-3">
                       <label>Expiration Date</label>
-                      <input type="date" 
+                      <input type="text" 
                       class="form-control"
-                      v-model="hajj.passport_exp_date"
+                      name="passport_exp_date"
+                      :placeholder="[[ hajj.passport_exp_date ]]"
+                      v-model="form.passport_exp_date"
+                      onfocus="(this.type='date')"
                       :disabled="disabled == 1"
                       >
                        </div>
@@ -123,7 +143,9 @@
                       <input 
                       type="text" 
                       class="form-control"
-                      v-model="hajj.mobile_no"
+                      name="mobile_no"
+                    :placeholder="[[ hajj.mobile_no ]]"
+                      v-model="form.mobile_no"
                       :disabled="disabled == 1"
                        >
                     </div>
@@ -139,7 +161,9 @@
                       <input 
                       type="text" 
                       class="form-control"
-                      v-model="hajj.whatsapp_no"
+                      name="whatsapp_no"
+                    :placeholder="[[ hajj.whatsapp_no ]]"
+                      v-model="form.whatsapp_no"
                       :disabled="disabled == 1"
                       >
                        </div>
@@ -147,10 +171,11 @@
                   <div class="col-md-4 mb-3">
                     <label>Nationality</label>
                     <select class="form-control"
-                    v-model="hajj.nationality"
+                    v-model="form.nationality"
+                    name="nationality"
                     :disabled="disabled == 1"
                     >
-                        <option value="">Select</option>
+                        <option value="">{{hajj.nationality}}</option>
                         <option value="Filipino">Filipino</option>
                         <option value="Saudi">Saudi</option>
                     </select>
@@ -160,10 +185,11 @@
                   <div class="col-md-4 mb-3">
                     <label>Address</label>
                     <select class="form-control"
-                    v-model="hajj.address"
+                    name="address"
+                    v-model="form.address"
                     :disabled="disabled == 1"
                     >
-                    <option value="">Select</option>
+                    <option value="">{{hajj.address}}</option>
                     <option value="Philippines">Philippines</option>
                     <option value="Saudi Arabia">Saudi Arabia</option>
                     </select>
@@ -173,7 +199,9 @@
                     <input 
                     type="text" 
                     class="form-control"
-                    v-model="hajj.city"
+                    name="city"
+                    v-model="form.city"
+                    :placeholder="[[ hajj.city ]]"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -182,7 +210,9 @@
                     <input 
                     type="text" 
                     class="form-control"
-                    v-model="hajj.job"
+                    name="job"
+                    v-model="form.job"
+                    :placeholder="[[ hajj.job ]]"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -193,7 +223,9 @@
                     <input 
                     type="text" 
                     class="form-control"
-                    v-model="hajj.company"
+                    name="company"
+                    :placeholder="[[ hajj.company ]]"
+                    v-model="form.company"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -202,7 +234,9 @@
                     <input 
                     type="text" 
                     class="form-control"
-                    v-model="hajj.contact_company"
+                    name="contact_company"
+                    :placeholder="[[ hajj.contact_company ]]"
+                    v-model="form.contact_company"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -219,7 +253,7 @@
                     <div class="col-md-4 mb-3">
                       <label>Passport Picture</label>
                       <img class="img-thumbnail" v-bind:src="'/images/passport/'+hajj.passport_pic">
-                    </div> -->
+                    </div>
                 </div>
                 <hr>
                 <div class="mb-5">
@@ -237,15 +271,28 @@ export default {
 		return {
             disabled: 1,
             hajj: {},
-			// form: new Form({
-			// 	id: '',
-			// 	firstname: '',
-			// 	middlename: '',
-			// 	lastname: '',
-			// 	gender: '',
-			// 	created_at: '',
-			// 	status: ''
-			// }),
+			form: new Form({
+				id: '',
+				firstname: '',
+				middlename: '',
+				lastname: '',
+				gender: '',
+				birthday: '',
+				iqama_no: '',
+				iqama_exp_date: '',
+				passport_no: '',
+				passport_exp_date: '',
+				mobile_no: '',
+				whatsapp_no: '',
+				email: '',
+				nationality: '',
+				address: '',
+				city: '',
+				job: '',
+				company: '',
+				contact_company: '',
+				status: ''
+			}),
 		};
 	},
 	mounted() {
@@ -256,7 +303,7 @@ export default {
 		update()
 		{
 			this.$Progress.start();
-			axios.put('/api/hajj/'+this.id)
+			this.form.put('/api/hajj/'+this.id)
 			.then(() => {
 			swal.fire(
 				'Approved',

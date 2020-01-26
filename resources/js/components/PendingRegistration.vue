@@ -1,170 +1,321 @@
 <template>
 	<div class="container">
-		<div class="row">
-			<div class="col-12 mt-4">
-				<div class="card">
-					<div class="card-header">
-						<h5>Pending Registration</h5>
-						<div class="card-tools">
-                		<!-- <button type="submit" class="btn btn-success btn-sm" @click="newModal">Add Patient <i class="fas fa-user-plus"></i></button> -->
-						</div>
-					</div>
-					<!-- /.card-header -->
-					<div class="card-body table-responsive p-0">
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Name of Registrants</th>
-									<th>Date of Registration</th>
-									<!-- <th>Address</th> -->
-									<th>Gender</th>
-									<th>Status</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>{{hajj.id}}</td>
-									<td>{{hajj.fullname}}</td>
-									<td>{{hajj.created_at | myDate}}</td>
-									<td>{{hajj.gender}}</td>
-									<td><span class="badge badge-success"> {{hajj.status}}</span></td>
-									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> 
-									</td>-->
-			                      <td>
-			                      	<!-- <a v-bind:href="'/pendingRegistration/'+ pending.id" class="btn btn-primary btn-sm" @click="editModal(pending)">View Details &nbsp;
-			                      		<i class="ion-ios-redo"></i>
-			                      	</a> -->
-			                      	<!-- <a href="#" @click="deletePatient(pending.id)">
-			                      		<i class="fas fa-trash red"></i>
-			                      	</a> -->
-			                      </td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<!-- /.card-body -->
-				</div>
-				<!-- /.card -->
-			</div>
-		</div>
-
-
-		<!-- Modal -->
-        <!-- <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-        	<div class="modal-dialog modal-dialog-centered" role="document">
-        		<div class="modal-content">
-        			<div class="modal-header">
-        				<h5 v-show="!editmode" class="modal-title" id="addNewLabel">Add Patient</h5>
-        				<h5 v-show="editmode" class="modal-title" id="addNewLabel">Edit Patient</h5>
-        				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        					<span aria-hidden="true">&times;</span>
-        				</button>
-        			</div>
-        			<form @submit.prevent="editmode ? updatePatient() : createPatient()">
-        			<div class="modal-body">
-        				<div class="form-group">
-        					<input v-model="form.firstname" type="text" name="firstname"
-        					placeholder="Firstname" 
-        					class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('firstname') }">
-        					<has-error :form="form" field="firstname"></has-error>
-        				</div>
-        				<div class="form-group">
-        					<input v-model="form.middlename" type="text" name="middlename"
-        					placeholder="Middlename" 
-        					class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('middlename') }">
-        					<has-error :form="form" field="middlename"></has-error>
-        				</div>
-        				<div class="form-group">
-        					<input v-model="form.lastname" type="text" name="lastname"
-        					placeholder="Lastname" 
-        					class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('lastname') }">
-        					<has-error :form="form" field="lastname"></has-error>
-        				</div>
-        				<div class="form-group">
-        					<input v-model="form.age" type="text" name="age"
-        					placeholder="Age" 
-        					class="form-control" :class="{ 'is-invalid': form.errors.has('age') }">
-        					<has-error :form="form" field="age"></has-error>
-        				</div>
-        				<div class="form-group">
-        					<input v-model="form.address" type="text" name="address"
-        					placeholder="Address" 
-        					class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('address') }">
-        					<has-error :form="form" field="address"></has-error>
-        				</div>
-        				<div class="form-group">
-        					<input v-model="form.contact_no" type="text" name="contact_no"
-        					placeholder="Contact No." 
-        					class="form-control" :class="{ 'is-invalid': form.errors.has('contact_no') }">
-        					<has-error :form="form" field="contact_no"></has-error>
-        				</div>
-        				<div class="form-group">
-        					<select name="type" v-model="form.type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
-        						<option value="">Patient Type</option>
-        						<option value="Brace">Brace</option>
-        						<option value="Extraction">Extraction</option>
-        						<option value="Denture">Denture</option>
-        					</select>
-        					<has-error :form="form" field="type"></has-error>
-        				</div>
-        			</div>
-        			<div class="modal-footer">
-        				<button type="button" class="btn btn-danger btn-flat" data-dismiss="modal">Close</button>
-        				<button v-show="editmode" type="submit" class="btn btn-primary btn-flat">Update</button>
-        				<button v-show="!editmode" type="submit" class="btn btn-success btn-flat">Save</button>
-        			</div>
-        			</form>
-        		</div>
-        	</div>
-        </div> -->
-
-	</div>
+		<img 
+            class="rounded mx-auto d-block"
+            height="150px"
+            src="/template/img/logo1.png">
+            <button class="btn btn-primary float-right" @click="disabled = (disabled + 1) % 2">Edit
+                <i class="ion-ios-compose-outline"></i>
+            </button>
+            <h4 class="mb-4">Hajj Registration Form</h4>
+            <hr class="mb-4">            
+            <form @submit.prevent="update()">    
+            <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label>First name</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="firstname"
+                    :placeholder="[[ hajj.firstname ]]"
+                    v-model="form.firstname"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Middle name</label>
+                    <input type="text" 
+                    class="form-control"
+                    name="middlename"
+                    :placeholder="[[ hajj.middlename ]]"
+                    v-model="form.middlename"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Last name</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="lastname"
+                    :placeholder="[[ hajj.lastname ]]"
+                    v-model="form.lastname"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label>Gender</label>
+                    <select class="form-control" v-model="form.gender" name="gender" :disabled="disabled == 1">
+                        <option value="">{{hajj.gender}}</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Birthday</label>
+                    <input 
+                    type="text" 
+                    :placeholder="[[ hajj.birthday ]]"
+                    class="form-control" 
+                    name="birthday"
+                    v-model="form.birthday"
+                    onfocus="(this.type='date')"
+                    :disabled="disabled == 1"
+                    >
+                     </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Email</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </span>
+                      </div>
+                      <input 
+                      type="email" 
+                      class="form-control"
+                      name="email"
+                    :placeholder="[[ hajj.email ]]"
+                      v-model="form.email"
+                      :disabled="disabled == 1"
+                      >
+                      </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                      <label>Iqama No.</label>
+                      <input 
+                      type="text" 
+                      class="form-control"
+                      name="iqama_no"
+                    :placeholder="[[ hajj.iqama_no ]]"
+                      v-model="form.iqama_no"
+                      :disabled="disabled == 1"
+                      >
+                      </div>
+                    <div class="col-md-3 mb-3">
+                      <label>Expiration Date</label>
+                      <input 
+                      type="text" 
+                      class="form-control"
+                      name="iqama_exp_date"
+                      :placeholder="[[ hajj.iqama_exp_date ]]"
+                      v-model="form.iqama_exp_date"
+                      onfocus="(this.type='date')"
+                      :disabled="disabled == 1"
+                      >
+                       </div>
+                    <div class="col-md-3 mb-3">
+                      <label>Passport No.</label>
+                      <input 
+                      type="text" 
+                      class="form-control"
+                      name="passport_no"
+                      :placeholder="[[ hajj.passport_no ]]"
+                      v-model="form.passport_no" 
+                      :disabled="disabled == 1"
+                      >
+                       </div>
+                    <div class="col-md-3 mb-3">
+                      <label>Expiration Date</label>
+                      <input type="text" 
+                      class="form-control"
+                      name="passport_exp_date"
+                      :placeholder="[[ hajj.passport_exp_date ]]"
+                      v-model="form.passport_exp_date"
+                      onfocus="(this.type='date')"
+                      :disabled="disabled == 1"
+                      >
+                       </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label>Mobile No.</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fas fa-mobile"></span>
+                        </span>
+                      </div>
+                      <input 
+                      type="text" 
+                      class="form-control"
+                      name="mobile_no"
+                    :placeholder="[[ hajj.mobile_no ]]"
+                      v-model="form.mobile_no"
+                      :disabled="disabled == 1"
+                       >
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label>WhatsApp</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fab fa-whatsapp"></span>
+                        </span>
+                      </div>
+                      <input 
+                      type="text" 
+                      class="form-control"
+                      name="whatsapp_no"
+                    :placeholder="[[ hajj.whatsapp_no ]]"
+                      v-model="form.whatsapp_no"
+                      :disabled="disabled == 1"
+                      >
+                       </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Nationality</label>
+                    <select class="form-control"
+                    v-model="form.nationality"
+                    name="nationality"
+                    :disabled="disabled == 1"
+                    >
+                        <option value="">{{hajj.nationality}}</option>
+                        <option value="Filipino">Filipino</option>
+                        <option value="Saudi">Saudi</option>
+                    </select>
+                     </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label>Address</label>
+                    <select class="form-control"
+                    name="address"
+                    v-model="form.address"
+                    :disabled="disabled == 1"
+                    >
+                    <option value="">{{hajj.address}}</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    </select>
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>City</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="city"
+                    v-model="form.city"
+                    :placeholder="[[ hajj.city ]]"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Job Title</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="job"
+                    v-model="form.job"
+                    :placeholder="[[ hajj.job ]]"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label>Company Name</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="company"
+                    :placeholder="[[ hajj.company ]]"
+                    v-model="form.company"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Company Contact</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="contact_company"
+                    :placeholder="[[ hajj.contact_company ]]"
+                    v-model="form.contact_company"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label>2x2 Picture</label><br>
+                      <img class="img-thumbnail" v-bind:src="'/images/picture/'+hajj.picture">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label>Iqama Picture</label>
+                      <img class="img-thumbnail" v-bind:src="'/images/iqama/'+hajj.iqama_pic">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label>Passport Picture</label>
+                      <img class="img-thumbnail" v-bind:src="'/images/passport/'+hajj.passport_pic">
+                    </div>
+                </div>
+                <hr>
+                <div class="mb-5">
+                    <button class="col-md-4 btn btn-success" type="submit">Approve Registration
+                        <i class="ion-ios-checkmark"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
 </template>
 <script>
 
 export default {
 	data() {
 		return {
-			wid: null,
-			// pending: {},
-			// form: new Form({
-			// 	id: '',
-			// 	firstname: '',
-			// 	middlename: '',
-			// 	lastname: '',
-			// 	gender: '',
-			// 	created_at: '',
-			// 	status: ''
-			// }),
-			hajj: []
+            disabled: 1,
+            hajj: {},
+			form: new Form({
+				id: '',
+				firstname: '',
+				middlename: '',
+				lastname: '',
+				gender: '',
+				birthday: '',
+				iqama_no: '',
+				iqama_exp_date: '',
+				passport_no: '',
+				passport_exp_date: '',
+				mobile_no: '',
+				whatsapp_no: '',
+				email: '',
+				nationality: '',
+				address: '',
+				city: '',
+				job: '',
+				company: '',
+				contact_company: '',
+				status: ''
+			}),
 		};
 	},
 	mounted() {
-		this.wid = this.$route.params.id;
+		this.id = this.$route.params.id;
 		this.pendingRegistration();
 	},
 	methods: {
-		// updatePatient()
-		// {
-		// 	this.$Progress.start();
-		// 	this.form.put('api/patient/'+this.form.id)
-		// 	.then(() => {
-		// 	$('#addNew').modal('hide');
-		// 	swal.fire(
-		// 		'Updated!',
-		// 		'Patient information updated.',
-		// 		'success'
-		// 		)
-		// 		Fire.$emit('afterCreate');
-		// 		this.$Progress.finish();
-		// 	Fire.$emit('afterCreate');
-		// 	})
-		// 	.catch(() => {
-		// 		this.$Progress.fail();
-		// 	})
-		// },
+		update()
+		{
+			this.$Progress.start();
+			this.form.put('/api/hajj/'+this.id)
+			.then(() => {
+			swal.fire(
+				'Approved',
+				'Successfully registered.',
+				'success'
+				)
+			this.$Progress.finish();
+			})
+			.catch(() => {
+				this.$Progress.fail();
+			})
+		},
 		// editModal(patient)
 		// {
 		// 	this.editmode = true;
@@ -207,7 +358,7 @@ export default {
 		// },
 		pendingRegistration()
 		{
-			axios.get('/api/hajj/'+this.wid)
+			axios.get('/api/hajj/'+this.id)
 			.then(({ data }) => (this.hajj = data));
 		},
 		// createPatient() 

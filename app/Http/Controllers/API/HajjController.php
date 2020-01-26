@@ -57,9 +57,37 @@ class HajjController extends Controller
     public function update(Request $request, $id)
     {
         
+        // $hajj = Hajj::findOrFail($id);
         $hajj = Hajj::findOrFail($id);
         $hajj->firstname = $request->firstname;
+        $hajj->middlename = $request->middlename;
+        $hajj->status = 'Approved';
         $hajj->save();
+        // $this->validate($request, [
+        //     'firstname' => 'required|string|min:3',
+        //     // 'middlename' => 'required|string|min:3',
+        //     // 'lastname' => 'required|string|min:3',
+        //     // 'gender' => 'required',
+        //     // 'birthday' => 'required',
+        //     // 'iqama_no' => 'required|numeric|min:10',
+        //     // 'iqama_exp_date' => 'required',
+        //     // 'passport_no' => 'required|numeric',
+        //     // 'passport_exp_date' => 'required',
+        //     // 'mobile_no' => 'required|numeric|min:11',
+        //     // 'whatsapp_no' => 'required|numeric',
+        //     // 'email' => 'required|string',
+        //     // 'nationality' => 'required|string',
+        //     // 'address' => 'required|string',
+        //     // 'city' => 'required|string',
+        //     // 'job' => 'required',
+        //     // 'company' => 'required',
+        //     // 'contact_company' => 'required',
+        //     // 'picture' => 'required|image|mimes:jpg,png,gif,jpeg|max:2048',
+        //     // 'iqama_pic' => 'required',
+        //     // 'passport_pic' => 'required',
+        // ]);
+
+        // $hajj->update($request->all());
 
     }
 

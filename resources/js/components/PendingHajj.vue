@@ -36,7 +36,7 @@
 									<!-- <td><span :class="[pending.status === 'Pending' ? 'badge-success' : (pending.status === 'Pending'?'badge-warning':'badge-primary'), 'badge badge-pill']">{{pending.type | upCase}}</span> 
 									</td>-->
 			                      <td>
-                                    <router-link v-bind:to="'pendingRegistration1/'+pending.id" class="btn btn-primary btn-sm">View Details &nbsp;
+                                    <router-link v-bind:to="'pendingRegistration/'+pending.id" class="btn btn-primary btn-sm">View Details &nbsp;
                                         <i class="ion-ios-redo"></i>
                                     </router-link>
 			                      	<!-- <a v-bind:href="'pendingRegistration/'+pending.id" class="btn btn-primary btn-sm">View Details &nbsp;
@@ -134,16 +134,17 @@ export default {
 	data() {
 		return {
 			pendings: {},
-			form: new Form({
-				id: '',
-				firstname: '',
-				middlename: '',
-				lastname: '',
-				gender: '',
-				created_at: '',
-				picture: '',
-				status: ''
-			})
+			hajj: {},
+			// form: new Form({
+			// 	id: '',
+			// 	firstname: '',
+			// 	middlename: '',
+			// 	lastname: '',
+			// 	gender: '',
+			// 	created_at: '',
+			// 	picture: '',
+			// 	status: ''
+			// })
 		}
 	},
 	methods: {

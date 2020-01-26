@@ -40,7 +40,7 @@ let routes = [
     { path: '/dashboard', component: require('./components/Dashboard').default },
     { path: '/pendingHajj', component: require('./components/PendingHajj').default },
     { path: '/pendingUmrah', component: require('./components/PendingUmrah').default },
-    { path: '/pendingRegistration1/:id', component: require('./components/PendingRegistration1').default },
+    { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
     // { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
     // { path: '/denture', component: require('./components/Denture').default },
     // { path: '/extraction', component: require('./components/Extraction').default },
