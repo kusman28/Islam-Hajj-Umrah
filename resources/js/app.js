@@ -11,6 +11,7 @@ import { Form, HasError, AlertError } from 'vform'
 import moment from 'moment'
 
 window.Form = Form;
+window.Hajj = Form;
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
