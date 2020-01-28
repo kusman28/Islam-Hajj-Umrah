@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<a @click="$router.go(-1)">back</a>
+		<!-- <a @click="$router.go(-1)">back</a> -->
 		<img 
             class="rounded mx-auto d-block"
             height="150px"
@@ -292,17 +292,17 @@
                     				</div>
                     				<div class="col-md-4 mb-2">
 									<small>Middlename</small>	
-									<input v-model="form.middlename" type="text" name="firstname"
-									placeholder="Firstname" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.middlename" type="text" name="middlename"
+									placeholder="Middlename" 
+									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('middlename') }">
+									<has-error :form="form" field="middlename"></has-error>
                     				</div>
                     				<div class="col-md-4 mb-2">
 									<small>Lastname</small>	
-									<input v-model="form.lastname" type="text" name="firstname"
-									placeholder="Firstname" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.lastname" type="text" name="lastname"
+									placeholder="Lastname" 
+									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('lastname') }">
+									<has-error :form="form" field="lastname"></has-error>
                     				</div>
 								</div>
 								<div class="form-row">
@@ -313,106 +313,117 @@
 										<option value="Male">Male</option>
 										<option value="Female">Female</option>
 									</select>
-									<has-error :form="form" field="firstname"></has-error>
+									<has-error :form="form" field="gender"></has-error>
                     				</div>
                     				<div class="col-md-4 mb-2">
 									<small>Birthday</small>	
-									<input v-model="form.birthday" type="date" name="firstname"
-									placeholder="Firstname" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.birthday" type="date" name="birthday"
+									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('birthday') }">
+									<has-error :form="form" field="birthday"></has-error>
                     				</div>
                     				<div class="col-md-4 mb-2">
 									<small>Email</small>	
-									<input v-model="form.email" type="text" name="firstname"
-									placeholder="Firstname" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.email" type="text" name="email"
+									placeholder="Email" 
+									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('email') }">
+									<has-error :form="form" field="email"></has-error>
                     				</div>
 								</div>
 								<div class="form-row">
                     				<div class="col-md-6 mb-2">
 									<small>Iqama No.</small>	
-									<input v-model="form.iqama_no" type="text" name="firstname"
-									class="form-control" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.iqama_no" type="text" name="iqama_no"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('iqama_no') }">
+									<has-error :form="form" field="iqama_no"></has-error>
                     				</div>
                     				<div class="col-md-6 mb-2">
 									<small>Expiration Date</small>	
-									<input v-model="form.iqama_exp_date" type="date" name="firstname"
-									class="form-control" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.iqama_exp_date" type="date" name="iqama_exp_date"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('iqama_exp_date') }">
+									<has-error :form="form" field="iqama_exp_date"></has-error>
                     				</div>
 								</div>
 								<div class="form-row">
                     				<div class="col-md-6 mb-2">
 									<small>Passport No.</small>	
-									<input v-model="form.passport_no" type="text" name="firstname"
-									class="form-control" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.passport_no" type="text" name="passport_no"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('passport_no') }">
+									<has-error :form="form" field="passport_no"></has-error>
                     				</div>
                     				<div class="col-md-6 mb-2">
 									<small>Expiration Date</small>	
-									<input v-model="form.passport_exp_date" type="date" name="firstname"
-									class="form-control" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.passport_exp_date" type="date" name="passport_exp_date"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('passport_exp_date') }">
+									<has-error :form="form" field="passport_exp_date"></has-error>
                     				</div>
 								</div>
 								<div class="form-row">
                     				<div class="col-md-6 mb-2">
 									<small>Mobile No.</small>	
-									<input v-model="form.mobile_no" type="text" name="firstname"
-									class="form-control" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.mobile_no" type="text" name="mobile_no"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('mobile_no') }">
+									<has-error :form="form" field="mobile_no"></has-error>
                     				</div>
                     				<div class="col-md-6 mb-2">
 									<small>WhatsApp</small>	
-									<input v-model="form.whatsapp" type="text" name="firstname"
-									class="form-control" :class="{ 'is-invalid': form.errors.has('firstname') }">
-									<has-error :form="form" field="firstname"></has-error>
+									<input v-model="form.whatsapp_no" type="text" name="whatsapp_no"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('whatsapp_no') }">
+									<has-error :form="form" field="whatsapp_no"></has-error>
                     				</div>
 								</div>
-								<div class="form-group">
-									<input v-model="form.middlename" type="text" name="middlename"
-									placeholder="Middlename" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('middlename') }">
-									<has-error :form="form" field="middlename"></has-error>
-								</div>
-								<div class="form-group">
-									<input v-model="form.lastname" type="text" name="lastname"
-									placeholder="Lastname" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('lastname') }">
-									<has-error :form="form" field="lastname"></has-error>
-								</div>
-								<div class="form-group">
-									<input v-model="form.age" type="text" name="age"
-									placeholder="Age" 
-									class="form-control" :class="{ 'is-invalid': form.errors.has('age') }">
-									<has-error :form="form" field="age"></has-error>
-								</div>
-								<div class="form-group">
-									<input v-model="form.address" type="text" name="address"
-									placeholder="Address" 
-									class="form-control ucfirst" :class="{ 'is-invalid': form.errors.has('address') }">
-									<has-error :form="form" field="address"></has-error>
-								</div>
-								<div class="form-group">
-									<input v-model="form.contact_no" type="text" name="contact_no"
-									placeholder="Contact No." 
-									class="form-control" :class="{ 'is-invalid': form.errors.has('contact_no') }">
-									<has-error :form="form" field="contact_no"></has-error>
-								</div>
-								<div class="form-group">
-									<select name="type" v-model="form.type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
-										<option value="">Patient Type</option>
-										<option value="Brace">Brace</option>
-										<option value="Extraction">Extraction</option>
-										<option value="Denture">Denture</option>
+								<div class="form-row">
+                    				<div class="col-md-6 mb-2">
+									<small>Nationality</small>	
+									<select name="type" v-model="form.nationality" class="form-control" :class="{ 'is-invalid': form.errors.has('nationality') }">
+										<option value="">Select</option>
+										<option value="Filipino">Filipino</option>
+										<option value="Saudi">Saudi</option>
 									</select>
-									<has-error :form="form" field="type"></has-error>
+									<has-error :form="form" field="nationality"></has-error>
+                    				</div>
+                    				<div class="col-md-6 mb-2">
+									<small>Address</small>	
+									<select name="type" v-model="form.address" class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
+										<option value="">Select</option>
+										<option value="Philippines">Philippines</option>
+										<option value="Saudi Arabia">Saudi Arabia</option>
+									</select>
+									<has-error :form="form" field="address"></has-error>
+                    				</div>
+								</div>
+								<div class="form-row">
+                    				<div class="col-md-6 mb-2">
+									<small>City</small>	
+									<input v-model="form.city" type="text" name="city"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('city') }">
+									<has-error :form="form" field="city"></has-error>
+                    				</div>
+                    				<div class="col-md-6 mb-2">
+									<small>Job</small>	
+									<input v-model="form.job" type="text" name="job"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('job') }">
+									<has-error :form="form" field="job"></has-error>
+                    				</div>
+								</div>
+								<div class="form-row">
+                    				<div class="col-md-6 mb-2">
+									<small>Company/Employer Name</small>	
+									<input v-model="form.company" type="text" name="company"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('company') }">
+									<has-error :form="form" field="company"></has-error>
+                    				</div>
+                    				<div class="col-md-6 mb-2">
+									<small>Company/Employer Contact</small>	
+									<input v-model="form.contact_company" type="text" name="contact_company"
+									class="form-control" :class="{ 'is-invalid': form.errors.has('contact_company') }">
+									<has-error :form="form" field="contact_company"></has-error>
+                    				</div>
 								</div>
 							</div>
 							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close
+									<i class="ion-ios-close"></i>
+								</button>
 								<button type="submit" class="btn btn-success">Approve
 									<i class="ion-ios-checkmark"></i>
 								</button>
