@@ -36,6 +36,10 @@ class HajjController extends Controller
     public function store(Request $request)
     {
         $hajj = new Hajj();
+
+        $rules = [
+            'mobile_no' => 'required|digits_between:10,11'
+        ];
         
         $this->validate($request, [
             'firstname' => 'required|string|min:3',
@@ -43,11 +47,11 @@ class HajjController extends Controller
             'lastname' => 'required|string|min:3',
             'gender' => 'required',
             'birthday' => 'required',
-            'iqama_no' => 'required|numeric|min:10',
+            'iqama_no' => 'required|numeric|digits:10',
             'iqama_exp_date' => 'required',
             'passport_no' => 'required|numeric',
             'passport_exp_date' => 'required',
-            'mobile_no' => 'required|numeric|min:11',
+            'mobile_no' => 'required|numeric|digits_between:10,11',
             'whatsapp_no' => 'required|numeric',
             'email' => 'required|string',
             'nationality' => 'required|string',
@@ -56,7 +60,7 @@ class HajjController extends Controller
             'job' => 'required',
             'company' => 'required',
             'contact_company' => 'required',
-            'picture' => 'required|image|mimes:jpg,png,gif,jpeg|max:2048',
+            'picture' => 'required|image|mimes:jpg,png,gif,jpeg|max:4096',
             'iqama_pic' => 'required',
             'passport_pic' => 'required',
         ]);

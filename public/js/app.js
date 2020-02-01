@@ -2885,6 +2885,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.$Progress.start();
+      this.form.put('/api/hajj/' + this.id);
       this.form.put('/api/hajj/' + this.id).then(function () {
         $('#addNew').modal('hide');
         var timerInterval;

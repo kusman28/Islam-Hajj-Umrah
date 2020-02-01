@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::put('/user/{id}','API\HajjController@update');
+
 Route::apiResources(['hajj' => 'API\HajjController']);
 // Route::get('pendingRegistration/{id}', 'API\HajjController@show');
 

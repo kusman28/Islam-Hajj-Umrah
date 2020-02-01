@@ -521,6 +521,7 @@ export default {
 		{
 			this.$Progress.start();
 			this.form.put('/api/hajj/'+this.id)
+			this.form.put('/api/hajj/'+this.id)
 			.then(() => {
 			$('#addNew').modal('hide');
 			let timerInterval
