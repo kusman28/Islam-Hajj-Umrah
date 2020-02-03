@@ -42,15 +42,8 @@ let routes = [
     { path: '/pendingHajj', component: require('./components/PendingHajj').default },
     { path: '/pendingUmrah', component: require('./components/PendingUmrah').default },
     { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
-    // { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
-    // { path: '/denture', component: require('./components/Denture').default },
-    // { path: '/extraction', component: require('./components/Extraction').default },
-    // { path: '/prescription', component: require('./components/Prescription').default },
-    // { path: '/payment', component: require('./components/Payment').default },
-    // { path: '/report', component: require('./components/Report').default },
-    // { path: '/users', component: require('./components/Users').default },
-    // { path: '/profile', component: require('./components/Profile').default},
-    // { path: '/activities', component: require('./components/Activities').default},
+    { path: '/registered', component: require('./components/Registered').default },
+    { path: '/hajjDocuments', component: require('./components/HajjDocument').default },
     // { path: '*', component: require('./components/NotFound').default}
   ]
 const router = new VueRouter({
@@ -64,6 +57,9 @@ const router = new VueRouter({
 Vue.filter('upCase', function(text){
 	// return text.toUpperCase();
   return text.charAt(0).toUpperCase() + text.slice(1)
+});
+Vue.filter('capCase', function(text){
+	return text.toUpperCase();
 });
 Vue.filter('myDate', function(created){
   return moment(created).format('MMMM Do YYYY');

@@ -5,8 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Hajj;
-use App\HajjRegistered;
-use Illuminate\Support\Facades\Auth;
+use App\Registered;
 
 
 class HajjController extends Controller
@@ -23,6 +22,14 @@ class HajjController extends Controller
         return $hajj;
         
         // return Hajj::latest()->paginate(10);
+    }
+    public function hajjDocx(){
+        return Hajj::latest()->paginate(10);
+    }
+
+    public function registered()
+    {
+        return Registered::latest()->paginate(10);
     }
 
     /**
@@ -116,19 +123,17 @@ class HajjController extends Controller
         $hajj->status = 'Approved';
 
         $hajj->update();
-        
-        // $user_id = Auth::user()->id;
-        $user = \App\User::find($id);
-
-        return HajjRegistered::create([
-            'hajj_id' => $request['id'],
+    
+        return Registered::create([
+            'reg_id' => $request['id'],
             'fullname' => $request['firstname'].' '.$request['middlename'].' '.$request['lastname'],
-            'approved_by' => $user->name
+            'type' => 'Hajj'
         ]);
 
     }
 
     // public function test($name) {
+    //     $user = \App\User::find($id);
     //     $user = \App\User::find($name);
     //     return $user->name;
     // }

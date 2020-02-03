@@ -206,13 +206,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <router-link to="/hajj" class="nav-link">
+                <router-link to="/hajjDocuments" class="nav-link">
                   <i class="nav-icon ion-ios-copy-outline"></i>
                   <p>Hajj Documents</p>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/umrah" class="nav-link">
+                <router-link to="/umrahDocuments" class="nav-link">
                   <i class="nav-icon ion-ios-copy-outline"></i>
                   <p>Umrah Documents</p>
                 </router-link>
