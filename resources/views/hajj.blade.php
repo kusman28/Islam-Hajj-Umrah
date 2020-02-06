@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         *{
-            font-family: Poppins;
+          font-family: 'Poppins', sans-serif;
         }
         body::-webkit-scrollbar {
             width: 0.4em;
@@ -33,6 +33,10 @@
         body::-webkit-scrollbar-thumb {
             background-color: #52de97;
             outline: 1px solid slategrey;
+        }
+        .alert-custom{
+          background-color: #fff3cd;
+          color: #333;
         }
     </style>
 </head>
@@ -416,7 +420,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="alert alert-warning" role="alert">
+                <div class="alert alert-custom" role="alert">
                     <h4 class="alert-heading">Note:</h4>
                     <p>Siguraduhing tama ang mga impormasyon na inilagay at high-quality ang imahe ng Iqama at Pasaporte upang malinaw at hindi malabo kapag inupload ang mga ito.</p>
                     <hr>

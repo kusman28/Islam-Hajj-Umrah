@@ -16,7 +16,7 @@
 								<tr>
 									<th>ID</th>
 									<th>Name of Registrant</th>
-									<th>Type</th>
+									<th>Approved By</th>
 									<th>Registration Date</th>
 								</tr>
 							</thead>
@@ -24,7 +24,8 @@
 								<tr v-for="pending in pendings" :key="pending.id">
 									<td>{{pending.id}}</td>
 									<td>{{pending.fullname}}</td>
-									<td><span :class="[pending.type === 'Hajj' ? 'badge-success' : (pending.type === 'Umrah'?'badge-primary':'badge-primary'), 'badge badge-pill']"> {{pending.type | capCase}}</span></td>
+									<td><span class="badge badge-success">{{pending.type}}</span></td>
+									<!-- <td><span :class="[pending.type === 'Hajj' ? 'badge-success' : (pending.type === 'Umrah'?'badge-primary':'badge-primary'), 'badge badge-pill']"> {{pending.type | capCase}}</span></td> -->
 									<td>{{pending.created_at | myDate}}</td>
 								</tr>
 							</tbody>

@@ -34,6 +34,13 @@
             background-color: #52de97;
             outline: 1px solid slategrey;
         }
+        .alert-custom{
+          background-color: #d4edda;
+          color: #333;
+        }
+        .alert a{
+            color: #1d68a7;
+        }
     </style>
 </head>
 <body>
@@ -46,11 +53,19 @@
         </div>
     </nav>
     <div class="container mt-5">
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-custom" role="alert">
             <h3 class="alert-heading">Almost done!</h3>
-            <p>Your Hajj registation is being processed, please wait 1-2 days for the approval. You can check your registration <a href="#"> here.</a></p>
-            <hr>
+            <p>Your Hajj registation is being processed, please wait 1-2 days for the approval or you can check your registration <a href="#"> here.</a></p>
             <p class="mb-0">Thank you.</p>
+            <hr>
+            For more information please contact us.<br>
+            <i class="ion-social-facebook"></i>&nbsp;Facebook
+            <a href="#">IslamHajjUmrah</a><br>
+            <i class="ion-social-whatsapp"></i>&nbsp;WhatsApp:
+            <a href="#">00639368182985</a><br>
+            <i class="ion-social-google"></i>&nbsp;Gmail:
+            <a href="#">islamhajjandumrah@gmail.com</a>
+            
         </div>
     </div>
 </body>

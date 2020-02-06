@@ -88,7 +88,7 @@ class HajjController extends Controller
         if ($request->hasfile('picture')) {
             $file = $request->file('picture');
             $extension = $file->getClientOriginalExtension();
-            $filename = '2x2' . time() . '.' . $extension;
+            $filename = '2x2_' . $request->input('firstname') . time() . '.' . $extension;
             $file->move(public_path('images/picture/'), $filename);
             $hajj->picture = $filename;
         } else {
@@ -99,7 +99,7 @@ class HajjController extends Controller
         if ($request->hasfile('iqama_pic')) {
             $file = $request->file('iqama_pic');
             $extension = $file->getClientOriginalExtension();
-            $filename = 'Iqama' . time() . '.' . $extension;
+            $filename = 'Iqama_' . $request->input('firstname') . time() . '.' . $extension;
             $file->move(public_path('images/iqama/'), $filename);
             $hajj->iqama_pic = $filename;
         } else {
@@ -110,7 +110,7 @@ class HajjController extends Controller
         if ($request->hasfile('passport_pic')) {
             $file = $request->file('passport_pic');
             $extension = $file->getClientOriginalExtension();
-            $filename = 'Passport' . time() . '.' . $extension;
+            $filename = 'Passport_' . $request->input('firstname') . time() . '.' . $extension;
             $file->move(public_path('images/passport/'), $filename);
             $hajj->passport_pic = $filename;
         } else {

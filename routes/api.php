@@ -17,7 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('profile', 'API\UserController@profile');
+Route::apiResources(['user' => 'API\UserController']);
 Route::apiResources(['hajj' => 'API\HajjController']);
+
 Route::get('registered', 'API\HajjController@registered');
 Route::get('hajjDocx', 'API\HajjController@hajjDocx');
 

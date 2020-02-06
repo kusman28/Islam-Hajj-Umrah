@@ -11,6 +11,15 @@ use App\Registered;
 class HajjController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -127,7 +136,7 @@ class HajjController extends Controller
         return Registered::create([
             'reg_id' => $request['id'],
             'fullname' => $request['firstname'].' '.$request['middlename'].' '.$request['lastname'],
-            'type' => 'Hajj'
+            'type' => auth('api')->user()->name
         ]);
 
     }

@@ -53,7 +53,7 @@
             <span class="info-box-number">
               <!-- {{extraction.length}} -->
             </span>
-              <router-link to="/extraction" class="small-box-footer">View Details
+              <router-link to="/hajjDocuments" class="small-box-footer">View Details
                   <!-- <i class="ion-ios-arrow-forward"></i> -->
                 </router-link>
         </div>
@@ -99,26 +99,24 @@
 
 <script>
 export default {
-//     data(){
-//       return {
-//       denture: {},
-//       extraction: {},
-//       treatments: {},
-//       patients: {},
-//       }
-//     },
-//     methods: {
-//       loadPatients()
-//     {
-//       axios.get('api/patient').then(({ data }) => (this.patients = data.data));
-//       axios.get('treatment').then(({ data }) => (this.treatments = data.data));
-//       axios.get('treatment/denture').then(({ data }) => (this.denture = data.data));
-//       axios.get('treatment/extraction').then(({ data }) => (this.extraction = data.data));
-//     },
-//     },
-//       created(){
-//     this.loadPatients();
+  // data() {
+  //   return {
+  //     form: new Form({
+  //       id: '',
+  //       name: ''
+  //     })
+  //   }
+  // },
+  // mounted() {
 
-//   },
+  // },
+  // methods: {
+
+  // },
+  // created()
+	// {	
+	// 	axios.get('api/profile')
+	// 	.then(({ data }) => (this.form.fill(data)));
+	// }
 }
 </script>
