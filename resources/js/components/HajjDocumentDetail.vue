@@ -549,47 +549,47 @@ export default {
 		this.pendingRegistration();
 	},
 	methods: {
-		update()
-		{
-			this.$Progress.start();
-			this.form.put('/api/hajj/'+this.id)
-			.then(() => {
-			$('#addNew').modal('hide');
-			let timerInterval
-			swal.fire(
-				{
-				title: 'Approved',
-				html: 'Registered successfully.',
-				icon: 'success',
-				timer: 2000,
-				timerProgressBar: false,
-				onBeforeOpen: () => {
-					// swal.showLoading()
-					timerInterval = setInterval(() => {
-					const content = swal.getContent()
-					if (content) {
-						const b = content.querySelector('b')
-						if (b) {
-						b.textContent = swal.getTimerLeft()
-						}
-					}}, 100)},
-				onClose: () => {
-					clearInterval(timerInterval)
-				}
-				})
-				.then((result) => {
-				/* Read more about handling dismissals below */
-				if (result.dismiss === swal.DismissReason.timer) {
-					console.log('Registered successfully.')
-				}
-				})
-			this.$Progress.finish();
-			this.$router.push('/hajjDocuments')
-			})
-			.catch(() => {
-				this.$Progress.fail();
-			})
-		},
+		// update()
+		// {
+		// 	this.$Progress.start();
+		// 	this.form.put('/api/hajj/'+this.id)
+		// 	.then(() => {
+		// 	$('#addNew').modal('hide');
+		// 	let timerInterval
+		// 	swal.fire(
+		// 		{
+		// 		title: 'Approved',
+		// 		html: 'Registered successfully.',
+		// 		icon: 'success',
+		// 		timer: 2000,
+		// 		timerProgressBar: false,
+		// 		onBeforeOpen: () => {
+		// 			// swal.showLoading()
+		// 			timerInterval = setInterval(() => {
+		// 			const content = swal.getContent()
+		// 			if (content) {
+		// 				const b = content.querySelector('b')
+		// 				if (b) {
+		// 				b.textContent = swal.getTimerLeft()
+		// 				}
+		// 			}}, 100)},
+		// 		onClose: () => {
+		// 			clearInterval(timerInterval)
+		// 		}
+		// 		})
+		// 		.then((result) => {
+		// 		/* Read more about handling dismissals below */
+		// 		if (result.dismiss === swal.DismissReason.timer) {
+		// 			console.log('Registered successfully.')
+		// 		}
+		// 		})
+		// 	this.$Progress.finish();
+		// 	this.$router.push('/hajjDocuments')
+		// 	})
+		// 	.catch(() => {
+		// 		this.$Progress.fail();
+		// 	})
+		// },
 		updateModal(hajj){
 			this.form.reset();
 			$('#addNew').modal('show');
