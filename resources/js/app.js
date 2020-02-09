@@ -44,6 +44,7 @@ let routes = [
     { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
     { path: '/registered', component: require('./components/Registered').default },
     { path: '/hajjDocuments', component: require('./components/HajjDocument').default },
+    { path: '/hajjDocumentsDetails/:id', component: require('./components/HajjDocumentDetail').default },
     // { path: '*', component: require('./components/NotFound').default}
   ]
 const router = new VueRouter({

@@ -1,5 +1,31 @@
+<style scoped>
+a {
+  color: inherit;
+}
+
+.router-link-exact-active {
+  background: yellow;
+  border-radius: 5px;
+  color: red;
+  font-style: italic;
+}
+</style>
 <template>
     <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+        <form class="form-inline mt-3 text-center">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                <button class="btn btn-navbar btn-success" type="submit">
+                <i class="ion-ios-search-strong"></i>
+                </button>
+                </div>
+            </div>
+        </form>
+            </div>
+        </div>
         <div class="row mt-4">
         <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch"
         v-for="hajj in hajjDocx" :key="hajj.id">
@@ -24,9 +50,9 @@
                 </div>
                 <div class="card-footer">
                   <div class="text-right">
-                    <button href="#" class="btn btn-sm btn-success">
-                      <i class="ion-ios-printer"></i> Print
-                    </button>
+                    <router-link v-bind:to="'hajjDocumentsDetails/'+hajj.id" class="btn btn-success btn-sm">View Details &nbsp;
+                        <i class="ion-ios-redo"></i>
+                    </router-link>
                     <div class="btn-group">
                     <button type="button" class="btn-flat btn btn-sm btn-primary">Download</button>
                     <button type="button" class="btn btn-sm btn-primary ion-ios-arrow-down-toggle ion-ios-arrow-down" data-toggle="dropdown">

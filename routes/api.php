@@ -23,5 +23,6 @@ Route::apiResources(['hajj' => 'API\HajjController']);
 
 Route::get('registered', 'API\HajjController@registered');
 Route::get('hajjDocx', 'API\HajjController@hajjDocx');
+Route::get('hajjTotal', 'API\HajjController@hajjTotal');
 
 // Route::get('pendingRegistration/'{id}, 'API\HajjController@show');

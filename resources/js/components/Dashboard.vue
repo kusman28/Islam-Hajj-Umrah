@@ -11,7 +11,7 @@
                         <span class="info-box-text">Hajj</span>
                         <span class="info-box-number">
                             
-                          <!-- {{patients.length}} -->
+                          {{hajj.length}}
                           <!-- <small>%</small> -->
                       </span>
                             
@@ -46,10 +46,10 @@
 
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-          <span class="info-box-icon bg-primary elevation-1"><i class="ion-ios-download"></i></span>
+          <span class="info-box-icon bg-primary elevation-1"><i class="ion-ios-search-strong"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Download</span>
+            <span class="info-box-text">Search</span>
             <span class="info-box-number">
               <!-- {{extraction.length}} -->
             </span>
@@ -99,24 +99,22 @@
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     form: new Form({
-  //       id: '',
-  //       name: ''
-  //     })
-  //   }
-  // },
-  // mounted() {
-
-  // },
-  // methods: {
-
-  // },
-  // created()
-	// {	
-	// 	axios.get('api/profile')
-	// 	.then(({ data }) => (this.form.fill(data)));
-	// }
+  data() {
+    return {
+      hajj: {},
+    }
+  },
+  methods: {
+    load()
+    {
+      axios.get('api/hajjTotal').then(({data}) => (this.hajj = data.data));
+    }
+  },
+  created()
+	{	
+    this.load();
+		// axios.get('api/profile')
+		// .then(({ data }) => (this.form.fill(data)));
+	}
 }
 </script>
