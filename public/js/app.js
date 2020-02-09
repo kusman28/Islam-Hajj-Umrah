@@ -2770,50 +2770,47 @@ __webpack_require__.r(__webpack_exports__);
     this.pendingRegistration();
   },
   methods: {
-    update: function update() {
-      var _this = this;
-
-      this.$Progress.start();
-      this.form.put('/api/hajj/' + this.id).then(function () {
-        $('#addNew').modal('hide');
-        var timerInterval;
-        swal.fire({
-          title: 'Approved',
-          html: 'Registered successfully.',
-          icon: 'success',
-          timer: 2000,
-          timerProgressBar: false,
-          onBeforeOpen: function onBeforeOpen() {
-            // swal.showLoading()
-            timerInterval = setInterval(function () {
-              var content = swal.getContent();
-
-              if (content) {
-                var b = content.querySelector('b');
-
-                if (b) {
-                  b.textContent = swal.getTimerLeft();
-                }
-              }
-            }, 100);
-          },
-          onClose: function onClose() {
-            clearInterval(timerInterval);
-          }
-        }).then(function (result) {
-          /* Read more about handling dismissals below */
-          if (result.dismiss === swal.DismissReason.timer) {
-            console.log('Registered successfully.');
-          }
-        });
-
-        _this.$Progress.finish();
-
-        _this.$router.push('/hajjDocuments');
-      })["catch"](function () {
-        _this.$Progress.fail();
-      });
-    },
+    // update()
+    // {
+    // 	this.$Progress.start();
+    // 	this.form.put('/api/hajj/'+this.id)
+    // 	.then(() => {
+    // 	$('#addNew').modal('hide');
+    // 	let timerInterval
+    // 	swal.fire(
+    // 		{
+    // 		title: 'Approved',
+    // 		html: 'Registered successfully.',
+    // 		icon: 'success',
+    // 		timer: 2000,
+    // 		timerProgressBar: false,
+    // 		onBeforeOpen: () => {
+    // 			// swal.showLoading()
+    // 			timerInterval = setInterval(() => {
+    // 			const content = swal.getContent()
+    // 			if (content) {
+    // 				const b = content.querySelector('b')
+    // 				if (b) {
+    // 				b.textContent = swal.getTimerLeft()
+    // 				}
+    // 			}}, 100)},
+    // 		onClose: () => {
+    // 			clearInterval(timerInterval)
+    // 		}
+    // 		})
+    // 		.then((result) => {
+    // 		/* Read more about handling dismissals below */
+    // 		if (result.dismiss === swal.DismissReason.timer) {
+    // 			console.log('Registered successfully.')
+    // 		}
+    // 		})
+    // 	this.$Progress.finish();
+    // 	this.$router.push('/hajjDocuments')
+    // 	})
+    // 	.catch(() => {
+    // 		this.$Progress.fail();
+    // 	})
+    // },
     updateModal: function updateModal(hajj) {
       this.form.reset();
       $('#addNew').modal('show');
@@ -2838,11 +2835,11 @@ __webpack_require__.r(__webpack_exports__);
       this.form.fill(hajj);
     },
     pendingRegistration: function pendingRegistration() {
-      var _this2 = this;
+      var _this = this;
 
       axios.get('/api/hajj/' + this.id).then(function (_ref) {
         var data = _ref.data;
-        return _this2.hajj = data;
+        return _this.hajj = data;
       });
     } // createPatient() 
     // {
