@@ -2735,6 +2735,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -65196,7 +65200,12 @@ var staticRenderFns = [
                     "aria-selected": "true"
                   }
                 },
-                [_vm._v("Information")]
+                [
+                  _vm._v(
+                    "\n                                        Information "
+                  ),
+                  _c("i", { staticClass: "ion-ios-information" })
+                ]
               )
             ]),
             _vm._v(" "),
@@ -65214,7 +65223,12 @@ var staticRenderFns = [
                     "aria-selected": "false"
                   }
                 },
-                [_vm._v("Ticket")]
+                [
+                  _vm._v(
+                    "\n                                            Ticket "
+                  ),
+                  _c("i", { staticClass: "ion-plane" })
+                ]
               )
             ])
           ]
@@ -65471,6 +65485,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c(
+      "a",
+      {
+        staticClass: "btn btn-success btn-sm mt-2",
+        attrs: { href: "#" },
+        on: {
+          click: function($event) {
+            return _vm.$router.go(-1)
+          }
+        }
+      },
+      [_c("i", { staticClass: "ion-ios-arrow-back" }), _vm._v(" Back")]
+    ),
+    _vm._v(" "),
     _c("img", {
       staticClass: "rounded mx-auto d-block",
       attrs: { height: "150px", src: "/template/img/logo1.png" }

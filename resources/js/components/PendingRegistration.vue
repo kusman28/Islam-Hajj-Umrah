@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<!-- <a @click="$router.go(-1)">back</a> -->
+		<a class="btn btn-success btn-sm mt-2" href="#" @click="$router.go(-1)"><i class="ion-ios-arrow-back"></i> Back</a>
 		<img 
             class="rounded mx-auto d-block"
             height="150px"

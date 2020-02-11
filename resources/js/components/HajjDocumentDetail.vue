@@ -257,10 +257,14 @@
 								<h5 class="modal-title" id="addNewLabel">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Information</a>
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                        Information <i class="ion-ios-information"></i>
+                                        </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ticket</a>
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                                            Ticket <i class="ion-plane"></i>
+                                            </a>
                                     </li>
                                     </ul>
                                 </h5>

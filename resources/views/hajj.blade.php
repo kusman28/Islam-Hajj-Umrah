@@ -284,7 +284,10 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Address</label>
-                    <select class="form-control @error('address') is-invalid @enderror" 
+                    <select 
+                    id="input" 
+                    onchange="random_function()" 
+                    class="form-control @error('address') is-invalid @enderror" 
                     name="address" 
                     value="{{ old('address') }}">
                         <option value="">Select</option>
@@ -299,13 +302,20 @@
                   </div>
                   <div class="col-md-4 mb-3">
                     <label>City</label>
-                    <input 
+                    <select class="form-control @error('city') is-invalid @enderror" 
+                    value="{{ old('city') }}"
+                    name="city"
+                    id="output" 
+                    onchange="random_function1()">
+                    <option>Select</option>
+                    </select>
+                    {{-- <input 
                     type="text" 
                     class="form-control @error('city') is-invalid @enderror" 
                     name="city"
                     placeholder="Enter City"
                     value="{{ old('city') }}"
-                    >
+                    > --}}
                     @error('city')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -471,6 +481,48 @@ function readURL2(input) {
 
         reader.readAsDataURL(input.files[0]);
     }
+}
+
+function random_function()
+{
+    var a=document.getElementById("input").value;
+    if(a==="Philippines")
+    {
+        var arr=["Zamboanga","Jolu Sulu"];
+    }
+    else if(a==="Saudi Arabia")
+    {
+        var arr=[
+          'Abha',
+          'Al Qunfudhah',
+          'Al-`Ula',
+          'Dammam',
+          'Hafr Al-Batin',
+          'Hail',
+          'Hofuf',
+          'Jeddah',
+          'Jizan',
+          'Jubail',
+          'Khobar',
+          'Makkah',
+          'Madinah',
+          'Najran',
+          'Qatif',
+          'Riyadh',
+          'Taif',
+          'Tabuk',
+          'Unaizah',
+          'Yanbu'
+      ];
+    }
+  
+    var string="";
+  
+    for(i=0;i<arr.length;i++)
+    {
+        string=string+"<option value="+arr[i]+">"+arr[i]+"</option>";
+    }
+    document.getElementById("output").innerHTML=string;
 }
 </script>
 </html>

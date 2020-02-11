@@ -157,7 +157,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="nav-icon nav-icon ion-ios-more"></i>
               <p>
-                Pending
+                Pending 
                 <i class="right fas ion-ios-arrow-back mt-1"></i>
               </p>
             </a>
