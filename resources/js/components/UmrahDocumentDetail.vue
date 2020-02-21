@@ -6,17 +6,17 @@
             height="150px"
             src="/template/img/logo1.png">
 			<div class="row float-right">
-            <button class="btn btn-primary btn-sm float-right" @click="updateModal(hajj)">Edit Form
+            <button class="btn btn-primary btn-sm float-right" @click="updateModal(umrah)">Edit Form
                 <i class="ion-ios-compose-outline"></i>
             </button>
 			&nbsp;
-            <a :href="'/pdfexport/' + hajj.id" target="_blank" class="btn btn-success btn-sm float-right">Print Form
+            <a :href="'/pdfexport/' + umrah.id" target="_blank" class="btn btn-success btn-sm float-right">Print Form
                 <i class="ion-printer"></i>
             </a>
 			</div>
-            <h2 class="mb-4">Hajj Form</h2>
-            <a style="cursor: pointer;" @click="picture(hajj)">
-            <img height="150px" class="col-md-3 mt-3 img-thumbnail float-right" v-bind:src="'/images/picture/'+hajj.picture">
+            <h2 class="mb-4">Umrah Form</h2>
+            <a style="cursor: pointer;" @click="picture(umrah)">
+            <img height="150px" class="col-md-3 mt-3 img-thumbnail float-right" v-bind:src="'/images/picture/'+umrah.picture">
             </a>
             <hr class="mb-4">  
                 <div class="form-row">
@@ -25,7 +25,7 @@
                     <input type="text" 
                     class="form-control"
                     name="middlename"
-                    v-model="hajj.fullname"
+                    v-model="umrah.fullname"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -33,8 +33,8 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Gender</label>
-                    <select class="form-control" v-model="hajj.gender" name="gender" :disabled="disabled == 1">
-                        <option value="">{{hajj.gender}}</option>
+                    <select class="form-control" v-model="umrah.gender" name="gender" :disabled="disabled == 1">
+                        <option value="">{{umrah.gender}}</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -43,10 +43,10 @@
                     <label>Birthday</label>
                     <input 
                     type="text" 
-                    :placeholder="[[ hajj.birthday ]]"
+                    :placeholder="[[ umrah.birthday ]]"
                     class="form-control" 
                     name="birthday"
-                    v-model="hajj.birthday"
+                    v-model="umrah.birthday"
                     onfocus="(this.type='date')"
                     :disabled="disabled == 1"
                     >
@@ -59,8 +59,8 @@
                       type="text" 
                       class="form-control"
                       name="iqama_no"
-                    :placeholder="[[ hajj.iqama_no ]]"
-                      v-model="hajj.iqama_no"
+                    :placeholder="[[ umrah.iqama_no ]]"
+                      v-model="umrah.iqama_no"
                       :disabled="disabled == 1"
                       >
                       </div>
@@ -70,8 +70,8 @@
                       type="text" 
                       class="form-control"
                       name="iqama_exp_date"
-                      :placeholder="[[ hajj.iqama_exp_date ]]"
-                      v-model="hajj.iqama_exp_date"
+                      :placeholder="[[ umrah.iqama_exp_date ]]"
+                      v-model="umrah.iqama_exp_date"
                       onfocus="(this.type='date')"
                       :disabled="disabled == 1"
                       >
@@ -84,8 +84,8 @@
                       type="text" 
                       class="form-control"
                       name="passport_no"
-                      :placeholder="[[ hajj.passport_no ]]"
-                      v-model="hajj.passport_no" 
+                      :placeholder="[[ umrah.passport_no ]]"
+                      v-model="umrah.passport_no" 
                       :disabled="disabled == 1"
                       >
                        </div>
@@ -94,8 +94,8 @@
                       <input type="text" 
                       class="form-control"
                       name="passport_exp_date"
-                      :placeholder="[[ hajj.passport_exp_date ]]"
-                      v-model="hajj.passport_exp_date"
+                      :placeholder="[[ umrah.passport_exp_date ]]"
+                      v-model="umrah.passport_exp_date"
                       onfocus="(this.type='date')"
                       :disabled="disabled == 1"
                       >
@@ -114,8 +114,8 @@
                       type="text" 
                       class="form-control"
                       name="mobile_no"
-                    :placeholder="[[ hajj.mobile_no ]]"
-                      v-model="hajj.mobile_no"
+                    :placeholder="[[ umrah.mobile_no ]]"
+                      v-model="umrah.mobile_no"
                       :disabled="disabled == 1"
                        >
                     </div>
@@ -132,8 +132,8 @@
                       type="email" 
                       class="form-control"
                       name="email"
-                    :placeholder="[[ hajj.email ]]"
-                      v-model="hajj.email"
+                    :placeholder="[[ umrah.email ]]"
+                      v-model="umrah.email"
                       :disabled="disabled == 1"
                       >
                       </div>
@@ -150,8 +150,8 @@
                       type="text" 
                       class="form-control"
                       name="whatsapp_no"
-                    :placeholder="[[ hajj.whatsapp_no ]]"
-                      v-model="hajj.whatsapp_no"
+                    :placeholder="[[ umrah.whatsapp_no ]]"
+                      v-model="umrah.whatsapp_no"
                       :disabled="disabled == 1"
                       >
                        </div>
@@ -162,11 +162,11 @@
                   <div class="col-md-4 mb-3">
                     <label>Nationality</label>
                     <select class="form-control"
-                    v-model="hajj.nationality"
+                    v-model="umrah.nationality"
                     name="nationality"
                     :disabled="disabled == 1"
                     >
-                        <option value="">{{hajj.nationality}}</option>
+                        <option value="">{{umrah.nationality}}</option>
                         <option value="Filipino">Filipino</option>
                         <option value="Saudi">Saudi</option>
                     </select>
@@ -175,10 +175,10 @@
                     <label>Address</label>
                     <select class="form-control"
                     name="address"
-                    v-model="hajj.address"
+                    v-model="umrah.address"
                     :disabled="disabled == 1"
                     >
-                    <option value="">{{hajj.address}}</option>
+                    <option value="">{{umrah.address}}</option>
                     <option value="Philippines">Philippines</option>
                     <option value="Saudi Arabia">Saudi Arabia</option>
                     </select>
@@ -189,8 +189,8 @@
                     type="text" 
                     class="form-control"
                     name="city"
-                    v-model="hajj.city"
-                    :placeholder="[[ hajj.city ]]"
+                    v-model="umrah.city"
+                    :placeholder="[[ umrah.city ]]"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -202,8 +202,8 @@
                     type="text" 
                     class="form-control"
                     name="job"
-                    v-model="hajj.job"
-                    :placeholder="[[ hajj.job ]]"
+                    v-model="umrah.job"
+                    :placeholder="[[ umrah.job ]]"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -213,8 +213,8 @@
                     type="text" 
                     class="form-control"
                     name="company"
-                    :placeholder="[[ hajj.company ]]"
-                    v-model="hajj.company"
+                    :placeholder="[[ umrah.company ]]"
+                    v-model="umrah.company"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -224,8 +224,8 @@
                     type="text" 
                     class="form-control"
                     name="contact_company"
-                    :placeholder="[[ hajj.contact_company ]]"
-                    v-model="hajj.contact_company"
+                    :placeholder="[[ umrah.contact_company ]]"
+                    v-model="umrah.contact_company"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -233,20 +233,20 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label>Iqama Picture</label>
-					  <a style="cursor: pointer;" @click="iqama(hajj)">
-                      <img class="img-thumbnail" v-bind:src="'/images/iqama/'+hajj.iqama_pic">
+					  <a style="cursor: pointer;" @click="iqama(umrah)">
+                      <img class="img-thumbnail" v-bind:src="'/images/iqama/'+umrah.iqama_pic">
 					  </a>
                     </div>
                     <div class="col-md-6 mb-3">
-						<a style="cursor: pointer;" @click="passport(hajj)">
+						<a style="cursor: pointer;" @click="passport(umrah)">
                       <label>Passport Picture</label>
-                      <img class="img-thumbnail" v-bind:src="'/images/passport/'+hajj.passport_pic">
+                      <img class="img-thumbnail" v-bind:src="'/images/passport/'+umrah.passport_pic">
 						</a>
                     </div>
                 </div>
                 <hr>
                 <!-- <div class="mb-5">
-                    <a :href="'/pdfexport/' + hajj.id" class="col-md-4 btn btn-success">Print
+                    <a :href="'/pdfexport/' + umrah.id" class="col-md-4 btn btn-success">Print
                         <i class="ion-printer"></i>
                     </a>
                 </div> -->
@@ -419,7 +419,7 @@
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="form-row">
                     				<div class="col-md-4 mb-2">
-									<small>Hajj Type</small>	
+									<small>Umrah Type</small>	
 									<select name="type" class="form-control">
 										<option value="">Select</option>
 										<option value="Tamattu">Tamattu</option>
@@ -487,8 +487,8 @@
 							<div class="modal-body">
 								<div class="form-group">
 									<div class="col-md-12 text-center">
-									<img v-show="editmode" class="rounded img-fluid" v-bind:src="'/images/picture/'+hajj.picture">
-									<img v-show="!editmode" class="rounded img-fluid" v-bind:src="'/images/iqama/'+hajj.iqama_pic">
+									<img v-show="editmode" class="rounded img-fluid" v-bind:src="'/images/picture/'+umrah.picture">
+									<img v-show="!editmode" class="rounded img-fluid" v-bind:src="'/images/iqama/'+umrah.iqama_pic">
 									</div>
 								</div>
 							</div>
@@ -509,7 +509,7 @@
 							<div class="modal-body">
 								<div class="form-group">
 									<div class="col-md-12 text-center">
-									<img  class="rounded img-fluid" v-bind:src="'/images/passport/'+hajj.passport_pic">
+									<img  class="rounded img-fluid" v-bind:src="'/images/passport/'+umrah.passport_pic">
 									</div>
 								</div>
 							</div>
@@ -526,7 +526,7 @@ export default {
 		return {
 			editmode: false,
             disabled: 1,
-            hajj: {},
+            umrah: {},
 			form: new Form({
 				id: '',
 				firstname: '',
@@ -559,7 +559,7 @@ export default {
 		update()
 		{
 			this.$Progress.start();
-			this.form.put('/api/hajjdocx/'+this.id)
+			this.form.put('/api/umrahdocx/'+this.id)
 			.then(() => {
 			$('#addNew').modal('hide');
 			let timerInterval
@@ -591,39 +591,39 @@ export default {
 				}
 				})
 			this.$Progress.finish();
-			this.$router.push('/hajjDocuments')
+			this.$router.push('/umrahDocuments')
 			})
 			.catch(() => {
 				this.$Progress.fail();
 			})
 		},
-		updateModal(hajj){
+		updateModal(umrah){
 			this.form.reset();
 			$('#addNew').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
-		picture(hajj){
+		picture(umrah){
 			this.editmode = true;
 			this.form.reset();
 			$('#picture').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
-		iqama(hajj){
+		iqama(umrah){
 			this.editmode = false;
 			this.form.reset();
 			$('#picture').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
-		passport(hajj){
+		passport(umrah){
 			this.editmode = false;
 			this.form.reset();
 			$('#passport').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
 		pendingRegistration()
 		{
-			axios.get('/api/hajj/'+this.id)
-			.then(({ data }) => (this.hajj = data));
+			axios.get('/api/umrah/'+this.id)
+			.then(({ data }) => (this.umrah = data));
 		},
 		// createPatient() 
 		// {

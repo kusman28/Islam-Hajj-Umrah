@@ -7,6 +7,15 @@
 						<h5>Registered</h5>
 						<div class="card-tools">
                 		<!-- <button type="submit" class="btn btn-success btn-sm" @click="newModal">Add Patient <i class="fas fa-user-plus"></i></button> -->
+							<div class="input-group input-group-sm">
+								<input class="form-control form-control-navbar" @keyup="searchit" v-model="search" type="search" placeholder="Search" aria-label="Search">
+
+								<div class="input-group-append">
+								<button class="btn btn-navbar" @click="searchit">
+									<i class="fas fa-search"></i>
+								</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- /.card-header -->
@@ -21,7 +30,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-for="pending in pendings" :key="pending.id">
+								<tr v-for="pending in pendings.data" :key="pending.id">
 									<td>{{pending.id}}</td>
 									<td>{{pending.fullname}}</td>
 									<td><span class="badge badge-success">{{pending.type}}</span></td>
@@ -32,6 +41,9 @@
 						</table>
 					</div>
 					<!-- /.card-body -->
+					<div class="card-footer">
+						<pagination :data="pendings" @pagination-change-page="getResults"></pagination>
+					</div>
 				</div>
 				<!-- /.card -->
 			</div>
@@ -115,9 +127,10 @@ export default {
 	data() {
 		return {
 			pendings: {},
+			search: '',
 			// hajj: {},
 			// form: new Form({
-			// 	id: '',
+				// 	id: '',
 			// 	firstname: '',
 			// 	middlename: '',
 			// 	lastname: '',
@@ -129,9 +142,18 @@ export default {
 		}
 	},
 	methods: {
+		searchit: _.debounce(() => {
+			Fire.$emit('searching');
+		},0.700),
+		getResults(page = 1) {
+			axios.get('api/registered?page=' + page)
+				.then(response => {
+					this.pendings = response.data;
+				});
+		},
 		pendingRegistration()
 		{
-            axios.get('api/registered').then(({ data }) => (this.pendings = data.data));
+            axios.get('api/registered').then(({ data }) => (this.pendings = data));
             
 		},
 		// createPatient() 
@@ -153,6 +175,16 @@ export default {
 		// }
     },
 	created(){
+		Fire.$on('searching', () => {
+			let query = this.search;
+			axios.get('api/find?q=' + query)
+			.then((data) => {
+				this.pendings = data.data
+			})
+			.catch(() => {
+
+			})
+		});
 		this.pendingRegistration();
 		// Fire.$on('afterCreate',() => {
 		// 	this.pendingRegistration();

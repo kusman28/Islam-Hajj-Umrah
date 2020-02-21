@@ -75,7 +75,7 @@ Header
 <li class="menu-has-children"><a href="#">Registration</a>
 <ul>
 <li><a href="HajjRegistrationForm">Hajj</a></li>
-<li><a href="Umrah">Umrah</a></li>
+<li><a href="UmrahRegistrationForm">Umrah</a></li>
 </ul>
 </li>
 <li><a href="#about">About Us</a></li>

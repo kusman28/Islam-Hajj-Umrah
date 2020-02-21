@@ -5,10 +5,8 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Hajj;
-use App\Registered;
 
-
-class HajjController extends Controller
+class HajjDocxController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,25 +24,7 @@ class HajjController extends Controller
      */
     public function index()
     {
-        $hajj = Hajj::where('status', 'Pending')->paginate(10);
-
-        return $hajj;
-        
-        // return Hajj::latest()->paginate(10);
-    }
-    public function hajjDocx(){
-        return Hajj::latest()->paginate(10);
-    }
-
-    public function registered()
-    {
-        return Registered::latest()->paginate(5);
-    }
-
-    public function hajjTotal()
-    {
-        // return Registered::latest()->paginate(20);
-        return Hajj::latest()->paginate();
+        dd('wew');
     }
 
     /**
@@ -66,10 +46,7 @@ class HajjController extends Controller
      */
     public function show($id)
     {
-        return Hajj::findOrFail($id);
-        // $hajj = Hajj::findOrFail($id);
-
-        // return $hajj;
+        //
     }
 
     /**
@@ -82,10 +59,6 @@ class HajjController extends Controller
     public function update(Request $request, $id)
     {
         $hajj = Hajj::findOrFail($id);
-        // $hajj = Hajj::findOrFail($id);
-        // $hajj->firstname = $request->firstname;
-        // $hajj->status = 'Approved';
-        // $hajj->update();
 
         $rules = [
             'mobile_no' => 'required|digits_between:10,11'
@@ -110,10 +83,6 @@ class HajjController extends Controller
             'job' => 'required',
             'company' => 'required',
             'contact_company' => 'required',
-            // 'picture' => 'required|image|mimes:jpg,png,gif,jpeg|max:2048',
-            // 'iqama_pic' => 'required',
-            // 'passport_pic' => 'required',
-            // 'passport_pic' => 'required',
         ]);
 
         $hajj->fullname = $request->input('firstname'). ' '.$request->input('middlename'). ' '.$request->input('lastname');
@@ -138,12 +107,6 @@ class HajjController extends Controller
         $hajj->status = 'Approved';
 
         $hajj->update();
-            
-        return Registered::create([
-            'reg_id' => $request['id'],
-            'fullname' => $request['firstname'].' '.$request['middlename'].' '.$request['lastname'],
-            'type' => auth('api')->user()->name
-        ]);
 
     }
 
@@ -156,21 +119,5 @@ class HajjController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search() {
-
-        if ($search = \Request::get('q')) {
-            $registered = Registered::where(function($query) use ($search){
-                $query->where('fullname','LIKE',"%$search%")
-                ->orWhere('type','LIKE',"%$search%")
-                ->orWhere('created_at','LIKE',"%$search%");
-            })->paginate(20);
-        } else {
-            $registered = Registered::latest()->paginate(5);
-        }
-
-        return $registered;
-
     }
 }

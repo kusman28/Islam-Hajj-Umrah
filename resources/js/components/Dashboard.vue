@@ -15,7 +15,7 @@
                           <!-- <small>%</small> -->
                       </span>
                             
-                    <a href="#">&nbsp;</a>
+                    <!-- <a href="#">&nbsp;</a> -->
                   </div>
                   <!-- /.info-box-content -->
               </div>
@@ -29,6 +29,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Umrah</span>
                 <span class="info-box-number">
+                  {{umrah.length}}
                 <!-- {{treatments.length}} -->
               </span>
               <!-- <router-link to="/brace" class="small-box-footer">View Details
@@ -102,12 +103,14 @@ export default {
   data() {
     return {
       hajj: {},
+      umrah: {},
     }
   },
   methods: {
     load()
     {
       axios.get('api/hajjTotal').then(({data}) => (this.hajj = data.data));
+      axios.get('api/umrahTotal').then(({data}) => (this.umrah = data.data));
     }
   },
   created()

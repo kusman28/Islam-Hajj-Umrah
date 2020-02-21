@@ -22,6 +22,8 @@ Vue.use(VueProgressBar, {
   height: '3px'
 })
 
+window.Fire = new Vue();
+
 // Sweetalert
 import swal from 'sweetalert2'
 window.swal = swal;
@@ -41,18 +43,23 @@ let routes = [
     { path: '/dashboard', component: require('./components/Dashboard').default },
     { path: '/pendingHajj', component: require('./components/PendingHajj').default },
     { path: '/pendingUmrah', component: require('./components/PendingUmrah').default },
-    { path: '/pendingRegistration/:id', component: require('./components/PendingRegistration').default },
+    { path: '/pendingHajjRegistration/:id', component: require('./components/PendingHajjRegistration').default },
+    { path: '/pendingUmrahRegistration/:id', component: require('./components/PendingUmrahRegistration').default },
     { path: '/registered', component: require('./components/Registered').default },
     { path: '/hajjDocuments', component: require('./components/HajjDocument').default },
     { path: '/hajjDocumentsDetails/:id', component: require('./components/HajjDocumentDetail').default },
-    // { path: '*', component: require('./components/NotFound').default}
+    { path: '/umrahDocuments', component: require('./components/UmrahDocument').default },
+    { path: '/umrahDocumentsDetails/:id', component: require('./components/UmrahDocumentDetail').default },
+    { path: '/*', component: require('./components/NotFound').default}
   ]
 const router = new VueRouter({
 	mode: 'history',
-  	routes // short for `routes: routes`
+  routes, // short for `routes: routes`
 })
 // End of Routes
 
+
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 // Text filter
 Vue.filter('upCase', function(text){
@@ -106,4 +113,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     router,
+    // data: {
+    //   search: ''
+    // },
+    // methods: {
+    //   searchit(){
+    //     console.log('Wew');
+    //   }
+    // }
 });

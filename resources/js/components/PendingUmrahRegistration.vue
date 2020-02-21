@@ -1,31 +1,46 @@
 <template>
 	<div class="container">
-		<!-- <a @click="$router.go(-1)">back</a> -->
+		<a class="btn btn-success float-right btn-sm mt-2" href="#" @click="$router.go(-1)"><i class="ion-ios-arrow-back"></i> Back</a>
 		<img 
             class="rounded mx-auto d-block"
             height="150px"
             src="/template/img/logo1.png">
-			<div class="row float-right">
-            <button class="btn btn-primary btn-sm float-right" @click="updateModal(hajj)">Edit Form
+            <!-- <button class="btn btn-primary float-right" @click="updateModal(hajj)">Edit
                 <i class="ion-ios-compose-outline"></i>
-            </button>
-			&nbsp;
-            <a :href="'/pdfexport/' + hajj.id" target="_blank" class="btn btn-success btn-sm float-right">Print Form
-                <i class="ion-printer"></i>
-            </a>
-			</div>
-            <h2 class="mb-4">Hajj Form</h2>
-            <a style="cursor: pointer;" @click="picture(hajj)">
-            <img height="150px" class="col-md-3 mt-3 img-thumbnail float-right" v-bind:src="'/images/picture/'+hajj.picture">
-            </a>
-            <hr class="mb-4">  
-                <div class="form-row">
+            </button> -->
+            <h4 class="mb-4">Umrah Registration Form</h4>
+            <hr class="mb-4">            
+            <!-- <form @submit.prevent="update()">     -->
+            <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label>Full Name</label>
+                    <label>First name</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="firstname"
+                    :placeholder="[[ umrah.firstname ]]"
+                    v-model="umrah.firstname"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Middle name</label>
                     <input type="text" 
                     class="form-control"
                     name="middlename"
-                    v-model="hajj.fullname"
+                    :placeholder="[[ umrah.middlename ]]"
+                    v-model="umrah.middlename"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Last name</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="lastname"
+                    :placeholder="[[ umrah.lastname ]]"
+                    v-model="umrah.lastname"
                     :disabled="disabled == 1"
                     >
                     </div>
@@ -33,8 +48,8 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Gender</label>
-                    <select class="form-control" v-model="hajj.gender" name="gender" :disabled="disabled == 1">
-                        <option value="">{{hajj.gender}}</option>
+                    <select class="form-control" v-model="umrah.gender" name="gender" :disabled="disabled == 1">
+                        <option value="">{{umrah.gender}}</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -43,59 +58,75 @@
                     <label>Birthday</label>
                     <input 
                     type="text" 
-                    :placeholder="[[ hajj.birthday ]]"
+                    :placeholder="[[ umrah.birthday ]]"
                     class="form-control" 
                     name="birthday"
-                    v-model="hajj.birthday"
+                    v-model="umrah.birthday"
                     onfocus="(this.type='date')"
                     :disabled="disabled == 1"
                     >
                      </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Email</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </span>
+                      </div>
+                      <input 
+                      type="email" 
+                      class="form-control"
+                      name="email"
+                    :placeholder="[[ umrah.email ]]"
+                      v-model="umrah.email"
+                      :disabled="disabled == 1"
+                      >
+                      </div>
+                  </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-3 mb-3">
                       <label>Iqama No.</label>
                       <input 
                       type="text" 
                       class="form-control"
                       name="iqama_no"
-                    :placeholder="[[ hajj.iqama_no ]]"
-                      v-model="hajj.iqama_no"
+                    :placeholder="[[ umrah.iqama_no ]]"
+                      v-model="umrah.iqama_no"
                       :disabled="disabled == 1"
                       >
                       </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-3 mb-3">
                       <label>Expiration Date</label>
                       <input 
                       type="text" 
                       class="form-control"
                       name="iqama_exp_date"
-                      :placeholder="[[ hajj.iqama_exp_date ]]"
-                      v-model="hajj.iqama_exp_date"
+                      :placeholder="[[ umrah.iqama_exp_date ]]"
+                      v-model="umrah.iqama_exp_date"
                       onfocus="(this.type='date')"
                       :disabled="disabled == 1"
                       >
                        </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-3 mb-3">
                       <label>Passport No.</label>
                       <input 
                       type="text" 
                       class="form-control"
                       name="passport_no"
-                      :placeholder="[[ hajj.passport_no ]]"
-                      v-model="hajj.passport_no" 
+                      :placeholder="[[ umrah.passport_no ]]"
+                      v-model="umrah.passport_no" 
                       :disabled="disabled == 1"
                       >
                        </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-3 mb-3">
                       <label>Expiration Date</label>
                       <input type="text" 
                       class="form-control"
                       name="passport_exp_date"
-                      :placeholder="[[ hajj.passport_exp_date ]]"
-                      v-model="hajj.passport_exp_date"
+                      :placeholder="[[ umrah.passport_exp_date ]]"
+                      v-model="umrah.passport_exp_date"
                       onfocus="(this.type='date')"
                       :disabled="disabled == 1"
                       >
@@ -114,29 +145,11 @@
                       type="text" 
                       class="form-control"
                       name="mobile_no"
-                    :placeholder="[[ hajj.mobile_no ]]"
-                      v-model="hajj.mobile_no"
+                    :placeholder="[[ umrah.mobile_no ]]"
+                      v-model="umrah.mobile_no"
                       :disabled="disabled == 1"
                        >
                     </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label>Email</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </span>
-                      </div>
-                      <input 
-                      type="email" 
-                      class="form-control"
-                      name="email"
-                    :placeholder="[[ hajj.email ]]"
-                      v-model="hajj.email"
-                      :disabled="disabled == 1"
-                      >
-                      </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label>WhatsApp</label>
@@ -150,35 +163,34 @@
                       type="text" 
                       class="form-control"
                       name="whatsapp_no"
-                    :placeholder="[[ hajj.whatsapp_no ]]"
-                      v-model="hajj.whatsapp_no"
+                    :placeholder="[[ umrah.whatsapp_no ]]"
+                      v-model="umrah.whatsapp_no"
                       :disabled="disabled == 1"
                       >
                        </div>
                   </div>
-                </div>
-                <div class="form-row">
-                    
                   <div class="col-md-4 mb-3">
                     <label>Nationality</label>
                     <select class="form-control"
-                    v-model="hajj.nationality"
+                    v-model="umrah.nationality"
                     name="nationality"
                     :disabled="disabled == 1"
                     >
-                        <option value="">{{hajj.nationality}}</option>
+                        <option value="">{{umrah.nationality}}</option>
                         <option value="Filipino">Filipino</option>
                         <option value="Saudi">Saudi</option>
                     </select>
                      </div>
+                </div>
+                <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Address</label>
                     <select class="form-control"
                     name="address"
-                    v-model="hajj.address"
+                    v-model="umrah.address"
                     :disabled="disabled == 1"
                     >
-                    <option value="">{{hajj.address}}</option>
+                    <option value="">{{umrah.address}}</option>
                     <option value="Philippines">Philippines</option>
                     <option value="Saudi Arabia">Saudi Arabia</option>
                     </select>
@@ -189,97 +201,87 @@
                     type="text" 
                     class="form-control"
                     name="city"
-                    v-model="hajj.city"
-                    :placeholder="[[ hajj.city ]]"
+                    v-model="umrah.city"
+                    :placeholder="[[ umrah.city ]]"
                     :disabled="disabled == 1"
                     >
                     </div>
-                </div>
-                <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Job Title</label>
                     <input 
                     type="text" 
                     class="form-control"
                     name="job"
-                    v-model="hajj.job"
-                    :placeholder="[[ hajj.job ]]"
-                    :disabled="disabled == 1"
-                    >
-                    </div>
-                  <div class="col-md-4 mb-3">
-                    <label>Company Name</label>
-                    <input 
-                    type="text" 
-                    class="form-control"
-                    name="company"
-                    :placeholder="[[ hajj.company ]]"
-                    v-model="hajj.company"
-                    :disabled="disabled == 1"
-                    >
-                    </div>
-                  <div class="col-md-4 mb-3">
-                    <label>Company Contact</label>
-                    <input 
-                    type="text" 
-                    class="form-control"
-                    name="contact_company"
-                    :placeholder="[[ hajj.contact_company ]]"
-                    v-model="hajj.contact_company"
+                    v-model="umrah.job"
+                    :placeholder="[[ umrah.job ]]"
                     :disabled="disabled == 1"
                     >
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                      <label>Iqama Picture</label>
-					  <a style="cursor: pointer;" @click="iqama(hajj)">
-                      <img class="img-thumbnail" v-bind:src="'/images/iqama/'+hajj.iqama_pic">
+                  <div class="col-md-6 mb-3">
+                    <label>Company Name</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="company"
+                    :placeholder="[[ umrah.company ]]"
+                    v-model="umrah.company"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                  <div class="col-md-6 mb-3">
+                    <label>Company Contact</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    name="contact_company"
+                    :placeholder="[[ umrah.contact_company ]]"
+                    v-model="umrah.contact_company"
+                    :disabled="disabled == 1"
+                    >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label>2x2 Picture</label><br>
+					  <a style="cursor: pointer;" @click="picture(umrah)">
+                      <img class="img-thumbnail" v-bind:src="'/images/picture/'+umrah.picture">
 					  </a>
                     </div>
-                    <div class="col-md-6 mb-3">
-						<a style="cursor: pointer;" @click="passport(hajj)">
+                    <div class="col-md-4 mb-3">
+                      <label>Iqama Picture</label>
+					  <a style="cursor: pointer;" @click="iqama(umrah)">
+                      <img class="img-thumbnail" v-bind:src="'/images/iqama/'+umrah.iqama_pic">
+					  </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+						<a style="cursor: pointer;" @click="passport(umrah)">
                       <label>Passport Picture</label>
-                      <img class="img-thumbnail" v-bind:src="'/images/passport/'+hajj.passport_pic">
+                      <img class="img-thumbnail" v-bind:src="'/images/passport/'+umrah.passport_pic">
 						</a>
                     </div>
                 </div>
                 <hr>
-                <!-- <div class="mb-5">
-                    <a :href="'/pdfexport/' + hajj.id" class="col-md-4 btn btn-success">Print
-                        <i class="ion-printer"></i>
-                    </a>
-                </div> -->
+                <div class="mb-5">
+                    <button class="col-md-4 btn btn-primary" @click="updateModal(umrah)">Verify Registration
+                        <i class="ion-ios-information"></i>
+                    </button>
+                </div>
             <!-- </form> -->
 
 			<!-- Modal -->
 				<div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-top" role="document">
+					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="addNewLabel">
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                        Information <i class="ion-ios-information"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                                            Ticket <i class="ion-plane"></i>
-                                            </a>
-                                    </li>
-                                    </ul>
-                                </h5>
+								<h5 class="modal-title" id="addNewLabel">Verify Registrant</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<form @submit.prevent="update()">
 							<div class="modal-body">
-                                
-                            <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 								<div class="form-row">
                     				<div class="col-md-4 mb-2">
 									<small>Firstname</small>	
@@ -370,7 +372,7 @@
                     				</div>
 								</div>
 								<div class="form-row">
-                    				<div class="col-md-4 mb-2">
+                    				<div class="col-md-6 mb-2">
 									<small>Nationality</small>	
 									<select name="type" v-model="form.nationality" class="form-control" :class="{ 'is-invalid': form.errors.has('nationality') }">
 										<option value="">Select</option>
@@ -379,7 +381,7 @@
 									</select>
 									<has-error :form="form" field="nationality"></has-error>
                     				</div>
-                    				<div class="col-md-4 mb-2">
+                    				<div class="col-md-6 mb-2">
 									<small>Address</small>	
 									<select name="type" v-model="form.address" class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
 										<option value="">Select</option>
@@ -388,82 +390,41 @@
 									</select>
 									<has-error :form="form" field="address"></has-error>
                     				</div>
-                    				<div class="col-md-4 mb-2">
+								</div>
+								<div class="form-row">
+                    				<div class="col-md-6 mb-2">
 									<small>City</small>	
 									<input v-model="form.city" type="text" name="city"
 									class="form-control" :class="{ 'is-invalid': form.errors.has('city') }">
 									<has-error :form="form" field="city"></has-error>
                     				</div>
-								</div>
-								<div class="form-row">
-                    				<div class="col-md-4 mb-2">
+                    				<div class="col-md-6 mb-2">
 									<small>Job</small>	
 									<input v-model="form.job" type="text" name="job"
 									class="form-control" :class="{ 'is-invalid': form.errors.has('job') }">
 									<has-error :form="form" field="job"></has-error>
                     				</div>
-                    				<div class="col-md-4 mb-2">
+								</div>
+								<div class="form-row">
+                    				<div class="col-md-6 mb-2">
 									<small>Company/Employer Name</small>	
 									<input v-model="form.company" type="text" name="company"
 									class="form-control" :class="{ 'is-invalid': form.errors.has('company') }">
 									<has-error :form="form" field="company"></has-error>
                     				</div>
-                    				<div class="col-md-4 mb-2">
+                    				<div class="col-md-6 mb-2">
 									<small>Company/Employer Contact</small>	
 									<input v-model="form.contact_company" type="text" name="contact_company"
 									class="form-control" :class="{ 'is-invalid': form.errors.has('contact_company') }">
 									<has-error :form="form" field="contact_company"></has-error>
                     				</div>
 								</div>
-                            </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="form-row">
-                    				<div class="col-md-4 mb-2">
-									<small>Hajj Type</small>	
-									<select name="type" class="form-control">
-										<option value="">Select</option>
-										<option value="Tamattu">Tamattu</option>
-										<option value="Qiran">Qiran</option>
-										<option value="Ifrad">Ifrad</option>
-									</select>
-                    				</div>
-                                </div>
-                                <div class="form-row">
-                    				<div class="col-md-4 mb-2">
-									<small>Ticket No.</small>	
-									<input type="text" name="contact_company"
-									class="form-control">
-									<has-error :form="form" field="contact_company"></has-error>
-                    				</div>
-                    				<div class="col-md-4 mb-2">
-									<small>Airline</small>	
-									<input type="text" name="contact_company"
-									class="form-control">
-									<has-error :form="form" field="contact_company"></has-error>
-                    				</div>
-                                </div>
-                                <div class="form-row">
-                    				<div class="col-md-4 mb-2">
-									<small>Date</small>	
-									<input type="date" name="contact_company"
-									class="form-control">
-									<has-error :form="form" field="contact_company"></has-error>
-                    				</div>
-                    				<div class="col-md-4 mb-2">
-									<small>Time</small>	
-									<input type="time" name="contact_company"
-									class="form-control">
-									<has-error :form="form" field="contact_company"></has-error>
-                    				</div>
-                                </div>
-                                </div>
-                            </div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancel
 									<i class="ion-ios-close"></i>
 								</button>
-								<button type="submit" class="btn btn-success">Update
+								<button type="submit" class="btn btn-success">Approve
 									<i class="ion-ios-checkmark"></i>
 								</button>
 							</div>
@@ -487,8 +448,8 @@
 							<div class="modal-body">
 								<div class="form-group">
 									<div class="col-md-12 text-center">
-									<img v-show="editmode" class="rounded img-fluid" v-bind:src="'/images/picture/'+hajj.picture">
-									<img v-show="!editmode" class="rounded img-fluid" v-bind:src="'/images/iqama/'+hajj.iqama_pic">
+									<img v-show="editmode" class="rounded img-fluid" v-bind:src="'/images/picture/'+umrah.picture">
+									<img v-show="!editmode" class="rounded img-fluid" v-bind:src="'/images/iqama/'+umrah.iqama_pic">
 									</div>
 								</div>
 							</div>
@@ -509,7 +470,7 @@
 							<div class="modal-body">
 								<div class="form-group">
 									<div class="col-md-12 text-center">
-									<img  class="rounded img-fluid" v-bind:src="'/images/passport/'+hajj.passport_pic">
+									<img  class="rounded img-fluid" v-bind:src="'/images/passport/'+umrah.passport_pic">
 									</div>
 								</div>
 							</div>
@@ -526,7 +487,7 @@ export default {
 		return {
 			editmode: false,
             disabled: 1,
-            hajj: {},
+            umrah: {},
 			form: new Form({
 				id: '',
 				firstname: '',
@@ -559,14 +520,14 @@ export default {
 		update()
 		{
 			this.$Progress.start();
-			this.form.put('/api/hajjdocx/'+this.id)
+			this.form.put('/api/umrah/'+this.id)
 			.then(() => {
 			$('#addNew').modal('hide');
 			let timerInterval
 			swal.fire(
 				{
-				title: 'Updated',
-				html: 'Update successfully.',
+				title: 'Approved',
+				html: 'Registered successfully.',
 				icon: 'success',
 				timer: 2000,
 				timerProgressBar: false,
@@ -591,39 +552,39 @@ export default {
 				}
 				})
 			this.$Progress.finish();
-			this.$router.push('/hajjDocuments')
+			this.$router.push('/pendingUmrah')
 			})
 			.catch(() => {
 				this.$Progress.fail();
 			})
 		},
-		updateModal(hajj){
+		updateModal(umrah){
 			this.form.reset();
 			$('#addNew').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
-		picture(hajj){
+		picture(umrah){
 			this.editmode = true;
 			this.form.reset();
 			$('#picture').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
-		iqama(hajj){
+		iqama(umrah){
 			this.editmode = false;
 			this.form.reset();
 			$('#picture').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
-		passport(hajj){
+		passport(umrah){
 			this.editmode = false;
 			this.form.reset();
 			$('#passport').modal('show');
-			this.form.fill(hajj);
+			this.form.fill(umrah);
 		},
 		pendingRegistration()
 		{
-			axios.get('/api/hajj/'+this.id)
-			.then(({ data }) => (this.hajj = data));
+			axios.get('/api/umrah/'+this.id)
+			.then(({ data }) => (this.umrah = data));
 		},
 		// createPatient() 
 		// {
