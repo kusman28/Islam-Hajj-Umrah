@@ -93,28 +93,28 @@ class HajjController extends Controller
             $hajj->picture = $filename;
 
             //Compress Image Code Here
-            $filepath = public_path('images/picture/'.$filename);
+            // $filepath = public_path('images/picture/'.$filename);
             
-            try {
-                \Tinify\setKey("XqxGwd1vzgkVxrYdv0qtfCScQVH2Dfrd"); // Alternatively, you can store your key in .env file.
-                $source = \Tinify\fromFile($filepath);
-                $source->toFile($filepath);
-            } catch(\Tinify\AccountException $e) {
-                // Verify your API key and account limit.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ClientException $e) {
-                // Check your source image and request options.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ServerException $e) {
-                // Temporary issue with the Tinify API.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ConnectionException $e) {
-                // A network connection error occurred.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(Exception $e) {
-                // Something else went wrong, unrelated to the Tinify API.
-                return redirect('images/create')->with('error', $e->getMessage());
-            }
+            // try {
+            //     \Tinify\setKey("XqxGwd1vzgkVxrYdv0qtfCScQVH2Dfrd"); // Alternatively, you can store your key in .env file.
+            //     $source = \Tinify\fromFile($filepath);
+            //     $source->toFile($filepath);
+            // } catch(\Tinify\AccountException $e) {
+            //     // Verify your API key and account limit.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ClientException $e) {
+            //     // Check your source image and request options.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ServerException $e) {
+            //     // Temporary issue with the Tinify API.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ConnectionException $e) {
+            //     // A network connection error occurred.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(Exception $e) {
+            //     // Something else went wrong, unrelated to the Tinify API.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // }
 
         } else {
             return $request;
@@ -129,28 +129,28 @@ class HajjController extends Controller
             $hajj->iqama_pic = $filename;
 
             //Compress Image Code Here
-            $filepath = public_path('images/iqama/'.$filename);
+            // $filepath = public_path('images/iqama/'.$filename);
             
-            try {
-                \Tinify\setKey("XqxGwd1vzgkVxrYdv0qtfCScQVH2Dfrd"); // Alternatively, you can store your key in .env file.
-                $source = \Tinify\fromFile($filepath);
-                $source->toFile($filepath);
-            } catch(\Tinify\AccountException $e) {
-                // Verify your API key and account limit.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ClientException $e) {
-                // Check your source image and request options.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ServerException $e) {
-                // Temporary issue with the Tinify API.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ConnectionException $e) {
-                // A network connection error occurred.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(Exception $e) {
-                // Something else went wrong, unrelated to the Tinify API.
-                return redirect('images/create')->with('error', $e->getMessage());
-            }
+            // try {
+            //     \Tinify\setKey("XqxGwd1vzgkVxrYdv0qtfCScQVH2Dfrd"); // Alternatively, you can store your key in .env file.
+            //     $source = \Tinify\fromFile($filepath);
+            //     $source->toFile($filepath);
+            // } catch(\Tinify\AccountException $e) {
+            //     // Verify your API key and account limit.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ClientException $e) {
+            //     // Check your source image and request options.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ServerException $e) {
+            //     // Temporary issue with the Tinify API.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ConnectionException $e) {
+            //     // A network connection error occurred.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(Exception $e) {
+            //     // Something else went wrong, unrelated to the Tinify API.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // }
 
         } else {
             return $request;
@@ -165,28 +165,28 @@ class HajjController extends Controller
             $hajj->passport_pic = $filename;
 
             //Compress Image Code Here
-            $filepath = public_path('images/passport/'.$filename);
+            // $filepath = public_path('images/passport/'.$filename);
             
-            try {
-                \Tinify\setKey("XqxGwd1vzgkVxrYdv0qtfCScQVH2Dfrd"); // Alternatively, you can store your key in .env file.
-                $source = \Tinify\fromFile($filepath);
-                $source->toFile($filepath);
-            } catch(\Tinify\AccountException $e) {
-                // Verify your API key and account limit.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ClientException $e) {
-                // Check your source image and request options.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ServerException $e) {
-                // Temporary issue with the Tinify API.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(\Tinify\ConnectionException $e) {
-                // A network connection error occurred.
-                return redirect('images/create')->with('error', $e->getMessage());
-            } catch(Exception $e) {
-                // Something else went wrong, unrelated to the Tinify API.
-                return redirect('images/create')->with('error', $e->getMessage());
-            }
+            // try {
+            //     \Tinify\setKey("XqxGwd1vzgkVxrYdv0qtfCScQVH2Dfrd"); // Alternatively, you can store your key in .env file.
+            //     $source = \Tinify\fromFile($filepath);
+            //     $source->toFile($filepath);
+            // } catch(\Tinify\AccountException $e) {
+            //     // Verify your API key and account limit.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ClientException $e) {
+            //     // Check your source image and request options.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ServerException $e) {
+            //     // Temporary issue with the Tinify API.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(\Tinify\ConnectionException $e) {
+            //     // A network connection error occurred.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // } catch(Exception $e) {
+            //     // Something else went wrong, unrelated to the Tinify API.
+            //     return redirect('images/create')->with('error', $e->getMessage());
+            // }
 
         } else {
             return $request;

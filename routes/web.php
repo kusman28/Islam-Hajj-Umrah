@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/markAsRead', function() {
+    auth()->user()->unreadNotifications->markAsRead();
+});
+
 Route::resource('HajjRegistrationForm', 'HajjController');
 Route::resource('UmrahRegistrationForm', 'UmrahController');
 // Route::get('/Hajj', function () {

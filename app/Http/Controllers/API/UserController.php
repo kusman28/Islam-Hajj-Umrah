@@ -25,7 +25,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::all();
+        // return User::all()->load('notifications');
+        return auth('api')->user()->load('notifications');
     }
 
     public function profile() {

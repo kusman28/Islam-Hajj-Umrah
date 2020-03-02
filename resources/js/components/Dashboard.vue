@@ -117,7 +117,17 @@ export default {
 	{	
     this.load();
 		// axios.get('api/profile')
-		// .then(({ data }) => (this.form.fill(data)));
+    // .then(({ data }) => (this.form.fill(data)));
+    // Echo.join(`chat`)
+    // .here((users) => {
+    //     //
+    // })
+    // .joining((user) => {
+    //     console.log(user.name);
+    // })
+    // .leaving((user) => {
+    //     console.log(user.name);
+    // });
 	}
 }
 </script>

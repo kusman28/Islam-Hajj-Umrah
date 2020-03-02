@@ -10,7 +10,7 @@
                 <i class="ion-ios-compose-outline"></i>
             </button>
 			&nbsp;
-            <a :href="'/pdfexport/' + hajj.id" target="_blank" class="btn btn-success btn-sm float-right">Print Form
+            <a :href="'/pdfexport/' + hajj.id" target="_blank" rel="noopener" class="btn btn-success btn-sm float-right">Print Form
                 <i class="ion-printer"></i>
             </a>
 			</div>

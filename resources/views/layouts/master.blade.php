@@ -65,58 +65,49 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="#" class="nav-link">Contact</a>
       </li> 
     -->
-    {{-- <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" v-model="search" type="search" placeholder="Search" aria-label="Search">
-
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form> --}}
     </ul>
-
-    <!-- SEARCH -->
-      <!-- <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" @keyup="searchit" type="search" v-model="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" @click="searchit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div> -->
-{{-- <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form> --}}
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
         <ul class="navbar-nav ml-auto">
             <!-- Notifications Dropdown Menu -->
-            <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="#">Notifications
-                <i class="ion-android-notifications"></i> 
-                {{-- <span class="badge badge-warning navbar-badge">15</span> --}}
+            <li class="nav-item dropdown" id="markasread" onclick="markNotificationAsRead()">
+              <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="ion-android-notifications"></i> Notifications 
+              {{-- <span class="badge badge-danger navbar-badge">{{count(auth()->user()->unreadNotifications)}}</span> --}}
+              <span class="badge {{count(auth()->user()->unreadNotifications) === 0 ? 'badge-success' : (count(auth()->user()->unreadNotifications) === !0 ?'badge-danger':'badge-danger'), 'badge badge-pill'}}">{{count(auth()->user()->unreadNotifications)}}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">Notifications</span>
-                <div class="dropdown-divider"></div>
-                {{-- <a href="#" class="dropdown-item">
-                  <i class="fas fa-envelope mr-2"></i> 4 new messages
-                  <span class="float-right text-muted text-sm">3 mins</span>
-                </a> --}}
+                {{-- <span class="dropdown-item dropdown-header">{{count(auth()->user()->unreadNotifications)}} New Registration</span> --}}
+                {{-- <div class="dropdown-divider"></div> --}}
+                @forelse(auth()->user()->unreadNotifications as $notification)
+                    @include('layouts.notification.'.snake_case(class_basename($notification->type)))
+                    @empty
+                    <span class="dropdown-item dropdown-header">No Unread Notifications</span>
+                @endforelse
               </div>
             </li>
-          </ul>
+            {{-- <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+                <i class="ion-android-notifications"></i>SSS
+                <span class="badge badge-danger navbar-badge">3</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a href="#" class="dropdown-item">
+                  <!-- Message Start -->
+                  <div class="media">
+                    <div class="media-body">
+                      <h3 class="dropdown-item-title">
+                        Brad Diesel
+                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                      </h3>
+                      <p class="text-sm">Call me whenever you can...</p>
+                      <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+              </div>
+            </li> --}}
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -281,5 +272,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 <script src="/js/app.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

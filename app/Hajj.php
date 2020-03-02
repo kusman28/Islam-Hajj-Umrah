@@ -2,10 +2,15 @@
 
 namespace App;
 
+use App\User;
+use App\Notifications\HajjRegistered;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
 class Hajj extends Model
 {
+    use Notifiable;
     protected $table = 'hajj';
     protected $fillable = [
         'fullname',
@@ -32,6 +37,15 @@ class Hajj extends Model
         'passport_pic',
         'status',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function($model) {
+            Notification::send(User::all(), new HajjRegistered($model));
+        });
+    }
     
 }
 
