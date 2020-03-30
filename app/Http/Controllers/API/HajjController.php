@@ -33,7 +33,7 @@ class HajjController extends Controller
         // return Hajj::latest()->paginate(10);
     }
     public function hajjDocx(){
-        return Hajj::latest()->paginate(10);
+        return Hajj::latest()->paginate(20);
     }
 
     public function registered()

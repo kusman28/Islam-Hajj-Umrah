@@ -57,13 +57,11 @@ Header
 <header id="header">
 <div class="container-fluid">
 
-<div id="logo" class="pull-left">
-<a href="#intro" class="scrollto">
+<div class="pull-left">
+<a href="/">
     <img 
-    style="height: 120px; margin-top: -40px;" 
-    src="template/img/logo.png" 
-    alt="dupang-logo" 
-    title="dupang-logo">
+    style="height: 120px; margin-top: -40px; margin-left: 40%" 
+    src="template/img/logo.png">
 </a>
 <!-- Uncomment below if you prefer to use an image logo -->
 <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->

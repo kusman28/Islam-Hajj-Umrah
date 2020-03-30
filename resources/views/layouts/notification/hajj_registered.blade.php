@@ -1,4 +1,4 @@
-<a href="#" class="dropdown-item">
+<a href="/pendingHajj" class="dropdown-item">
     {{-- <a href="{{route('thread.show',$notification->data['thread']['id'])}}"> --}}
         <i class="ion-person mr-2"></i>
         <b>{{$notification->data['createdUser']['fullname']}}</b> just registered.
