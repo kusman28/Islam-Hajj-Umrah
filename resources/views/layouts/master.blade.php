@@ -148,12 +148,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <li class="nav-item">
-            <router-link to="/dashboard" class="nav-link">
+            <a href="/dashboard" class="nav-link">
             <i class="nav-icon ion-ios-speedometer"></i>
               <p>
                 Dashboard
               </p>
-            </router-link>
+            </a>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -190,7 +190,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="nav-icon ion-ios-settings-strong"></i>
               <p>
-                Management
+                Manage
                 <i class="right fas ion-ios-arrow-back mt-1"></i>
               </p>
             </a>

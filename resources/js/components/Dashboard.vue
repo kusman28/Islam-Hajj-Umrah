@@ -45,23 +45,19 @@
     <!-- fix for small devices only -->
     <div class="clearfix hidden-md-up"></div>
 
-    <div class="col-12 col-sm-6 col-md-3">
+      <!-- <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
           <span class="info-box-icon bg-primary elevation-1"><i class="ion-ios-search-strong"></i></span>
 
           <div class="info-box-content">
             <span class="info-box-text">Search</span>
             <span class="info-box-number">
-              <!-- {{extraction.length}} -->
             </span>
               <router-link to="/hajjDocuments" class="small-box-footer">View Details
-                  <!-- <i class="ion-ios-arrow-forward"></i> -->
                 </router-link>
         </div>
-        <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
-</div>
+</div> -->
 <!-- /.col -->
 
 <!-- <div class="card card-primary card-outline col-md-6">

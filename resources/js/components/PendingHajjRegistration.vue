@@ -5,9 +5,9 @@
             class="rounded mx-auto d-block"
             height="150px"
             src="/template/img/logo1.png">
-            <!-- <button class="btn btn-primary float-right" @click="updateModal(hajj)">Edit
-                <i class="ion-ios-compose-outline"></i>
-            </button> -->
+            <button class="btn btn-primary float-right" @click="updateModal(hajj)">Verify Registration
+                        <i class="ion-ios-information"></i>
+            </button>
             <h4 class="mb-4">Hajj Registration Form</h4>
             <hr class="mb-4">            
             <!-- <form @submit.prevent="update()">     -->
@@ -263,11 +263,11 @@
                     </div>
                 </div>
                 <hr>
-                <div class="mb-5">
+                <!-- <div class="mb-5">
                     <button class="col-md-4 btn btn-primary" @click="updateModal(hajj)">Verify Registration
                         <i class="ion-ios-information"></i>
                     </button>
-                </div>
+                </div> -->
             <!-- </form> -->
 
 			<!-- Modal -->

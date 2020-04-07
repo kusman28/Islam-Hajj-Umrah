@@ -251,8 +251,8 @@ Featured Services Section
 
 <div class="col-lg-4 box">
 <i class="ion-social-facebook"></i>
-<h4 class="title"><a href="https://www.facebook.com/">Facebook</a></h4>
-<p class="description"><a href="https://www.facebook.com/">Follow us on Facebook to get more updates.</a></p>
+<h4><a href="https://www.facebook.com/">Facebook</a></h4>
+<p class="description"><a href="https://www.facebook.com/">https://www.facebook.com/IslamHajjUmrah</a></p>
 </div>
 
 <div class="col-lg-4 box box-bg">

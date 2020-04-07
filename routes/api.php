@@ -22,7 +22,7 @@ Route::apiResources(['user' => 'API\UserController']);
 
 Route::apiResources(['hajj' => 'API\HajjController']);
 Route::apiResources(['hajjdocx' => 'API\HajjDocxController']);
-Route::get('hajjDocx', 'API\HajjController@hajjDocx');
+Route::get('hajjDocu', 'API\HajjController@hajjDocu');
 Route::get('hajjTotal', 'API\HajjController@hajjTotal');
 
 Route::apiResources(['umrah' => 'API\UmrahController']);

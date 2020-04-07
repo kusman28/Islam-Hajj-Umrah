@@ -82,7 +82,7 @@ export default {
     },
     methods: {
         hajjDocuments() {
-            axios.get('api/hajjDocx').then(({data}) => (this.hajjDocx = data.data));
+            axios.get('api/hajjDocu').then(({data}) => (this.hajjDocx = data.data));
         }
     },
     created() {
