@@ -76,9 +76,9 @@ Header
 <li><a href="UmrahRegistrationForm">Umrah</a></li>
 </ul>
 </li>
+<li><a href="#services">Check My Registration</a></li>
 <li><a href="#about">About Us</a></li>
 <li><a href="#contact">Contact Us</a></li>
-<li><a href="#services">Check My Registration</a></li>
 </ul>
 </nav><!-- #nav-menu-container -->
 </div>
@@ -251,20 +251,26 @@ Featured Services Section
 
 <div class="col-lg-4 box">
 <i class="ion-social-facebook"></i>
-<h4><a href="https://www.facebook.com/">Facebook</a></h4>
-<p class="description"><a href="https://www.facebook.com/">https://www.facebook.com/IslamHajjUmrah</a></p>
+<h4 class="text-white">Facebook</h4>
+<p class="description"><a target="_blank" rel="noreferrer" href="https://www.facebook.com/"><u>https://www.facebook.com/IslamHajjUmrah</u></a></p>
 </div>
 
 <div class="col-lg-4 box box-bg">
 <i class="ion-social-whatsapp"></i>
-<h4 class="title"><a href="">WhatsApp</a></h4>
-<p class="description">00639368182985</p>
+<h4 class="text-white">WhatsApp</h4>
+<p class="description"><a target="_blank" rel="noreferrer" href="https://wa.me/00639368182985"><u>00639368182985</u></a></p>
 </div>
 
 <div class="col-lg-4 box">
 <i class="ion-email"></i>
-<h4 class="title"><a href="">Email</a></h4>
-<p class="description">islamhajjandumrah@gmail.com</p>
+<h4 class="text-white">Email</h4>
+<p class="description">
+    <a 
+    target="_blank" rel="noreferrer"
+    href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=islamhajjandumrah@gmail.com">
+    <u>islamhajjandumrah@gmail.com</u>
+    </a>
+</p>
 </div>
 
 </div>
