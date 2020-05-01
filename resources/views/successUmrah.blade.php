@@ -60,11 +60,13 @@
             <hr>
             For more information please contact us.<br>
             <i class="ion-social-facebook"></i>&nbsp;Facebook
-            <a href="#">IslamHajjUmrah</a><br>
+            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/">IslamHajjUmrah</a><br>
             <i class="ion-social-whatsapp"></i>&nbsp;WhatsApp:
-            <a href="#">00639368182985</a><br>
+            <a target="_blank" rel="noreferrer" href="https://wa.me/00639368182985">00639368182985</a><br>
             <i class="ion-social-google"></i>&nbsp;Gmail:
-            <a href="#">islamhajjandumrah@gmail.com</a>
+            <a 
+            target="_blank" rel="noreferrer"
+            href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=islamhajjandumrah@gmail.com">islamhajjandumrah@gmail.com</a>
             
         </div>
     </div>

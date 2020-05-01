@@ -54,17 +54,19 @@
     </nav>
     <div class="container mt-5">
         <div class="alert alert-custom" role="alert">
-            <h3 class="alert-heading">Almost done!</h3>
+            <h3 class="alert-heading">Success!</h3>
             <p>Your Hajj registation is being processed, please wait 1-2 days for the approval or you can check your registration <a href="#"> here.</a></p>
             <p class="mb-0">Thank you.</p>
             <hr>
             For more information please contact us.<br>
             <i class="ion-social-facebook"></i>&nbsp;Facebook
-            <a href="#">IslamHajjUmrah</a><br>
+            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/">IslamHajjUmrah</a><br>
             <i class="ion-social-whatsapp"></i>&nbsp;WhatsApp:
-            <a href="#">00639368182985</a><br>
+            <a target="_blank" rel="noreferrer" href="https://wa.me/00639368182985">00639368182985</a><br>
             <i class="ion-social-google"></i>&nbsp;Gmail:
-            <a href="#">islamhajjandumrah@gmail.com</a>
+            <a 
+            target="_blank" rel="noreferrer"
+            href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=islamhajjandumrah@gmail.com">islamhajjandumrah@gmail.com</a>
             
         </div>
     </div>

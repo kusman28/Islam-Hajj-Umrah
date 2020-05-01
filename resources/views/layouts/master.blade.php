@@ -66,6 +66,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li> 
     -->
     </ul>
+      <div class="input-group input-group-sm col-md-6">
+        <input class="form-control form-control-navbar" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
         <ul class="navbar-nav ml-auto">
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown" id="markasread" onclick="markNotificationAsRead()">

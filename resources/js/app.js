@@ -50,6 +50,7 @@ let routes = [
     { path: '/hajjDocumentsDetails/:id', component: require('./components/HajjDocumentDetail').default },
     { path: '/umrahDocuments', component: require('./components/UmrahDocument').default },
     { path: '/umrahDocumentsDetails/:id', component: require('./components/UmrahDocumentDetail').default },
+    { path: '/history', component: require('./components/History').default },
     { path: '/*', component: require('./components/NotFound').default}
   ]
 const router = new VueRouter({

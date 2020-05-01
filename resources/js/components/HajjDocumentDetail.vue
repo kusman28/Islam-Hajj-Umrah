@@ -1,3 +1,8 @@
+<style scoped>
+.modal {
+    z-index: 100001 !important;
+}
+</style>
 <template>
 	<div class="container">
 		<!-- <a @click="$router.go(-1)">back</a> -->
@@ -6,11 +11,11 @@
             height="150px"
             src="/template/img/logo1.png">
 			<div class="row float-right">
-            <button class="btn btn-primary btn-sm float-right" @click="updateModal(hajj)">Edit Form
+            <button class="btn btn-primary float-right" @click="updateModal(hajj)">Edit Form
                 <i class="ion-ios-compose-outline"></i>
             </button>
 			&nbsp;
-            <a :href="'/pdfexport/' + hajj.id" target="_blank" rel="noopener" class="btn btn-success btn-sm float-right">Print Form
+            <a :href="'/pdfexport/' + hajj.id" target="_blank" rel="noopener" class="btn btn-success float-right">Print Form
                 <i class="ion-printer"></i>
             </a>
 			</div>
@@ -473,8 +478,8 @@
 				</div>
 
 				<!-- Modal Picture -->
-				<div class="modal fade" id="picture" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal fade bd-example-modal-lg" id="picture" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 v-show="editmode" class="modal-title" id="addNewLabel">2x2 Picture</h5>
@@ -497,8 +502,8 @@
 				</div>
 
 				<!-- Passport Picture -->
-				<div class="modal fade" id="passport" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal fade bd-example-modal-lg" id="passport" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="addNewLabel">Passport Picture</h5>
@@ -590,8 +595,9 @@ export default {
 					console.log('Registered successfully.')
 				}
 				})
+			Fire.$emit('afterCreate');
 			this.$Progress.finish();
-			this.$router.push('/hajjDocuments')
+			// this.$router.push('/hajjDocuments')
 			})
 			.catch(() => {
 				this.$Progress.fail();
@@ -643,12 +649,12 @@ export default {
 		// 	})
 		// }
     },
-	// created(){
-	// 	this.pendingRegistration();
-	// 	Fire.$on('afterCreate',() => {
-	// 		this.pendingRegistration();
-	// 	});
+	created(){
+		this.pendingRegistration();
+		Fire.$on('afterCreate',() => {
+			this.pendingRegistration();
+		});
 
-	// },
+	},
 }
 </script>

@@ -7,10 +7,12 @@ use App\Notifications\HajjRegistered;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Hajj extends Model
 {
-    use Notifiable;
+    use Notifiable, LogsActivity;
+    protected static $logFillable = true;
     protected $table = 'hajj';
     protected $fillable = [
         'fullname',
