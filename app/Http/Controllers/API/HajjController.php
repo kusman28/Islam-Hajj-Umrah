@@ -15,10 +15,10 @@ class HajjController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:api');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +33,7 @@ class HajjController extends Controller
         // return Hajj::latest()->paginate(10);
     }
     public function hajjDocu(){
-        $hajj = Hajj::where('status', 'Approved')->paginate(10);
+        $hajj = Hajj::where('status', 'Approved')->latest()->paginate(10);
         return $hajj;
     }
 

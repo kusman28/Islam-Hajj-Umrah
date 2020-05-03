@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\Traits\CausesActivity;
 
 class Hajj extends Model
 {
-    use Notifiable, LogsActivity;
+    use Notifiable, LogsActivity, CausesActivity;
     protected static $logFillable = true;
     protected $table = 'hajj';
     protected $fillable = [

@@ -18,13 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('profile', 'API\UserController@profile');
-Route::apiResources(['user' => 'API\UserController']);
+// Route::apiResources(['user' => 'API\UserController']);
+Route::apiResources(['activities' => 'AdminApi\ActivityController']);
 
+// Hajj Routes
 Route::apiResources(['hajj' => 'API\HajjController']);
 Route::apiResources(['hajjdocx' => 'API\HajjDocxController']);
 Route::get('hajjDocu', 'API\HajjController@hajjDocu');
 Route::get('hajjTotal', 'API\HajjController@hajjTotal');
 
+// Umrah Routes
 Route::apiResources(['umrah' => 'API\UmrahController']);
 Route::apiResources(['umrahdocx' => 'API\UmrahDocxController']);
 Route::get('umrahDocx', 'API\UmrahController@umrahDocx');

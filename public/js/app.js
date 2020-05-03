@@ -2204,7 +2204,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      hajjDocx: {}
+      hajjDocu: {}
     };
   },
   methods: {
@@ -2213,7 +2213,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('api/hajjDocu').then(function (_ref) {
         var data = _ref.data;
-        return _this.hajjDocx = data.data;
+        return _this.hajjDocu = data.data;
       });
     }
   },
@@ -2890,7 +2890,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this3 = this;
 
-    this.pendingRegistration();
     Fire.$on('afterCreate', function () {
       _this3.pendingRegistration();
     });
@@ -2960,7 +2959,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      activities: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    // this.load();
+    axios.get('/api/activities').then(function (response) {
+      _this.activities = response.data;
+    });
+  }
+});
 
 /***/ }),
 
@@ -65969,7 +65983,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row mt-4" },
-      _vm._l(_vm.hajjDocx, function(hajj) {
+      _vm._l(_vm.hajjDocu, function(hajj) {
         return _c(
           "div",
           {
@@ -66224,7 +66238,7 @@ var render = function() {
           }
         },
         [
-          _vm._v("Print Form\n                "),
+          _vm._v("Print Certificate\n                "),
           _c("i", { staticClass: "ion-printer" })
         ]
       )
@@ -68369,40 +68383,82 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h3", { staticClass: "card-title mt-4" }, [_vm._v("History")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-8 mb-4" },
+        _vm._l(_vm.activities, function(activity) {
+          return _c("ul", { key: activity.id, staticClass: "timeline" }, [
+            _c("br"),
+            _vm._v(" "),
+            _c("li", { staticClass: "time-label" }, [
+              _c("span", { staticClass: "bg-success" }, [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm._f("myDate")(activity.updated_at)) +
+                    "\n        "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("div", { staticClass: "timeline-item" }, [
+                _c("span", { staticClass: "time text-primary" }, [
+                  _c("i", { staticClass: "fa fa-clock-o" }),
+                  _vm._v(" " + _vm._s(_vm._f("myTime")(activity.created_at)))
+                ]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "timeline-header" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(_vm._s(activity.description))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "timeline-body" }, [
+                  _c("b", [
+                    _vm._v(_vm._s(activity.properties.attributes.fullname))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "timeline-footer" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-primary btn-sm",
+                        attrs: {
+                          to: /hajjDocumentsDetails/ + activity.subject_id
+                        }
+                      },
+                      [_vm._v("View Details")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _vm._m(0, true)
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("h3", { staticClass: "card-title mt-4" }, [_vm._v("History")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("ul", { staticClass: "timeline" }, [
-            _c("br"),
-            _vm._v(" "),
-            _c("li", { staticClass: "time-label" }, [
-              _c("span", { staticClass: "bg-success" })
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "timeline-item" }, [
-                _c("div", { staticClass: "timeline-body" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "timeline-footer" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("li", [_c("i", { staticClass: "fa fa-clock bg-info" })])
-          ])
-        ])
-      ])
-    ])
+    return _c("li", [_c("i", { staticClass: "fa fa-clock bg-info" })])
   }
 ]
 render._withStripped = true

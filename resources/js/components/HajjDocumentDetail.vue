@@ -15,7 +15,7 @@
                 <i class="ion-ios-compose-outline"></i>
             </button>
 			&nbsp;
-            <a :href="'/pdfexport/' + hajj.id" target="_blank" rel="noopener" class="btn btn-success float-right">Print Form
+            <a :href="'/pdfexport/' + hajj.id" target="_blank" rel="noopener" class="btn btn-success float-right">Print Certificate
                 <i class="ion-printer"></i>
             </a>
 			</div>
@@ -650,7 +650,6 @@ export default {
 		// }
     },
 	created(){
-		this.pendingRegistration();
 		Fire.$on('afterCreate',() => {
 			this.pendingRegistration();
 		});

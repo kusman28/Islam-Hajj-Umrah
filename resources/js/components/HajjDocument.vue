@@ -28,7 +28,7 @@ a {
         </div>
         <div class="row mt-4">
         <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch"
-        v-for="hajj in hajjDocx" :key="hajj.id">
+        v-for="hajj in hajjDocu" :key="hajj.id">
               <div class="card bg-light">
                 <div class="card-header text-muted border-bottom-0">
                   Hajj Document
@@ -77,12 +77,12 @@ a {
 export default {
     data() {
         return {
-            hajjDocx: {},
+            hajjDocu: {},
         }
     },
     methods: {
         hajjDocuments() {
-            axios.get('api/hajjDocu').then(({data}) => (this.hajjDocx = data.data));
+            axios.get('api/hajjDocu').then(({data}) => (this.hajjDocu = data.data));
         }
     },
     created() {

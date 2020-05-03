@@ -72,8 +72,8 @@ Header
 <li class="menu-active"><a href="#">Home</a></li>
 <li class="menu-has-children"><a href="#">Registration</a>
 <ul>
-<li><a href="HajjRegistrationForm">Hajj</a></li>
-<li><a href="UmrahRegistrationForm">Umrah</a></li>
+<li><a href="HajjRegistrationForm">Hajj Form</a></li>
+<li><a href="UmrahRegistrationForm">Umrah Form</a></li>
 </ul>
 </li>
 <li><a href="#services">Check My Registration</a></li>
