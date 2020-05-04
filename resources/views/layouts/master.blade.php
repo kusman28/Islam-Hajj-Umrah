@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li> 
     -->
     </ul>
-      <div class="input-group input-group-sm col-md-6">
+      <div class="input-group input-group-xs col-md-6">
         <input class="form-control form-control-navbar" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar">
@@ -75,14 +75,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
       </div>
 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto d-none d-sm-block">
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown" id="markasread" onclick="markNotificationAsRead()">
               <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="ion-android-notifications"></i> Notifications 
+              <i class="ion-android-notifications"></i> Notifications
               {{-- <span class="badge badge-danger navbar-badge">{{count(auth()->user()->unreadNotifications)}}</span> --}}
               <span class="badge {{count(auth()->user()->unreadNotifications) === 0 ? 'badge-success' : (count(auth()->user()->unreadNotifications) === !0 ?'badge-danger':'badge-danger'), 'badge badge-pill'}}">{{count(auth()->user()->unreadNotifications)}}</span>
-              </a>
+            </a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 {{-- <span class="dropdown-item dropdown-header">{{count(auth()->user()->unreadNotifications)}} New Registration</span> --}}
                 {{-- <div class="dropdown-divider"></div> --}}

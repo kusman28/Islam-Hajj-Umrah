@@ -1,3 +1,8 @@
+<style scoped>
+.modal {
+    z-index: 100001 !important;
+}
+</style>
 <template>
 	<div class="container">
 		<!-- <a class="btn btn-success btn-sm mt-2" href="#" @click="$router.go(-1)"><i class="ion-ios-arrow-back"></i> Back</a> -->
@@ -421,7 +426,7 @@
 								</div>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-danger" data-dismiss="modal">Close
+								<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close
 									<i class="ion-ios-close"></i>
 								</button>
 								<button type="submit" class="btn btn-success">Approve
@@ -434,8 +439,8 @@
 				</div>
 
 				<!-- Modal Picture -->
-				<div class="modal fade" id="picture" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal fade bd-example-modal-lg" id="picture" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 v-show="editmode" class="modal-title" id="addNewLabel">2x2 Picture</h5>
@@ -458,8 +463,8 @@
 				</div>
 
 				<!-- Passport Picture -->
-				<div class="modal fade" id="passport" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal fade bd-example-modal-lg" id="passport" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="addNewLabel">Passport Picture</h5>

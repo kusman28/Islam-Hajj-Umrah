@@ -15,8 +15,7 @@
         "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0",
         "spatie/laravel-activitylog": "3.9",
-        "tinify/tinify": "^1.5",
-        "ext-mbstring": "*"
+        "tinify/tinify": "^1.5"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

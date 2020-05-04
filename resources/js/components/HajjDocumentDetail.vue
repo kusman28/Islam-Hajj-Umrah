@@ -19,11 +19,11 @@
                 <i class="ion-printer"></i>
             </a>
 			</div>
-            <h2 class="mb-4">Hajj Form</h2>
+            <h2 class="mb-4 d-none d-sm-block">Hajj Form</h2>
             <a style="cursor: pointer;" @click="picture(hajj)">
             <img height="150px" class="col-md-3 mt-3 img-thumbnail float-right" v-bind:src="'/images/picture/'+hajj.picture">
             </a>
-            <hr class="mb-4">  
+            <hr class="mb-4 d-none d-sm-block">  
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label>Full Name</label>
