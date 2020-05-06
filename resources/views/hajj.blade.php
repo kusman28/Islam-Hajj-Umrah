@@ -432,9 +432,10 @@
                 <hr>
                 <div class="alert alert-custom" role="alert">
                     <h4 class="alert-heading">Note:</h4>
-                    <p>Siguraduhing tama ang mga impormasyon na inilagay at high-quality ang imahe ng Iqama at Pasaporte upang malinaw at hindi malabo kapag inupload ang mga ito.</p>
+                    <p>Please, make sure that the images you are going to upload are high-quality so that we can process your registration quickly.</p>
+                    {{-- <p>Siguraduhing tama ang mga impormasyon na inilagay at high-quality ang imahe ng Iqama at Pasaporte upang malinaw at hindi malabo kapag inupload ang mga ito.</p> --}}
                     <hr>
-                    <p class="mb-0">Maraming salamat,</p>
+                    <p class="mb-0">Thank you,</p>
                 </div>
                 <div class="mb-5">
                     <button class="col-md-4 btn btn-primary" type="submit">Submit Form</button>

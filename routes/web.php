@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Input;
 use App\Hajj;
+use App\Umrah;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,11 +30,15 @@ Route::get('/CheckRegistration', function () {
 Route::post('/CheckRegistration', function() {
     $q = Input::get('q');
     if ($q != "") {
-        $hajj = Hajj::where('fullname', 'LIKE', '%' . $q . '%')
-                        ->orWhere('passport_no', 'LIKE', '%' . $q . '%')
+        $hajj = Hajj::where('passport_no', 'LIKE', '%' . $q . '%')
+                        // ->orWhere('passport_no', 'LIKE', '%' . $q . '%')
                         ->get();
-        if (count($hajj) > 0)
-            return view('search')->withDetails($hajj)->withQuery($q);
+        $umrah = Umrah::where('passport_no', 'LIKE', '%' . $q . '%')
+                        // ->orWhere('passport_no', 'LIKE', '%' . $q . '%')
+                        ->get();
+        $merged = $hajj->merge($umrah);
+        if (count($merged) > 0)
+            return view('search')->withDetails($merged)->withQuery($q);
     }
     return view('search')->withMessage('Sorry, No results found.');
 });

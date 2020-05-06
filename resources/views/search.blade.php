@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Hajj Registration</title>
+    <title>Check Registration</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -60,9 +60,9 @@
             {{-- <hr class="mb-4"> --}}
             <form action="{{URL::to('/CheckRegistration')}}" method="POST" role="search">
                 @csrf
-                <div class="col-md-8 mb-3 mx-auto d-block">
+                <div class="col-md-8 mx-auto d-block">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="q" placeholder="Search by Passport No." required>
+                        <input type="number" class="form-control" name="q" placeholder="Search by Passport No." required>
                         <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
                             <i class="fa fa-search"></i>
@@ -75,31 +75,33 @@
             @if (isset($details))
                 <p>Passport No.</p>
                 <h3>{{$query}}</h3>
+                <div class="card-body table-responsive p-0">
                 <table class="table table-stripped">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Email</th>
+                            <th class="d-none d-sm-block">Email</th>
                             <th>Registration Status</th>
-                            <th>Date of Approval</th>
+                            <th>Date of Registration</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($details as $hajj)
+                        @foreach ($details as $merged)
                             <tr>
-                                <td> {{$hajj->fullname}} </td>
-                                <td> {{$hajj->email}} </td>
-                                <td> <span class="badge {{$hajj->status === 'Approved' ? 'badge-success' : 'badge-danger'}}">{{strtoupper($hajj->status)}}</span> 
+                                <td> {{$merged->fullname}} </td>
+                                <td class="d-none d-sm-block"> {{$merged->email}} </td>
+                                <td> <span class="badge {{$merged->status === 'Approved' ? 'badge-success' : 'badge-danger'}}">{{strtoupper($merged->status)}}</span> 
                                     {{-- <span class="badge {{count(auth()->user()->unreadNotifications) === 0 ? 'badge-success' : (count(auth()->user()->unreadNotifications) === !0 ?'badge-danger':'badge-danger'), 'badge badge-pill'}}">{{count(auth()->user()->unreadNotifications)}}</span> --}}
                                 </td>
-                                <td> {{$hajj->updated_at->format('d/m/y')}} </td>
+                                <td> {{$merged->created_at->format('d/m/y')}} </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         @elseif(isset($message))
-            <h3 class="text-center"> {{$message}} </h3>
+            <h3 class="text-center mt-2"> {{$message}} </h3>
         @endif
     </div>
 </body>

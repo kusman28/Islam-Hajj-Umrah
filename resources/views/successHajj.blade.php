@@ -55,7 +55,7 @@
     <div class="container mt-5">
         <div class="alert alert-custom" role="alert">
             <h3 class="alert-heading">Success!</h3>
-            <p>Your Hajj registation is being processed, please wait 1-2 days for the approval or you can check your registration <a href="#"> here.</a></p>
+            <p>Your Hajj registation is being processed, please wait 1-2 days for the approval or you can check your registration <a href="/CheckRegistration"> here.</a></p>
             <p class="mb-0">Thank you.</p>
             <hr>
             For more information please contact us.<br>
